@@ -19,6 +19,6 @@
     Questions?
   </div>
   <div class="button">
-    <a href="contact">Contact Us</a>
+    <a href="mailto:info@plugshare.com">Contact Us</a>
   </div>
 </div>
