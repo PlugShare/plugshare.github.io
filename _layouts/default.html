@@ -45,5 +45,61 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+    <script>
+        (function() {
+            var updateFunc = function() {
+                $("#widget").html($("#code").val());
+
+                var height = $("#height").val();
+                var width = $("#width").val();
+
+                var src = 'http://www.plugshare.com/widget.html';
+
+                if (!($('#currentlocation').is(':checked'))) {
+
+                    var spanLat = $("#spanLat").val();
+                    var spanLng = $("#spanLng").val();
+                    var latitude = $("#latitude").val();
+                    var longitude = $("#longitude").val();
+
+                    src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
+                }
+
+                code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
+
+                $("#widget").html(code);
+                $("#code").val(code);
+            };
+        
+            updateFunc();
+
+            $("#update").on("click", function(e) {
+                e.preventDefault();
+                updateFunc();
+            });
+            $("#reset").on("click", function() {
+                $("#widget").html(code);
+                $("#code").val(code);
+            });
+
+            /*
+            //get the very first bounds changed so we can make the first locations request
+            google.maps.event.addListener(this.map, "bounds_changed", function() {
+                if ($('#chargerCost').is(':checked')) {
+                    code = '<iframe src="http://www.plugshare.com/widget.html" width="800" height="600"></iframe>';
+                } else {
+                    var center = this.map.getCenter();    
+                    var bounds = this.map.getBounds();
+                    var spanLat = bounds.toSpan().lat();
+                    var spanLng = bounds.toSpan().lng();
+                    var latitude = center.lat();
+                    var longitude = center.lng();
+
+                    code = '<iframe src="http://www.plugshare.com/widget.html?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng + '" width="800" height="600"></iframe>';
+                }
+            });
+            */
+        })();
+    </script>
   </body>
 </html>

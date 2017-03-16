@@ -1,6 +1,7 @@
-<div id="content"><h2>Embedding</h2>
+<div id="embed">
+<h2>Embedding</h2>
 <p>The below map can be embedded into any article, blog, or website.</p>
-<p id="widget"><iframe src="http://www.plugshare.com/widget.html?latitude=&amp;longitude=&amp;spanLat=&amp;spanLng=" width="800" height="600"></iframe></p>
+<p id="widget"><iframe src="https://www.plugshare.com/widget.html?latitude=&amp;longitude=&amp;spanLat=&amp;spanLng=" width="800" height="600"></iframe></p>
 
 <h3>Setting the map size.</h3>
 <p>Change the map size using the following values.</p>
@@ -26,62 +27,5 @@
 
 <p><a id="update" href="#" style="text-decoration:underline;">Update code with values entered above</a></p>
 <textarea id="code" rows="2" cols="100"></textarea>
-
-<script>
-    (function() {
-        var updateFunc = function() {
-            $("#widget").html($("#code").val());
-
-            var height = $("#height").val();
-            var width = $("#width").val();
-
-            var src = 'http://www.plugshare.com/widget.html';
-
-            if (!($('#currentlocation').is(':checked'))) {
-
-                var spanLat = $("#spanLat").val();
-                var spanLng = $("#spanLng").val();
-                var latitude = $("#latitude").val();
-                var longitude = $("#longitude").val();
-
-                src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
-            }
-
-            code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
-
-            $("#widget").html(code);
-            $("#code").val(code);
-        };
-    
-        updateFunc();
-
-        $("#update").on("click", function(e) {
-            e.preventDefault();
-            updateFunc();
-        });
-        $("#reset").on("click", function() {
-            $("#widget").html(code);
-            $("#code").val(code);
-        });
-
-        /*
-        //get the very first bounds changed so we can make the first locations request
-        google.maps.event.addListener(this.map, "bounds_changed", function() {
-            if ($('#chargerCost').is(':checked')) {
-                code = '<iframe src="http://www.plugshare.com/widget.html" width="800" height="600"></iframe>';
-            } else {
-                var center = this.map.getCenter();    
-                var bounds = this.map.getBounds();
-                var spanLat = bounds.toSpan().lat();
-                var spanLng = bounds.toSpan().lng();
-                var latitude = center.lat();
-                var longitude = center.lng();
-
-                code = '<iframe src="http://www.plugshare.com/widget.html?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng + '" width="800" height="600"></iframe>';
-            }
-        });
-*/
-    })();
-</script>
 
 </div>
