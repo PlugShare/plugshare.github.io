@@ -125,10 +125,47 @@ header {
     ul li {
       list-style: none;
       padding-left: 10px;
+      margin: 5px 0;
+      input {
+        padding: 10px;
+        font-size: 1.1em;
+        text-align: center;
+      }
+      .label {
+        margin-left: 10px;
+      }
+    }
+    #dimensions {
+      input {
+        width: 50px;
+      }
+    }
+    #coords {
+      input {
+        width: 100px;
+      }
+    }
+    #widget {
+      margin: 0;
+      height: 600px;
+    }
+    iframe {
+      border: 1px solid;
     }
     #parameters {
+      padding: 20px;
+      background: rgba(84, 84, 84, 0.1);
+      border: 1px solid;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      width: 802px;
+      box-sizing: border-box;
+      .button {
+        margin-top: 10px;
+      }
+    }
+    #code {
       padding: 10px;
-      border: 1px solid #333;
     }
   }
   #access {
