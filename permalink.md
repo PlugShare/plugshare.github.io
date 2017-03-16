@@ -7,8 +7,16 @@ Links to charging locations can also be generated using the "Share" buttons avai
 
 ## Link directly to a location
 
-`http://api.plugshare.com/view/location/[location_id]`
+`https://api.plugshare.com/view/location/[location_id]`
+
+### Example
+
+`https://api.plugshare.com/view/location/20840`
 
 ## Link to the PlugShare map zoomed to a specific region
 
-`http://api.plugshare.com/view/map?latitude=[latitude]&longitude=[longitude]&spanLat=[latitude span]&spanLng=[longitude span]`
+`https://api.plugshare.com/view/map?latitude=[latitude]&longitude=[longitude]&spanLat=[latitude span]&spanLng=[longitude span]`
+
+### Example
+
+`https://api.plugshare.com/view/map?latitude=33.992476&longitude=-118.4721&spanLat=0.1&spanLng=0.1`
