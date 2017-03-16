@@ -3,7 +3,7 @@
 You can link directly to charging locations or a map region on PlugShare's web, iOS, and Android apps. When viewed on a computer, links direct to PlugShare.com. When viewed on a mobile device, links direct to the appropriate app.
 Links to charging locations can also be generated using the "Share" buttons available on PlugShare.com and in the mobile apps.
 
-<img src="plugshare-laptop.png">
+<img src="devices.png">
 
 ## Link directly to a location
 
