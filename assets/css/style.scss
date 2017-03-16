@@ -27,15 +27,21 @@ header {
 }
 #main_content {
   padding-bottom: 40px;
+  text-align: center;
   section {
     width: 48%;
     padding: 0.5%;
     display: inline-block;
-    @media only screen and (min-width: 800px) {
+    text-align: left;
+    @media only screen and (max-width: 800px) {
       width: 100%;
       max-width: 620px;
       display: block;
       margin: 0 auto;
+      box-sizing: border-box;
+    }
+    h2 {
+      margin-top: 8px;
     }
   }
   a {
@@ -45,11 +51,34 @@ header {
       overflow: hidden;
     }
   }
-  .button {
-    padding: 5px 10px;
-    background-color: $psblue;
-    a {
-      color: #fff;
+  .cta {
+    margin-top: 30px;
+    text-align: center;
+    .prompt {
+      display: inline-block;
+      padding: 10px;
+      font-weight: 300;
+    }
+    .button {
+      white-space: nowrap;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      padding: 3px 20px;
+      box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+      border-radius: 4px;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      text-decoration: none;
+      font-weight: 200;
+      text-shadow: none;
+      background-color: $psblue;
+      position: relative;
+      bottom: 5px;
+      a {
+        color: #fff;
+      }
     }
   }
 }

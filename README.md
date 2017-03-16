@@ -16,7 +16,7 @@
 </section>
 <div id="cta">
   <div class="prompt">
-    <h4>Questions?</h4>
+    Questions?
   </div>
   <div class="button">
     <a href="#contact">Contact Us</a>
