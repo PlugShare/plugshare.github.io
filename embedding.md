@@ -14,10 +14,7 @@
     </ul>
 
     <h3>Setting the map region</h3>
-    <p>
-    <input type="checkbox" name="currentlocation" id="currentlocation"> Automatically zoom to user's location
-    </p>
-    <p>To adjust the map region (it defaults to the user's current location) set the following values.</p>
+    <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values</p>
     <ul id="coords">
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude"> <span class="label">The longitude of the center coordinate</span></li>
@@ -33,5 +30,5 @@
   <h3>Code</h3>
   <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
 
-  <textarea id="code" rows="2" cols="100" disabled></textarea>
+  <textarea id="code" rows="2" cols="100" disabled onclick="selectText('code')"></textarea>
 </div>

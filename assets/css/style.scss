@@ -55,7 +55,7 @@ h3 {
   bottom: 5px;
   transition: all .3s ease;
   &:hover {
-    background-color: tint($psblue, 10%);
+    background-color: tint($psblue, 20%);
   }
   a {
     color: #fff;
@@ -205,7 +205,7 @@ header {
       cursor: pointer;
       transition: all .3s ease;
       &:hover {
-        background-color: tint($psblue, 10%);
+        background-color: tint($psblue, 20%);
       }
     }
   }
