@@ -33,6 +33,35 @@ $psblue: #003ca6;
   clear: both;
 }
 
+h3 {
+  color: $psblue;
+}
+.button {
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 3px 20px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  border-radius: 4px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-decoration: none;
+  font-weight: 200;
+  text-shadow: none;
+  background-color: $psblue;
+  position: relative;
+  bottom: 5px;
+  transition: all .3s ease;
+  &:hover {
+    background-color: tint($psblue, 10%);
+  }
+  a {
+    color: #fff;
+  }
+}
+
 .inner {
   width: 100%;
   max-width: 1280px;
@@ -90,31 +119,6 @@ header {
         display: inline-block;
         padding: 10px;
       }
-      .button {
-        white-space: nowrap;
-        display: inline-block;
-        height: 40px;
-        line-height: 40px;
-        padding: 3px 20px;
-        box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-        border-radius: 4px;
-        font-size: 15px;
-        text-transform: uppercase;
-        letter-spacing: .05em;
-        text-decoration: none;
-        font-weight: 200;
-        text-shadow: none;
-        background-color: $psblue;
-        position: relative;
-        bottom: 5px;
-        transition: all .3s ease;
-        &:hover {
-          background-color: tint($psblue, 10%);
-        }
-        a {
-          color: #fff;
-        }
-      }
     }
   }
   #embed {
@@ -156,6 +160,7 @@ header {
       background-color: $psblue;
       color: #fff;
       margin-top: 10px;
+      cursor: pointer;
       transition: all .3s ease;
       &:hover {
         background-color: tint($psblue, 10%);
