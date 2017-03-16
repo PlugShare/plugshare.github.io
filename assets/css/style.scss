@@ -2,3 +2,11 @@
 ---
 
 @import "{{ site.theme }}";
+
+header {
+  padding-bottom: 0;
+  h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+    font-weight: 300;
+  }
+}

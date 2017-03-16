@@ -1,13 +1,11 @@
 ## PlugShare Map
 
-Embedding
+[Embedding](embedding)
 
-Permalinking
+[Permalinking](permalinking)
 
 ## Charging Stations API
 
-Overview
+[Documentation](docs)
 
-Request Access
-
-Resource Descriptions and Test Console
+[Request Access](request-access)
