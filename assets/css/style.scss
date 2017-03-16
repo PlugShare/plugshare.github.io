@@ -3,6 +3,12 @@
 
 @import "{{ site.theme }}";
 
+$psblue: #003ca6;
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+}
 header {
   padding-bottom: 0;
   text-align: center;
@@ -20,12 +26,17 @@ header {
   }
 }
 #main_content {
-  width: 100%;
-  max-width: 1280px;
+  padding-bottom: 40px;
   section {
-    width: 49%;
+    width: 48%;
+    padding: 0.5%;
     display: inline-block;
-
+    @media only screen and (min-width: 800px) {
+      width: 100%;
+      max-width: 620px;
+      display: block;
+      margin: 0 auto;
+    }
   }
   a {
     img {
@@ -34,7 +45,17 @@ header {
       overflow: hidden;
     }
   }
+  .button {
+    padding: 5px 10px;
+    background-color: $psblue;
+    a {
+      color: #fff;
+    }
+  }
 }
 footer {
   text-align: center;
+  padding: 0;
+  margin: 0;
+  background: none;
 }
