@@ -147,14 +147,13 @@ header {
     }
     #widget {
       margin: 0;
-      height: 600px;
     }
     iframe {
       border: 1px solid;
     }
     #parameters {
       padding: 20px;
-      background: rgba(84, 84, 84, 0.1);
+      background: rgba(255, 255, 255, 0.5);
       border: 1px solid;
       border-radius: 3px;
       margin-bottom: 20px;
@@ -166,6 +165,8 @@ header {
     }
     #code {
       padding: 10px;
+      font-size: 1.1em;
+      background: rgba(255, 255, 255, 0.5);
     }
   }
   #access {
