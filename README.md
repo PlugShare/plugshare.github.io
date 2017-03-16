@@ -3,7 +3,7 @@
     <img src="embed.png">
   </a>
   <h2>PlugShare Map</h2>
-  <a href="embedding"><h3>Embedding</h3></a>
+  <a href="embedding.html"><h3>Embedding</h3></a>
   <a href="permalinking"><h3>Permalinking</h3></a>
 </section>
 <section id="api">
