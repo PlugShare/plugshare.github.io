@@ -13,7 +13,7 @@
     </a>
     <h2>Charging Stations API</h2>
     <a href="slate"><h3>Documentation</h3></a>
-    <a href="request-access"><h3>Request Access</h3></a>
+    <a href="access"><h3>Request Access</h3></a>
   </section>
   <div id="cta">
     <div class="prompt">
