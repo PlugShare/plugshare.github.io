@@ -109,10 +109,11 @@ header {
       @extend .clearfix;
       .input-field {
         float: left;
-        margin: 10px 25px 10px 0;
+        margin: 5px 25px 10px 0;
         input {
-          padding: 5px;
+          padding: 10px 12px;
           margin-top: 5px;
+          font-size: 1.1em;
         }
       }
     }
