@@ -1,3 +1,5 @@
+<img src="embed.png">
+
 ## PlugShare Map
 
 [Embedding](embedding)
