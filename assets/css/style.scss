@@ -5,6 +5,16 @@
 
 $psblue: #003ca6;
 
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
 .inner {
   width: 100%;
   max-width: 1280px;
@@ -89,6 +99,19 @@ header {
     ul li {
       list-style: none;
       padding-left: 10px;
+    }
+  }
+  #access {
+    form {
+      background: rgba(84, 84, 84, 0.1);
+      border: 1px solid;
+      border-radius: 3px;
+      .fields {
+        @extend .clearfix;
+        .input-field {
+          float: left;
+        }
+      }
     }
   }
 }
