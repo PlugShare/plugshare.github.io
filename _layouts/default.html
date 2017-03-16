@@ -57,7 +57,7 @@
           $("#widget").html($("#code").val());
         });
 
-        $("#parameters input").keypress(function() {
+        var updateEmbed = function() {
           var height = $("#height").val();
           var width = $("#width").val();
 
@@ -73,8 +73,11 @@
 
           code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
 
-          $("#widget").html(code);
           $("#code").val(code);
+        }
+        updateEmbed();
+        $("#parameters input").keypress(function() {
+          updateEmbed();
         });
 
         /*
