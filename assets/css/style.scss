@@ -109,6 +109,13 @@ header {
       @extend .clearfix;
       .input-field {
         float: left;
+        margin: 10px 20px 10px 0;
+        label {
+          margin-bottom: 5px;
+        }
+        input {
+          padding: 5px;
+        }
       }
     }
   }

@@ -3,16 +3,16 @@
     <legend><h2>API Request Form</h2></legend>
     <div class="fields">
       <div class="input-field">
-        First Name:<br>
-        <input type="text" name="firstname" value="" placeholder="First Name">
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" value="" placeholder="First Name">
       </div>
       <div class="input-field">
-        Last Name:<br>
-        <input type="text" name="lastname" value="" placeholder="Last Name">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name">
       </div>
       <div class="input-field">
-        Email:<br>
-        <input type="text" name="email" value="" placeholder="Email">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="" placeholder="Email">
       </div>
     </div>
     <input type="submit" value="Submit">
