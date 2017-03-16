@@ -1,3 +1,5 @@
+<section id="map">
+
 <a href="#">
   <img src="embed.png">
 </a>
@@ -8,6 +10,10 @@
 
 [Permalinking](permalinking)
 
+</section>
+
+<section id="api">
+
 <a href="#">
   <img src="api.png">
 </a>
@@ -17,3 +23,5 @@
 [Documentation](docs)
 
 [Request Access](request-access)
+
+</section>

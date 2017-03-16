@@ -5,6 +5,7 @@
 
 header {
   padding-bottom: 0;
+  text-align: center;
   h1 {
     font-family: 'Helvetica Neue', Helvetica, Arial, serif;
     font-weight: 300;
@@ -19,6 +20,13 @@ header {
   }
 }
 #main_content {
+  width: 100%;
+  max-width: 1280px;
+  section {
+    width: 49%;
+    display: inline-block;
+
+  }
   a {
     img {
       border: 1px solid #333;
@@ -26,4 +34,7 @@ header {
       overflow: hidden;
     }
   }
+}
+footer {
+  text-align: center;
 }
