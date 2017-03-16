@@ -1,6 +1,6 @@
 <div id="embed">
 <h2>Embedding</h2>
-<p>The below map can be embedded into any article, blog, or website.</p>
+<p>The map below can be embedded into any article, blog, or website.</p>
 <p id="widget"><iframe src="https://www.plugshare.com/widget.html?latitude=&amp;longitude=&amp;spanLat=&amp;spanLng=" width="800" height="600"></iframe></p>
 
 <h3>Setting the map size.</h3>
