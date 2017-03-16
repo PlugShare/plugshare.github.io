@@ -1,4 +1,6 @@
-<img src="embed.png">
+<a href="#">
+  <img src="embed.png">
+</a>
 
 ## PlugShare Map
 

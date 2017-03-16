@@ -8,13 +8,22 @@ header {
   h1 {
     font-family: 'Helvetica Neue', Helvetica, Arial, serif;
     font-weight: 300;
-    .logo {
+    #logo {
       height: 50px;
       top: 6px;
       position: relative;
     }
     .title {
       margin-left: 15px;
+    }
+  }
+}
+#main_content {
+  a {
+    img {
+      border: 1px solid;
+      border-radius: 5px;
+      overflow: hidden;
     }
   }
 }
