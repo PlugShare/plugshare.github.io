@@ -73,7 +73,7 @@
                 code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
 
                 $("#widget").html(code);
-                $("#code").val(code);
+                $("#code").html(code);
             };
         
             updateFunc();
@@ -84,7 +84,7 @@
             });
             $("#reset").on("click", function() {
                 $("#widget").html(code);
-                $("#code").val(code);
+                $("#code").html(code);
             });
 
             /*

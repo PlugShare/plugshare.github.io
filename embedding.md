@@ -10,24 +10,27 @@
       <li><input type="text" name="width" id="width" value="800"> - The width of the map widget in pixels.</li>
   </ul>
 
-  <h3>Setting the map region.</h3>
-  <p>
-  <input type="checkbox" name="currentlocation" id="currentlocation"> Automatically zoom to user's location
-  </p>
-  <p>To adjust the map region (it defaults to the user's current location) set the following values.</p>
-  <ul>
-      <li><input type="text" name="latitude" id="latitude"> - The latitude of the center coordinate.</li>
-      <li><input type="text" name="longitude" id="longitude"> - The longitude of the center coordinate</li>
-      <li><input type="text" name="spanLat" id="spanLat"> - The distance in latitude between N and S.</li>
-      <li><input type="text" name="spanLng" id="spanLng"> - The distance in longitude between E and W.</li>
-  </ul>
+  <div id="parameters">
+    <h2>Map Parameters</h2>
+    <h3>Setting the map region.</h3>
+    <p>
+    <input type="checkbox" name="currentlocation" id="currentlocation"> Automatically zoom to user's location
+    </p>
+    <p>To adjust the map region (it defaults to the user's current location) set the following values.</p>
+    <ul>
+        <li><input type="text" name="latitude" id="latitude"> - The latitude of the center coordinate.</li>
+        <li><input type="text" name="longitude" id="longitude"> - The longitude of the center coordinate</li>
+        <li><input type="text" name="spanLat" id="spanLat"> - The distance in latitude between N and S.</li>
+        <li><input type="text" name="spanLng" id="spanLng"> - The distance in longitude between E and W.</li>
+    </ul>
+
+    <div class="button">
+      <a id="update" href="#">Update map</a>
+    </div>
+  </div>
 
   <h3>Code</h3>
   <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600. You can test the parameters here.</p>
 
-  <code class="highlighter-rouge" id="code">https://plugshare.github.io/embedding</code>
-
-  <div class="button">
-    <a id="update" href="#">Update map with values entered above</a>
-  </div>
+  <code class="highlighter-rouge" id="code"></code>
 </div>
