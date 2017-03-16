@@ -15,6 +15,7 @@
         <label for="email">Email:</label><br>
         <input type="text" name="email" id="email" value="" placeholder="Email">
       </div>
+      <input type="hidden" name="_next" value="thanks" />
     </div>
     <input type="submit" value="Submit">
   </fieldset>
