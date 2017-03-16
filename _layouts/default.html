@@ -79,40 +79,6 @@
         $("#parameters input").keyup(function() {
           updateEmbed();
         });
-
-        /*
-        //get the very first bounds changed so we can make the first locations request
-        google.maps.event.addListener(this.map, "bounds_changed", function() {
-            if ($('#chargerCost').is(':checked')) {
-                code = '<iframe src="http://www.plugshare.com/widget.html" width="800" height="600"></iframe>';
-            } else {
-                var center = this.map.getCenter();    
-                var bounds = this.map.getBounds();
-                var spanLat = bounds.toSpan().lat();
-                var spanLng = bounds.toSpan().lng();
-                var latitude = center.lat();
-                var longitude = center.lng();
-
-                code = '<iframe src="http://www.plugshare.com/widget.html?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng + '" width="800" height="600"></iframe>';
-            }
-        });
-        */
-
-        function selectText(containerid) {
-          if (document.selection) {
-              var range = document.body.createTextRange();
-              range.moveToElementText(document.getElementById(containerid));
-              range.select();
-          } else if (window.getSelection) {
-              var range = document.createRange();
-              range.selectNode(document.getElementById(containerid));
-              window.getSelection().addRange(range);
-          }
-          $("#code").on('click', function() {
-            selectText("code");
-          });
-        }
-
       });
     </script>
   </body>
