@@ -5,6 +5,8 @@ Links to charging locations can also be generated using the "Share" buttons avai
 
 <img src="devices.png">
 
+<hr>
+
 ## Link directly to a location
 
 `https://api.plugshare.com/view/location/[location_id]`
@@ -12,6 +14,8 @@ Links to charging locations can also be generated using the "Share" buttons avai
 ### Example
 
 `https://api.plugshare.com/view/location/20840`
+
+<hr>
 
 ## Link to the PlugShare map zoomed to a specific region
 
