@@ -1,18 +1,18 @@
-# PlugShare Map
-
 <a href="#">
   <img src="embed.png">
 </a>
+
+## PlugShare Map
 
 [Embedding](embedding)
 
 [Permalinking](permalinking)
 
-# Charging Stations API
-
 <a href="#">
-  <img src="embed.png">
+  <img src="api.png">
 </a>
+
+## Charging Stations API
 
 [Documentation](docs)
 
