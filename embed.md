@@ -7,14 +7,14 @@
     <h2>Map Parameters</h2>
 
     <h3>Setting the map size</h3>
-    <p>Change the map size using the following values.</p>
+    <p>Change the map size using the following values:</p>
     <ul id="dimensions">
         <li><input type="text" name="height" id="height" value="600" placeholder="height"> <span class="label">The height of the map widget in pixels.</span></li>
         <li><input type="text" name="width" id="width" value="800" placeholder="width"> <span class="label">The width of the map widget in pixels.</span></li>
     </ul>
 
     <h3>Setting the map region</h3>
-    <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values</p>
+    <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
     <ul id="coords">
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude"> <span class="label">The longitude of the center coordinate</span></li>

@@ -1,6 +1,6 @@
 <div id="index">
   <section id="map">
-    <a href="embedding">
+    <a href="embed">
       <img src="embed.png">
     </a>
     <h2>PlugShare Map</h2>
