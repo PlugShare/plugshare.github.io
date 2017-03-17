@@ -17,7 +17,7 @@
       </div>
       <div class="input-field">
         <label for="phone">Business Phone:</label><br>
-        <input type="text" name="phone" id="phone" value="" placeholder="Business Phone" required>
+        <input type="tel" name="phone" id="phone" value="" placeholder="Business Phone" required>
       </div>
       <div class="input-field">
         <label for="email">Email:</label><br>

@@ -31,4 +31,15 @@
   <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
 
   <textarea id="code" rows="2" cols="100" disabled></textarea>
+
+  <hr>
+
+  <h2>Who's using us?</h2>
+  <p>Take a look at some of our partners</p>
+  <div id="partners">
+    <a href="https://www.ez-charge.com/stations/" target="_blank"><img src="ez-charge-logo.png"></a>
+    <a href="http://pluginperks.com/find-a-charging-station/" target="_blank"><img src="drive-electric-orlando-logo.png"></a>
+    <a href="https://www.kiachargeup.com/stations/" target="_blank"><img src="kia-chargeup-logo.png"></a>
+    <a href="https://pluginamerica.org/get-equipped/find-an-ev-charging-station/" target="_blank"><img src="plugin-america-logo.png"></a>
+  </div>
 </div>
