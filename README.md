@@ -8,11 +8,11 @@
     <a href="permalink"><h3>Permalinking</h3></a>
   </section>
   <section id="api">
-    <a href="slate">
+    <a href="docs">
       <img src="api.png">
     </a>
     <h2>Charging Stations API</h2>
-    <a href="slate"><h3>Documentation</h3></a>
+    <a href="docs"><h3>Documentation</h3></a>
     <a href="access"><h3>Request Access</h3></a>
   </section>
   <div id="cta">
