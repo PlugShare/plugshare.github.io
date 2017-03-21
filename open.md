@@ -47,8 +47,12 @@
     <aside class="notice">
       Note: For exclusions, if a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.
     </aside>
-    <input type="radio" name="type" value="include" checked> Include<br>
-    <input type="radio" name="type" value="exclude"> Exclude<br>
+    <div class="network">
+      <input type="radio" name="type" value="include" checked> Include
+    </div>
+    <div class="network">
+      <input type="radio" name="type" value="exclude"> Exclude
+    </div>
     <ul id="networks">
         <li><input type="checkbox" name="network" value="1"> <span class="label">1. ChargePoint</span></li>
         <li><input type="checkbox" name="network" value="2"> <span class="label">2. Blink</span></li>
