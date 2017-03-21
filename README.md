@@ -4,7 +4,7 @@
       <img src="embed.png">
     </a>
     <h2>PlugShare Map</h2>
-    <a href="embed"><h3>Add a Charging Map to your Website</h3></a>
+    <a href="embed"><h3>Add a Charging Map to your Website</h3></a><br>
     <a href="permalink"><h3>Permalinking</h3></a>
   </section>
   <section id="api">
@@ -12,7 +12,7 @@
       <img src="api.png">
     </a>
     <h2>Charging Stations API</h2>
-    <a href="docs"><h3>Documentation</h3></a>
+    <a href="docs"><h3>Documentation</h3></a><br>
     <a href="access"><h3>Request Access</h3></a>
   </section>
   <div id="cta">
