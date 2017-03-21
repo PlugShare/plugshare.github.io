@@ -66,6 +66,16 @@
           var latitude = $("#latitude").val();
           var longitude = $("#longitude").val();
 
+          var outlets = $('input[name="outlet"]:checked').map(function() {
+            return this.value;
+          }).get();
+          var networks = $('input[name="network"]:checked').map(function() {
+            return this.value;
+          }).get();
+          var type = $('input[name="type"]:checked').val();
+          console.log(outlets, networks, type);
+
+
           if (spanLat && spanLng && latitude && longitude)
             src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
 
@@ -75,6 +85,9 @@
         }
         updateEmbed();
         $("#parameters input").keyup(function() {
+          updateEmbed();
+        });
+        $('input[type=radio], input[type=checkbox]').change(function() {
           updateEmbed();
         });
       });
