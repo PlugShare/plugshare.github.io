@@ -233,7 +233,7 @@
         <ul class="toc-footer">
             <li><a href='/access'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>API V4 - Updated 3/14/2017</li>
+            <li>API V3 - Updated 3/14/2017</li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -241,17 +241,18 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the PlugShare API! You can use our API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database.</p>
+<p>Welcome to the PlugShare API! You can use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database. The PlugShare API is a REST API</p>
 
 <h2 id="using-the-api">Using The API</h2>
 
-<p>Generally, you&rsquo;ll want to use a search method to return a list of locations. Each location will contain one or more stations, each of which may contain one or more outlets. Not all information about a location is returned from the search method; for reviews, photos, and more you&rsquo;ll want to request the location directly using its unique identifier.</p>
+<p>Generally, you&rsquo;ll want to use a search method to return a list of locations. Each location will contain one or more stations, each of which may contain one or more outlets. Not all information about a location is returned from the search method; for reviews, photos, and more you&rsquo;ll want to request the location directly using its unique identifier.<br>
+Here are some examples to get you started. Try out <a href="#get-nearby-locations"><code class="prettyprint">GET /locations/nearby</code></a> and <a href="#get-locations-in-region"><code class="prettyprint">GET /locations/region</code></a></p>
 
 <h2 id="access-instructions">Access Instructions</h2>
 
 <p>PlugShare uses API keys to allow access to the API. You can register a new PlugShare API key at our <a href="/access">developer portal</a>.</p>
 
-<p>HTTPS + HTTP Basic auth is required when making API requests. Your username and password will be provided.</p>
+<p>HTTPS + HTTP Basic auth is required when making API requests. After obtaining an API key/secret, the key and secret have to be specified in the request with HTTP Basic Auth, i.e. converted into an Authorization header.</p>
 
 <p>URL: <a href="https://api.plugshare.com/">https://api.plugshare.com/</a></p>
 
@@ -261,13 +262,15 @@
 
 <p>Passing your country code locale will result in an assignment of one of the following regions: &lsquo;US&rsquo;, &lsquo;JP&rsquo;, &lsquo;AU&rsquo;, &lsquo;UK&rsquo;, &lsquo;EU&rsquo;, or &lsquo;WW&rsquo; (worldwide). You will then get localized arrays for outlet configurations, connectors, and an available make vehicle list.</p>
 
+<h3 id="alex-is-writing-some-more-extensive-accurate-information-on-this-section">Alex is writing some more extensive/accurate information on this section</h3>
+
 <h1 id="core-data-entities">Core Data Entities</h1>
 
 <p><img src="images/tables.png"></p>
 
 <p>A location or station may also have zero to many promos, and a location may also have zero to many amenities.</p>
 
-<h1 id="locations">Locations</h1>
+<h1 id="location">Location</h1>
 
 <p>A driver identifiable destination where Charging Stations (Stations) are located. As a general rule if stations are within visible range of each other they are organized together into a location.</p>
 
@@ -392,7 +395,6 @@
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="s2">"requiresAccessCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -695,7 +697,7 @@
     </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a locations based on location id.</p>
+<p>This endpoint retrieves a location based on location id.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -806,7 +808,7 @@ Optional location filters do not apply to this endpoint because this only return
       <div class="field">count</div>
       <div class="type">optional</div>
     </td>
-    <td>Maximum count of locations to return.<br>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
     200-500 is a recommended value for most applications.</td>
   </tr>
   <tr>
@@ -828,8 +830,8 @@ Optional location filters do not apply to this endpoint because this only return
       <div class="field">cost</div>
       <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td><b>True</b> = Returns all locations regardless of cost.<br>
-    <b>False</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
   </tr>
   <tr>
     <td>
@@ -860,7 +862,7 @@ Optional location filters do not apply to this endpoint because this only return
       <div class="field">exclude_networks</div>
       <div class="type">optional</div>
     </td>
-    <td>Filter on a comma separated list of network ids to exlude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
     See <a href="#networks-list">Networks List</a></td>
   </tr>
   <tr>
@@ -899,7 +901,7 @@ You may want to apply some filters to the search queries to return only relevant
 
 <p>Returns an array of <code class="prettyprint">location</code> objects, containing up to <code class="prettyprint">count</code> locations</p>
 
-<h2 id="get-region-locations">Get Region Locations</h2>
+<h2 id="get-locations-in-region">Get Locations in Region</h2>
 
 <blockquote>
 <p>Example Request:</p>
@@ -985,7 +987,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">count</div>
       <div class="type required">required</div>
     </td>
-    <td>Maximum count of locations to return.<br>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
     200-500 is a recommended value for most applications.</td>
   </tr>
   <tr>
@@ -1000,8 +1002,8 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">cost</div>
       <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td><b>True</b> = Returns all locations regardless of cost.<br>
-    <b>False</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
   </tr>
   <tr>
     <td>
@@ -1032,7 +1034,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">exclude_networks</div>
       <div class="type">optional</div>
     </td>
-    <td>Filter on a comma separated list of network ids to exlude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
     See <a href="#networks-list">Networks List</a></td>
   </tr>
   <tr>
@@ -1051,7 +1053,7 @@ You may want to apply some filters to the search queries to return only relevant
 
 <h3 id="additional-examples">Additional Examples</h3>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;outlets</code></p>
+<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;outlets=[{&quot;connector&quot;:2}]</code></p>
 
 <p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
 
@@ -1135,7 +1137,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">count</div>
       <div class="type">optional</div>
     </td>
-    <td>Maximum count of locations to return.<br>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
     200-500 is a recommended value for most applications.</td>
   </tr>
   <tr>
@@ -1158,8 +1160,8 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">cost</div>
       <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td><b>True</b> = Returns all locations regardless of cost.<br>
-    <b>False</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
   </tr>
   <tr>
     <td>
@@ -1174,7 +1176,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">exclude_networks</div>
       <div class="type">optional</div>
     </td>
-    <td>Filter on a comma separated list of network ids to exlude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
     See <a href="#networks-list">Networks List</a></td>
   </tr>
   <tr>
@@ -1285,7 +1287,7 @@ POST body:
       <div class="field">count</div>
       <div class="type">optional</div>
     </td>
-    <td>Maximum count of locations to return.<br>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
     200-500 is a recommended value for most applications</td>
   </tr>
   <tr>
@@ -1308,8 +1310,8 @@ POST body:
       <div class="field">cost</div>
       <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td><b>True</b> = Returns all locations regardless of cost.<br>
-    <b>False</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
   </tr>
   <tr>
     <td>
@@ -1324,7 +1326,7 @@ POST body:
       <div class="field">exclude_networks</div>
       <div class="type">optional</div>
     </td>
-    <td>Filter on a comma separated list of network ids to exlude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
     See <a href="#networks-list">Networks List</a></td>
   </tr>
   <tr>
@@ -1404,7 +1406,7 @@ You may want to apply some filters to the search queries to return only relevant
 
 <h1 id="station">Station</h1>
 
-<p>A physical charging unit installed on the ground or wall. In EV industry terms this is also frequently referred to as an EVSE (Electric Vehicle Service Equipment). Stations can be network managed. Stations frequently support near time availability data.</p>
+<p>A physical charging unit installed on the ground or wall. In EV industry terms this is also frequently referred to as an EVSE (Electric Vehicle Service Equipment). Stations can be network managed. Stations frequently support real time availability data.</p>
 
 <h2 id="object-properties">Object Properties</h2>
 
@@ -1435,7 +1437,6 @@ You may want to apply some filters to the search queries to return only relevant
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"requiresAccessCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -1462,7 +1463,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">name</div>
       <div class="type">String</div>
     </td>
-    <td>Name describing the station, typically a combination of an identifying number and network name.</td>
+    <td>The name attribute of a station is the user-facing identifier for the station. Typically the name is found somewhere on the physical station.</td>
   </tr>
   <tr>
     <td>
@@ -1548,11 +1549,11 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field" id="availability-values">available</div>
       <div class="type">Number (integer enum)</div>
     </td>
-    <td><b>1</b> = Unknown<br>
-    <b>2</b> = Available<br>
-    <b>3</b> = In Use<br>
-    <b>4</b> = Offline<br>
-    <b>5</b> = Under Repair</td>
+    <td><b>0</b> = Unknown<br>
+    <b>1</b> = Available<br>
+    <b>2</b> = In Use<br>
+    <b>3</b> = Offline<br>
+    <b>4</b> = Under Repair</td>
   </tr>
   <tr>
     <td>
@@ -1581,13 +1582,6 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="type">Boolean</div>
     </td>
     <td>True if this station is tagged with a QR code for station identification and activation flows.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">requiresAccessCard</div>
-      <div class="type">Boolean</div>
-    </td>
-    <td>Requires an access card to use this station.</td>
   </tr>
   <tr>
     <td>
@@ -1637,7 +1631,7 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
-      <div class="field">Power</div>
+      <div class="field">power</div>
       <div class="type">Number (integer enum)</div>
     </td>
     <td>See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
@@ -1962,7 +1956,7 @@ You may want to apply some filters to the search queries to return only relevant
 </tr>
 <tr>
 <td>3</td>
-<td>SemaCharge</td>
+<td>Semaconnect</td>
 <td></td>
 <td>9</td>
 <td>AeroVironment</td>

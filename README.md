@@ -4,7 +4,7 @@
       <img src="embed.png">
     </a>
     <h2>PlugShare Map</h2>
-    <a href="embed"><h3>Embedding</h3></a>
+    <a href="embed"><h3>Add a Charging Map to your Website</h3></a>
     <a href="permalink"><h3>Permalinking</h3></a>
   </section>
   <section id="api">

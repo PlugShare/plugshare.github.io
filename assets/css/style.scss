@@ -33,6 +33,13 @@ $psblue: #003ca6;
   clear: both;
 }
 
+a {
+  color: $psblue;
+  &:hover {
+    color: tint($psblue, 20%);
+  }
+}
+
 h3 {
   color: $psblue;
 }
@@ -98,6 +105,9 @@ header {
         display: block;
         margin: 0 auto;
         box-sizing: border-box;
+      }
+      a {
+        display: inline-block;
       }
       h2 {
         margin-top: 8px;

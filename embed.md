@@ -32,7 +32,7 @@
 
   <textarea id="code" rows="2" cols="100" disabled></textarea>
 
-  <hr>
+  <!-- <hr>
 
   <h2>Who's using us?</h2>
   <p>Take a look at some of our partners</p>
@@ -41,5 +41,5 @@
     <a href="http://pluginperks.com/find-a-charging-station/" target="_blank"><img src="drive-electric-orlando-logo.png"></a>
     <a href="https://www.kiachargeup.com/stations/" target="_blank"><img src="kia-chargeup-logo.png"></a>
     <a href="https://pluginamerica.org/get-equipped/find-an-ev-charging-station/" target="_blank"><img src="plugin-america-logo.png"></a>
-  </div>
+  </div> -->
 </div>
