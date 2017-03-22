@@ -53,6 +53,7 @@
         $("#update").on("click", function(e) {
           e.preventDefault();
           $("#widget").html($("#code").val());
+          $(window).scrollTop(0);
         });
 
         var updateEmbed = function() {
