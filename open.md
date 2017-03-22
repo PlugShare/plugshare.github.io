@@ -15,16 +15,15 @@
 
     <h3>Setting the map region</h3>
     <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
-    <ul id="coords">
-        <li><input type="text" name="latitude" id="latitude" placeholder="latitude"> <span class="label">The latitude of the center coordinate.</span></li>
-        <li><input type="text" name="longitude" id="longitude" placeholder="longitude"> <span class="label">The longitude of the center coordinate</span></li>
-        <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat"> <span class="label">The distance in latitude between N and S.</span></li>
-        <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng"> <span class="label">The distance in longitude between E and W.</span></li>
-    </ul>
-
     <aside class="notice">
       Note: You must provide all 4 coordinate attributes before you can apply additional filters.
     </aside>
+    <ul id="coords">
+        <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
+        <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate</span></li>
+        <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
+        <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng" value="0.02"> <span class="label">The distance in longitude between E and W.</span></li>
+    </ul>
 
     <h3>Filter by outlets</h3>
     <p>By default, all outlet types are shown. Select one or more outlets to restrict results to show locations with at least one of the selected outlet(s) type.</p>
