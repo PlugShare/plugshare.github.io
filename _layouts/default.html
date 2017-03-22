@@ -80,12 +80,19 @@
             if (outlets.length || networks.length) {
               src += '&allowEmbedFilters=true';
               if (outlets.length) {
-                src += '&outlets=';
+                src += '&outlets=[';
                 for (var i = 0; i < outlets.length; i++) {
-                  src += outlets[i];
-                  if (i != outlets.length)
+                  if (outlets[i] == '6.0') {
+                    src += '{"connector":6,"power":0}';
+                  } else if (outlets[i] == '6.1') {
+                    src += '{"connector":6,"power":1}';
+                  } else {
+                    src += '{"connector":' + outlets[i] + '}';
+                  }
+                  if (i != outlets.length - 1)
                     src += ',';
                 }
+                src += ']';
               }
               if (networks.length) {
                 if (type == 'include')
@@ -94,12 +101,13 @@
                   src += '&exclusion_networks=';
                 for (var i = 0; i < networks.length; i++) {
                   src += networks[i];
-                  if (i != networks.length)
+                  if (i != networks.length - 1)
                     src += ',';
                 }
               }
             }
           }
+          
 
           code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
 
