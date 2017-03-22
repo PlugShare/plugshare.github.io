@@ -22,6 +22,10 @@
         <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng"> <span class="label">The distance in longitude between E and W.</span></li>
     </ul>
 
+    <aside class="notice">
+      Note: You must provide all 4 coordinate attributes before you can apply additional filters.
+    </aside>
+
     <h3>Filter by outlets</h3>
     <p>By default, all outlet types are shown. Select one or more outlets to restrict results to show locations with at least one of the selected outlet(s) type.</p>
     <ul id="outlets">
@@ -86,5 +90,5 @@
   <h3>Code</h3>
   <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
 
-  <textarea id="code" rows="2" cols="100" disabled></textarea>
+  <textarea id="code" rows="4" cols="100" disabled></textarea>
 </div>
