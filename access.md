@@ -1,4 +1,4 @@
-<form action="https://formspree.io/jordin@plugshare.com" method="POST" id="access">
+<form action="https://formspree.io/info@plugshare.com" method="POST" id="access">
   <fieldset>
     <legend><h2>API Request Form</h2></legend>
     <h3>Register for an API key to access api.plugshare.com</h3>
