@@ -57,28 +57,40 @@
       <input type="radio" name="type" value="exclude"> Exclude
     </div>
     <ul id="networks">
-        <li><input type="checkbox" name="network" value="7"> <span class="label">AddEnergie</span></li>
-        <li><input type="checkbox" name="network" value="9"> <span class="label">AeroVironment</span></li>
-        <li><input type="checkbox" name="network" value="2"> <span class="label">Blink</span></li>
-        <li><input type="checkbox" name="network" value="1"> <span class="label">ChargePoint</span></li>
-        <li><input type="checkbox" name="network" value="6"> <span class="label">Circuit Electrique</span></li>
-        <li><input type="checkbox" name="network" value="18"> <span class="label">Clever</span></li>
-        <li><input type="checkbox" name="network" value="15"> <span class="label">Endesa</span></li>
-        <li><input type="checkbox" name="network" value="23"> <span class="label">Enel Drive</span></li>
-        <li><input type="checkbox" name="network" value="16"> <span class="label">ESB</span></li>
-        <li><input type="checkbox" name="network" value="19"> <span class="label">EVgo</span></li>
-        <li><input type="checkbox" name="network" value="4"> <span class="label">GE WattStation</span></li>
-        <li><input type="checkbox" name="network" value="26"> <span class="label">Greenlots</span></li>
-        <li><input type="checkbox" name="network" value="34"> <span class="label">JNSH</span></li>
-        <li><input type="checkbox" name="network" value="22"> <span class="label">Lastestasjoner</span></li>
-        <li><input type="checkbox" name="network" value="11"> <span class="label">OpenChargeMap</span></li>
-        <li><input type="checkbox" name="network" value="14"> <span class="label">Oplaadpalen</span></li>
-        <li><input type="checkbox" name="network" value="13"> <span class="label">RWE</span></li>
-        <li><input type="checkbox" name="network" value="3"> <span class="label">Semaconnect</span></li>
-        <li><input type="checkbox" name="network" value="5"> <span class="label">Sun Country</span></li>
-        <li><input type="checkbox" name="network" value="8"> <span class="label">Tesla Supercharger</span></li>
-        <li><input type="checkbox" name="network" value="17"> <span class="label">Uppladdning</span></li>
-        <li><input type="checkbox" name="network" value="25"> <span class="label">Volta</span></li>
+      <li><input type="checkbox" name="network" value="7"> <span class="label">AddEnergie</span></li>
+      <li><input type="checkbox" name="network" value="9"> <span class="label">AeroVironment</span></li>
+      <li><input type="checkbox" name="network" value="2"> <span class="label">Blink</span></li>
+      <li><input type="checkbox" name="network" value="33"> <span class="label">CarCharging</span></li>
+      <li><input type="checkbox" name="network" value="20"> <span class="label">Chademo</span></li>
+      <li><input type="checkbox" name="network" value="24"> <span class="label">ChargeMap</span></li>
+      <li><input type="checkbox" name="network" value="36"> <span class="label">ChargeNet</span></li>
+      <li><input type="checkbox" name="network" value="1"> <span class="label">ChargePoint</span></li>
+      <li><input type="checkbox" name="network" value="6"> <span class="label">Circuit Electrique</span></li>
+      <li><input type="checkbox" name="network" value="18"> <span class="label">Clever</span></li>
+      <li><input type="checkbox" name="network" value="35"> <span class="label">Destination</span></li>
+      <li><input type="checkbox" name="network" value="32"> <span class="label">DOE AFDC</span></li>
+      <li><input type="checkbox" name="network" value="15"> <span class="label">Endesa</span></li>
+      <li><input type="checkbox" name="network" value="23"> <span class="label">Enel Drive</span></li>
+      <li><input type="checkbox" name="network" value="16"> <span class="label">ESB</span></li>
+      <li><input type="checkbox" name="network" value="19"> <span class="label">EVgo</span></li>
+      <li><input type="checkbox" name="network" value="40"> <span class="label">EVPoint</span></li>
+      <li><input type="checkbox" name="network" value="4"> <span class="label">GE WattStation</span></li>
+      <li><input type="checkbox" name="network" value="39"> <span class="label">GreenFrontiers</span></li>
+      <li><input type="checkbox" name="network" value="26"> <span class="label">Greenlots</span></li>
+      <li><input type="checkbox" name="network" value="34"> <span class="label">JNSH</span></li>
+      <li><input type="checkbox" name="network" value="22"> <span class="label">Lastestasjoner</span></li>
+      <li><input type="checkbox" name="network" value="29"> <span class="label">OpConnect</span></li>
+      <li><input type="checkbox" name="network" value="11"> <span class="label">OpenChargeMap</span></li>
+      <li><input type="checkbox" name="network" value="14"> <span class="label">Oplaadpalen</span></li>
+      <li><input type="checkbox" name="network" value="10"> <span class="label">PlugShare Stripe</span></li>
+      <li><input type="checkbox" name="network" value="31"> <span class="label">RechargeAccess</span></li>
+      <li><input type="checkbox" name="network" value="13"> <span class="label">RWE</span></li>
+      <li><input type="checkbox" name="network" value="3"> <span class="label">Semaconnect</span></li>
+      <li><input type="checkbox" name="network" value="30"> <span class="label">Shorepower</span></li>
+      <li><input type="checkbox" name="network" value="5"> <span class="label">Sun Country</span></li>
+      <li><input type="checkbox" name="network" value="8"> <span class="label">Tesla SuperCharger</span></li>
+      <li><input type="checkbox" name="network" value="17"> <span class="label">Uppladdning</span></li>
+      <li><input type="checkbox" name="network" value="25"> <span class="label">Volta</span></li>
     </ul>
 
     <div class="button">
