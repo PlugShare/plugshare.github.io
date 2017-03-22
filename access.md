@@ -25,8 +25,7 @@
       </div>
       <div class="input-field">
         <label for="description">Short description of intended use:</label><br>
-        <textarea rows="4" cols="50" name="description" id="description" value="" placeholder="Short description of intended use" required>
-        </textarea>
+        <textarea rows="4" cols="50" name="description" id="description" required></textarea>
       </div>
       <input type="hidden" name="_next" value="thanks" />
     </div>
