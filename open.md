@@ -39,14 +39,14 @@
         <li><input type="checkbox" name="outlet" value="5"> <span class="label"><img src="http://developers.plugshare.com/images/image10.png"> NEMA 14-50</span></li>
         <li><input type="checkbox" name="outlet" value="6.0"> <span class="label"><img src="http://developers.plugshare.com/images/image05.png"> Tesla S HPWC</span></li>
         <li><input type="checkbox" name="outlet" value="6.1"> <span class="label"><img src="http://developers.plugshare.com/images/image05.png"> Tesla Supercharger</span></li>
-        <li><input type="checkbox" name="outlet" value="7"> <span class="label"><img src="http://developers.plugshare.com/images/image06.png"> Type 2 (Mennekes)</span></li>
+        <!-- <li><input type="checkbox" name="outlet" value="7"> <span class="label"><img src="http://developers.plugshare.com/images/image06.png"> Type 2 (Mennekes)</span></li>
         <li><input type="checkbox" name="outlet" value="8"> <span class="label"><img src=""> Type 3</span></li>
         <li><input type="checkbox" name="outlet" value="9"> <span class="label"><img src="http://developers.plugshare.com/images/image09.png"> BS1363</span></li>
         <li><input type="checkbox" name="outlet" value="10"> <span class="label"><img src="http://developers.plugshare.com/images/image13.png"> Europlug</span></li>
         <li><input type="checkbox" name="outlet" value="11"> <span class="label"><img src="http://developers.plugshare.com/images/image12.png"> UK Commando</span></li>
-        <li><input type="checkbox" name="outlet" value="12"> <span class="label"><img src="http://developers.plugshare.com/images/image01.png"> AS3112</span></li>
+        <li><input type="checkbox" name="outlet" value="12"> <span class="label"><img src="http://developers.plugshare.com/images/image01.png"> AS3112</span></li> -->
         <li><input type="checkbox" name="outlet" value="13"> <span class="label"><img src="http://developers.plugshare.com/images/image02.png"> SAE Combo DC CCS</span></li>
-        <li><input type="checkbox" name="outlet" value="14"> <span class="label"><img src=""> Three Phase 32A (UK)</span></li>
+        <!-- <li><input type="checkbox" name="outlet" value="14"> <span class="label"><img src=""> Three Phase 32A (UK)</span></li> -->
     </ul>
 
     <h3>Filter by networks</h3>
