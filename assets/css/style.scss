@@ -132,6 +132,7 @@ header {
     }
   }
   #embed {
+    text-align: center;
     ul li {
       list-style: none;
       padding-left: 10px;
@@ -166,9 +167,11 @@ header {
       background: rgba(255, 255, 255, 0.5);
       border: 1px solid;
       border-radius: 3px;
-      margin-bottom: 20px;
       width: 802px;
       box-sizing: border-box;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      text-align: left;
       .button {
         margin-top: 10px;
       }
