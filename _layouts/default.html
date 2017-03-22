@@ -50,7 +50,7 @@
     </script>
     <script>
       $(document).ready(function(){
-        $(".update").on("click", function(e) {
+        $("#update").on("click", function(e) {
           e.preventDefault();
           $("#widget").html($("#code").val());
           window.scrollTo(0, 0);
@@ -84,11 +84,11 @@
                 src += '&outlets=[';
                 for (var i = 0; i < outlets.length; i++) {
                   if (outlets[i] == '6.0') {
-                    src += "{'connector':6,'power':0}";
+                    src += '{"connector":6,"power":0}';
                   } else if (outlets[i] == '6.1') {
-                    src += "{'connector':6,'power':1}";
+                    src += '{"connector":6,"power":1}';
                   } else {
-                    src += "{'connector':" + outlets[i] + "}";
+                    src += '{"connector":' + outlets[i] + '}';
                   }
                   if (i != outlets.length - 1)
                     src += ',';
@@ -109,7 +109,7 @@
             }
           }
 
-          code = '<iframe src="' + src + '" width="' + width + '" height="' + height + '"></iframe>';
+          code = '<iframe src=\'' + src + '\' width=\'' + width + '\' height=\''+ height + '\'></iframe>';
 
           $("#code").val(code);
         }
