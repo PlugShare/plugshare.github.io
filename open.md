@@ -25,6 +25,10 @@
         <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng" value="0.02"> <span class="label">The distance in longitude between E and W.</span></li>
     </ul>
 
+    <div class="button">
+      <a class="update" href="#">Update map</a>
+    </div><br><br>
+
     <h3>Filter by outlets</h3>
     <p>By default, all outlet types are shown. Select one or more outlets to restrict results to show locations with at least one of the selected outlet(s) type.</p>
     <ul id="outlets">
@@ -94,7 +98,7 @@
     </ul>
 
     <div class="button">
-      <a id="update" href="#">Update map</a>
+      <a class="update" href="#">Update map</a>
     </div>
   </div>
 
