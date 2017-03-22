@@ -23,6 +23,11 @@
         <label for="email">Email:</label><br>
         <input type="email" name="email" id="email" value="" placeholder="Email" required>
       </div>
+      <div class="input-field">
+        <label for="description">Short description of intended use:</label><br>
+        <textarea rows="4" cols="50" name="description" id="description" value="" placeholder="Short description of intended use" required>
+        </textarea>
+      </div>
       <input type="hidden" name="_next" value="thanks" />
     </div>
     <input type="submit" value="Request Access">
