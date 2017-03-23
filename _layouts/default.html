@@ -60,7 +60,7 @@
           var height = $("#height").val();
           var width = $("#width").val();
 
-          var src = 'https://staging.plugshare.com/widget.html';
+          var src = 'https://staging.plugshare.com/widget2.html?allowEmbedFilters=true';
 
           var spanLat = $("#spanLat").val();
           var spanLng = $("#spanLng").val();
@@ -68,7 +68,7 @@
           var longitude = $("#longitude").val();
 
           if (spanLat && spanLng && latitude && longitude) {
-            src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
+            src += '&latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
 
             // open embed
             var outlets = $('input[name="outlet"]:checked').map(function() {
@@ -79,7 +79,6 @@
             }).get();
             var type = $('input[name="type"]:checked').val();
             if (outlets.length || networks.length) {
-              src += '&allowEmbedFilters=true';
               if (outlets.length) {
                 src += '&outlets=[';
                 for (var i = 0; i < outlets.length; i++) {
