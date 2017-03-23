@@ -54,11 +54,17 @@
     <aside class="notice">
       Note: For exclusions, if a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.
     </aside>
-    <div class="network">
-      <input type="radio" name="type" value="include" checked> Include
-    </div>
-    <div class="network">
-      <input type="radio" name="type" value="exclude"> Exclude
+    <div id="network_filter_type">
+      <label for="network_include">
+        <div class="network">
+          <input type="radio" name="type" value="include" id="network_include" checked> Include
+        </div>
+      </label>
+      <label for="network_exclude">
+        <div class="network">
+          <input type="radio" name="type" value="exclude" id="network_exclude"> Exclude
+        </div>
+      </label>
     </div>
     <ul id="networks">
       <label for="network7"><li><input type="checkbox" name="network" value="7" id="network7"> <span class="label">AddEnergie</span></li></label>

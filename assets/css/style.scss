@@ -208,13 +208,21 @@ header {
         }
       }
     }
-    .network {
-      display: inline-block;
-      padding: 10px 12px;
-      margin: 15px 2px;
-      background-color: #ddd;
-      border: 1px solid #aaa;
-      border-radius: 3px;
+    #network_filter_type {
+      label {
+        &:hover .network {
+          cursor: pointer;
+          background-color: #ccc;
+        }
+      }
+      .network {
+        display: inline-block;
+        padding: 10px 12px;
+        margin: 15px 2px;
+        background-color: #ddd;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+      }
     }
     #networks {
       label {
@@ -223,7 +231,7 @@ header {
           background-color: #ddd;
         }
       }
-      ul li {
+      li {
         padding-left: 10px;
         margin: 3px 0;
         display: inline-block;
