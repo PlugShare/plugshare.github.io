@@ -226,7 +226,10 @@ header {
       }
     }
     .helpers {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      button {
+        padding: 10px;
+      }
     }
     #networks {
       label {
@@ -254,6 +257,15 @@ header {
       padding: 1em;
       border-radius: 5px;
     }
+  }
+  #terms {
+    #accept_button {
+      background-color: #18c30d;
+      color: #fff;
+    }
+  }
+  #snippet {
+    display: none;
   }
   #access {
     background: rgba(84, 84, 84, 0.1);

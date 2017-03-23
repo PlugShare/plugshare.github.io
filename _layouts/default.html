@@ -141,6 +141,11 @@
           $(':checkbox[name=outlet]').prop('checked', false);
           updateEmbed();
         });
+
+        $("#accept_button").on("click", function() {
+          $("#terms").hide();
+          $("#snippet").show();
+        });
       });
     </script>
   </body>
