@@ -60,7 +60,11 @@
           var height = $("#height").val();
           var width = $("#width").val();
 
-          var src = 'https://staging.plugshare.com/widget2.html?allowEmbedFilters=true';
+          var url = window.location.href; 
+          if (url.indexOf('open'))
+            var src = 'https://staging.plugshare.com/widget2.html';
+          else
+            var src = 'https://staging.plugshare.com/widget.html'; // standard widget shouldn't filter out international options
 
           var spanLat = $("#spanLat").val();
           var spanLng = $("#spanLng").val();
@@ -68,7 +72,7 @@
           var longitude = $("#longitude").val();
 
           if (spanLat && spanLng && latitude && longitude) {
-            src += '&latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
+            src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
 
             // open embed
             var outlets = $('input[name="outlet"]:checked').map(function() {
@@ -82,9 +86,9 @@
               if (outlets.length) {
                 src += '&outlets=[';
                 for (var i = 0; i < outlets.length; i++) {
-                  if (outlets[i] == '6.0') {
+                  if (outlets[i] == '6_0') {
                     src += '{"connector":6,"power":0}';
-                  } else if (outlets[i] == '6.1') {
+                  } else if (outlets[i] == '6_1') {
                     src += '{"connector":6,"power":1}';
                   } else {
                     src += '{"connector":' + outlets[i] + '}';

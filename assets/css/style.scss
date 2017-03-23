@@ -188,6 +188,12 @@ header {
       }
     }
     #outlets {
+      label {
+        &:hover li {
+          cursor: pointer;
+          background-color: #ddd;
+        }
+      }
       li {
         padding: 10px 20px;
         margin: 10px 0;
@@ -209,6 +215,24 @@ header {
       background-color: #ddd;
       border: 1px solid #aaa;
       border-radius: 3px;
+    }
+    #networks {
+      label {
+        &:hover li {
+          cursor: pointer;
+          background-color: #ddd;
+        }
+      }
+      ul li {
+        padding-left: 10px;
+        margin: 3px 0;
+        display: inline-block;
+        border: 1px solid #ddd;
+        padding: 10px; 
+        .label {
+          vertical-align: middle;
+        }
+      }
     }
     aside.notice {
       text-shadow: 0 1px 0 #c6dde9;
