@@ -56,6 +56,13 @@
           window.scrollTo(0, 0);
         });
 
+        $("#network_on").on("click", function() {
+          $(':checkbox[name=network]').prop('checked', true);
+        });
+        $("#network_off").on("click", function() {
+          $(':checkbox[name=network]').prop('checked', false);
+        });
+
         var updateEmbed = function() {
           var height = $("#height").val();
           var width = $("#width").val();

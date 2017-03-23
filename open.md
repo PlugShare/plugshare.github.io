@@ -66,6 +66,8 @@
         </div>
       </label>
     </div>
+    <button id="network_on">Check All</button>
+    <button id="network_off">Check None</button>
     <ul id="networks">
       <label for="network7"><li><input type="checkbox" name="network" value="7" id="network7"> <span class="label">AddEnergie</span></li></label>
       <label for="network9"><li><input type="checkbox" name="network" value="9" id="network9"> <span class="label">AeroVironment</span></li></label>

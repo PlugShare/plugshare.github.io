@@ -198,6 +198,7 @@ header {
         padding: 10px 20px;
         margin: 10px 0;
         border: 1px solid #ddd;
+        background-color: #eee;
         .label {
           img {
             height: 30px;
@@ -236,9 +237,11 @@ header {
         margin: 3px 0;
         display: inline-block;
         border: 1px solid #ddd;
+        background-color: #eee;
         padding: 10px; 
         .label {
           vertical-align: middle;
+          margin: 0 5px;
         }
       }
     }
