@@ -116,9 +116,9 @@
     </div>
   </div>
 
-  <h3>Code</h3>
+  <h3>Embed Code</h3>
   <div id="terms">
-    <p>Please read and accept the <a href="http://company.plugshare.com/terms/">Terms of Use</a> to view the embed code</p>
+    <p>Please read and accept the <a href="http://company.plugshare.com/terms/" target="_blank">Terms of Use</a> to view the embed code</p>
     <div class="button" id="accept_button">
       I ACCEPT
     </div>
