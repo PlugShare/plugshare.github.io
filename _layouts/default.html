@@ -56,13 +56,6 @@
           window.scrollTo(0, 0);
         });
 
-        $("#network_on").on("click", function() {
-          $(':checkbox[name=network]').prop('checked', true);
-        });
-        $("#network_off").on("click", function() {
-          $(':checkbox[name=network]').prop('checked', false);
-        });
-
         var updateEmbed = function() {
           var height = $("#height").val();
           var width = $("#width").val();
@@ -128,6 +121,24 @@
           updateEmbed();
         });
         $('input[type=radio], input[type=checkbox]').change(function() {
+          updateEmbed();
+        });
+
+        $("#network_on").on("click", function() {
+          $(':checkbox[name=network]').prop('checked', true);
+          updateEmbed();
+        });
+        $("#network_off").on("click", function() {
+          $(':checkbox[name=network]').prop('checked', false);
+          updateEmbed();
+        });
+
+        $("#outlet_on").on("click", function() {
+          $(':checkbox[name=outlet]').prop('checked', true);
+          updateEmbed();
+        });
+        $("#outlet_off").on("click", function() {
+          $(':checkbox[name=outlet]').prop('checked', false);
           updateEmbed();
         });
       });
