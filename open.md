@@ -14,7 +14,7 @@
     <ul id="coords">
         <li>
           <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
-          <input type="submit" id="geocode" value="Submit">
+          <div class="button accept" id="geocode">SEARCH</div>
         </li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate</span></li>
@@ -123,7 +123,7 @@
   <h3>Embed Code</h3>
   <div id="terms">
     <p>Please read and accept the <a href="http://company.plugshare.com/terms/" target="_blank">Terms of Use</a> to view the embed code</p>
-    <div class="button" id="accept_button">
+    <div class="button accept" id="accept_button">
       I ACCEPT
     </div>
   </div>

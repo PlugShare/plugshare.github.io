@@ -68,6 +68,11 @@ h3 {
     color: #fff;
   }
 }
+.button.accept {
+  background-color: #18c30d;
+  color: #fff;
+  cursor: pointer;
+}
 
 .inner {
   width: 100%;
@@ -153,7 +158,13 @@ header {
     }
     #coords {
       input {
-        width: 100px;
+        width: 120px;
+      }
+      #search {
+        width: 300px;
+      }
+      #geocode {
+        display: inline-block;
       }
     }
     #widget {
@@ -259,11 +270,6 @@ header {
     }
   }
   #terms {
-    #accept_button {
-      background-color: #18c30d;
-      color: #fff;
-      cursor: pointer;
-    }
   }
   #snippet {
     display: none;

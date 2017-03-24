@@ -148,8 +148,7 @@
           window.scrollTo(0, document.body.scrollHeight);
         });
 
-        $("#geocode").on("click", function(e) {
-          e.preventDefault();
+        $("#geocode").on("click", function() {
           console.log("geocode");
           $.ajax({
             type: "GET",
@@ -162,7 +161,9 @@
                 console.log(location);
                 $("#latitude").val(location.lat);
                 $("#longitude").val(location.lng);
-                updateEmbed();
+                setTimeout(function(){
+                  updateEmbed();
+                }, 1000);
               }
             }
           });
