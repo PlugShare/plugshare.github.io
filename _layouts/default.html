@@ -173,7 +173,7 @@
         calculate = function() {
           var mile_radius = $("#radius").val();
           lat_radius = mile_radius/69.172;
-          lng_radius = mile_radius/(Math.cos($("#latitude").val()))
+          lng_radius = mile_radius/(Math.cos($("#latitude").val()) * 69.172)
           $("#calc").html("Span degrees - lat: " + lat_radius + ", lng: " + lng_radius);
         }
 
