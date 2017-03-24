@@ -16,6 +16,7 @@
           <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
           <div class="button accept" id="geocode">SEARCH</div>
         </li>
+        <li id="result"><code></code></li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate</span></li>
         <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
