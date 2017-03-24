@@ -187,7 +187,7 @@
           calculate();
         });
         $("#radius").on('mousewheel', function() {
-          calculate();
+          setTimeout(function(){ calculate(); }, 10);
         });
         $("#radius").keyup(function() {
           calculate();
