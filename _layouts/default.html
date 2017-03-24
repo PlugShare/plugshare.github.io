@@ -154,7 +154,7 @@
             type: "GET",
             url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $('#search').val() + "&key=AIzaSyAIomWPUck8__IbdySu_W9f8etuWVOcKjU",
             success: function(data){
-              console.log(data.results.length);
+              console.log(data);
               console.log(JSON.stringify(data));
               if (data.results.length > 0) {
                 var location = data.results[0].geometry.location;
