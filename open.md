@@ -9,7 +9,7 @@
     <h3>Setting the map region</h3>
     <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
     <ul id="helpers">
-        <li>Helper Functions</li>
+        <li>Helper Functions (use these to help fill out the 4 inputs below)</li>
         <li>
           <form action="#">
             <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
@@ -23,8 +23,8 @@
     <ul id="coords">
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate.</span></li>
-        <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
-        <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng" value="0.02"> <span class="label">The distance in longitude between E and W.</span></li>
+        <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The span in degrees latitude between N and S.</span></li>
+        <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng" value="0.02"> <span class="label">The span in degrees longitude between E and W.</span></li>
     </ul>
 
     <h3>Setting the map size</h3>
