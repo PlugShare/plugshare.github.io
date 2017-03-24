@@ -156,12 +156,12 @@ header {
         width: 50px;
       }
     }
-    #coords {
-      form {
-        padding: 0;
-      }
+    #helpers {
       input {
         width: 120px;
+      }
+      form {
+        padding: 0;
       }
       #search {
         width: 300px;
@@ -180,6 +180,11 @@ header {
           display: block;
           background-color: #ddd;
         }
+      }
+    }
+    #coords {
+      input {
+        width: 120px;
       }
     }
     #widget {

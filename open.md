@@ -8,7 +8,8 @@
 
     <h3>Setting the map region</h3>
     <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
-    <ul id="coords">
+    <ul id="helpers">
+        <li><i>Helper Functions</i></li>
         <li>
           <form action="#">
             <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
@@ -17,6 +18,9 @@
         </li>
         <li id="result"><code></code></li>
         <li><input type="number" name="radius" id="radius" min="0"> <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
+    </ul>
+    <hr>
+    <ul id="coords">
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate.</span></li>
         <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
