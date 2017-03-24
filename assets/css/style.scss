@@ -157,11 +157,19 @@ header {
       }
     }
     #helpers {
+      background-color: #e7e7e7;
+      padding: 10px;
+      border-radius: 5px;
+      li:first-of-type {
+        font-style: italic;
+        border-bottom: 1px solid #aaa;
+      }
       input {
         width: 120px;
       }
       form {
         padding: 0;
+        background-color: inherit;
       }
       #search {
         width: 300px;

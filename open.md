@@ -9,7 +9,7 @@
     <h3>Setting the map region</h3>
     <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
     <ul id="helpers">
-        <li><i>Helper Functions</i></li>
+        <li>Helper Functions</li>
         <li>
           <form action="#">
             <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
@@ -17,7 +17,7 @@
           </form>
         </li>
         <li id="result"><code></code></li>
-        <li><input type="number" name="radius" id="radius" min="0"> <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
+        <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
     </ul>
     <hr>
     <ul id="coords">
@@ -134,6 +134,6 @@
   </div>
   <div id="snippet">
     <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
-    <textarea id="code" rows="4" cols="100" disabled></textarea>
+    <textarea id="code" rows="6" cols="100" disabled></textarea>
   </div>
 </div>
