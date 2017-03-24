@@ -52,6 +52,7 @@
       $(document).ready(function(){
         $(".update").on("click", function(e) {
           e.preventDefault();
+          updateEmbed();
           $("#widget").html($("#code").val());
           window.scrollTo(0, 0);
         });
