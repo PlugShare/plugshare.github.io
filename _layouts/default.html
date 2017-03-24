@@ -176,7 +176,8 @@
           miles_per_lng_degree = Math.cos($("#latitude").val()) * miles_per_lat_degree;
           lat_radius = mile_radius/miles_per_lat_degree;
           lng_radius = mile_radius/miles_per_lng_degree;
-          $("#calc").html(miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
+          $("#calc").html(lat_radius + ', ' + lng_radius);
+          console.log(miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
         }
 
         $("#radius").on('change', function() {
