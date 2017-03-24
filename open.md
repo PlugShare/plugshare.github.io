@@ -134,6 +134,6 @@
   </div>
   <div id="snippet">
     <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
-    <textarea id="code" rows="6" cols="100" disabled></textarea>
+    <textarea id="code" rows="5" cols="100" disabled></textarea>
   </div>
 </div>
