@@ -13,8 +13,10 @@
     </aside>
     <ul id="coords">
         <li>
-          <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
-          <input type="submit" id="geocode" value="SEARCH" class="button accept">
+          <form action="#">
+            <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
+            <input type="submit" id="geocode" value="SEARCH" class="button accept">
+          </form>
         </li>
         <li id="result"><code></code></li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>

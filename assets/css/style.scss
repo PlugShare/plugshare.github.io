@@ -157,6 +157,9 @@ header {
       }
     }
     #coords {
+      form {
+        padding: 0;
+      }
       input {
         width: 120px;
       }
@@ -166,6 +169,8 @@ header {
       #geocode {
         display: inline-block;
         top: -1px;
+        height: auto;
+        line-height: normal;
       }
       #result {
         display: none;
