@@ -16,7 +16,7 @@
           </form>
         </li>
         <li id="result"><code></code></li>
-        <li><input type="number" name="radius" id="radius"> <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
+        <li><input type="number" name="radius" id="radius" min="0"> <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate.</span></li>
         <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
