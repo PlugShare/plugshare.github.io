@@ -8,9 +8,6 @@
 
     <h3>Setting the map region</h3>
     <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
-    <aside class="notice">
-      Note: You must provide all 4 coordinate attributes before you can apply additional filters.
-    </aside>
     <ul id="coords">
         <li>
           <form action="#">
@@ -18,13 +15,10 @@
             <input type="submit" id="geocode" value="SEARCH" class="button accept">
           </form>
         </li>
-        <li>
-            <input type="number" name="radius" id="radius"> Map Radius in Miles
-            <div id="calc">span</div>
-        </li>
         <li id="result"><code></code></li>
+        <li><input type="number" name="radius" id="radius"> <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
-        <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate</span></li>
+        <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate.</span></li>
         <li><input type="text" name="spanLat" id="spanLat" placeholder="spanLat" value="0.02"> <span class="label">The distance in latitude between N and S.</span></li>
         <li><input type="text" name="spanLng" id="spanLng" placeholder="spanLng" value="0.02"> <span class="label">The distance in longitude between E and W.</span></li>
     </ul>

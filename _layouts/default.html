@@ -174,13 +174,19 @@
           var mile_radius = $("#radius").val();
           miles_per_lat_degree = 69.172;
           miles_per_lng_degree = Math.cos($("#latitude").val()) * miles_per_lat_degree;
-          lat_radius = mile_radius/miles_per_lat_degree;
-          lng_radius = mile_radius/miles_per_lng_degree;
-          $("#calc").html(lat_radius + ', ' + lng_radius);
-          console.log(miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
+          lat_radius = Math.abs(mile_radius/miles_per_lat_degree);
+          lng_radius = Math.abs(mile_radius/miles_per_lng_degree);
+          $("#spanLat").val(lat_radius);
+          $("#spanLng").val(lng_radius);
         }
 
         $("#radius").on('change', function() {
+          calculate();
+        });
+        $("#radius").on('mousewheel', function() {
+          calculate();
+        });
+        $("#radius").keyup(function() {
           calculate();
         });
 
