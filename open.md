@@ -17,7 +17,7 @@
           </form>
         </li>
         <li id="result"><code></code></li>
-        <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Radius in Miles (to help calculate span degrees</span></li>
+        <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Radius in Miles (to help calculate span degrees)</span></li>
     </ul>
     <hr>
     <ul id="coords">
