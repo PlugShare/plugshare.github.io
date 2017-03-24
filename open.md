@@ -18,6 +18,10 @@
             <input type="submit" id="geocode" value="SEARCH" class="button accept">
           </form>
         </li>
+        <li>
+            <input type="number" name="radius" id="radius"> Map Radius in Miles
+            <div id="calc">span</div>
+        </li>
         <li id="result"><code></code></li>
         <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
         <li><input type="text" name="longitude" id="longitude" placeholder="longitude" value="-118.4722"> <span class="label">The longitude of the center coordinate</span></li>
