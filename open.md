@@ -109,7 +109,7 @@
       <!-- <label for="network11"><li><input type="checkbox" name="network" value="11" id="network11" checked> <span class="label">OpenChargeMap</span></li></label> -->
       <label for="network14"><li><input type="checkbox" name="network" value="14" id="network14" checked> <span class="label">Oplaadpalen</span></li></label>
       <!-- <label for="network10"><li><input type="checkbox" name="network" value="10" id="network10" checked> <span class="label">PlugShare Stripe</span></li></label> -->
-      <label for="network31"><li><input type="checkbox" name="network" value="31" id="network31" checked> <span class="label">RechargeAccess</span></li></label>
+      <!-- <label for="network31"><li><input type="checkbox" name="network" value="31" id="network31" checked> <span class="label">RechargeAccess</span></li></label> -->
       <label for="network13"><li><input type="checkbox" name="network" value="13" id="network13" checked> <span class="label">RWE eMobility</span></li></label>
       <label for="network3"><li><input type="checkbox" name="network" value="3" id="network3" checked> <span class="label">Semaconnect</span></li></label>
       <label for="network30"><li><input type="checkbox" name="network" value="30" id="network30" checked> <span class="label">Shorepower</span></li></label>
