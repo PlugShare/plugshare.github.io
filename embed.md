@@ -51,8 +51,6 @@
     <textarea id="code" rows="5" cols="100" disabled></textarea>
   </div>
 
-  <textarea id="code" rows="2" cols="100" disabled></textarea>
-
   <!-- <hr>
 
   <h2>Who's using us?</h2>
