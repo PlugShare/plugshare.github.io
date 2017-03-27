@@ -63,7 +63,7 @@
     </ul>
 
     <h3>Filter by networks</h3>
-    <p>By default, all networks are shown. Select one or more networks to restrict results to include or exclude locations with at least one of the selected network(s).</p>
+    <p>By default, all networks are shown. Select one or more networks to restrict results to include or exclude locations with at least one of the selected supported network(s).</p>
     <aside class="notice">
       Note: For exclusions, if a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.
     </aside>
