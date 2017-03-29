@@ -45,20 +45,20 @@
       <button id="outlet_off">Check None</button>
     </div>
     <ul id="outlets">
-        <label for="outlet1"><li><input type="checkbox" name="outlet" value="1" id="outlet1" checked> <span class="label"><img src="http://developers.plugshare.com/images/image03.png"> US Wall Outlet</span></li></label>
-        <label for="outlet2"><li><input type="checkbox" name="outlet" value="2" id="outlet2" checked> <span class="label"><img src="http://developers.plugshare.com/images/image08.png"> J-1772</span></li></label>
-        <label for="outlet3"><li><input type="checkbox" name="outlet" value="3" id="outlet3" checked> <span class="label"><img src="http://developers.plugshare.com/images/image04.png"> CHAdeMO</span></li></label>
-        <label for="outlet4"><li><input type="checkbox" name="outlet" value="4" id="outlet4" checked> <span class="label"><img src="http://developers.plugshare.com/images/image00.png"> Tesla Roadster</span></li></label>
-        <label for="outlet5"><li><input type="checkbox" name="outlet" value="5" id="outlet5" checked> <span class="label"><img src="http://developers.plugshare.com/images/image10.png"> NEMA 14-50</span></li></label>
-        <label for="outlet6_0"><li><input type="checkbox" name="outlet" value="6_0" id="outlet6_0" checked> <span class="label"><img src="http://developers.plugshare.com/images/image05.png"> Tesla S HPWC</span></li></label>
-        <label for="outlet6_1"><li><input type="checkbox" name="outlet" value="6_1" id="outlet6_1" checked> <span class="label"><img src="http://developers.plugshare.com/images/image05.png"> Tesla Supercharger</span></li></label>
-        <!-- <li><input type="checkbox" name="outlet" value="7" checked> <span class="label"><img src="http://developers.plugshare.com/images/image06.png"> Type 2 (Mennekes)</span></li>
+        <label for="outlet1"><li><input type="checkbox" name="outlet" value="1" id="outlet1" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image03.png"> US Wall Outlet</span></li></label>
+        <label for="outlet2"><li><input type="checkbox" name="outlet" value="2" id="outlet2" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image08.png"> J-1772</span></li></label>
+        <label for="outlet3"><li><input type="checkbox" name="outlet" value="3" id="outlet3" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image04.png"> CHAdeMO</span></li></label>
+        <label for="outlet4"><li><input type="checkbox" name="outlet" value="4" id="outlet4" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image00.png"> Tesla Roadster</span></li></label>
+        <label for="outlet5"><li><input type="checkbox" name="outlet" value="5" id="outlet5" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image10.png"> NEMA 14-50</span></li></label>
+        <label for="outlet6_0"><li><input type="checkbox" name="outlet" value="6_0" id="outlet6_0" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla S HPWC</span></li></label>
+        <label for="outlet6_1"><li><input type="checkbox" name="outlet" value="6_1" id="outlet6_1" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
+        <!-- <li><input type="checkbox" name="outlet" value="7" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Type 2 (Mennekes)</span></li>
         <li><input type="checkbox" name="outlet" value="8" checked> <span class="label"><img src=""> Type 3</span></li>
-        <li><input type="checkbox" name="outlet" value="9" checked> <span class="label"><img src="http://developers.plugshare.com/images/image09.png"> BS1363</span></li>
-        <li><input type="checkbox" name="outlet" value="10" checked> <span class="label"><img src="http://developers.plugshare.com/images/image13.png"> Europlug</span></li>
-        <li><input type="checkbox" name="outlet" value="11" checked> <span class="label"><img src="http://developers.plugshare.com/images/image12.png"> UK Commando</span></li>
-        <li><input type="checkbox" name="outlet" value="12" checked> <span class="label"><img src="http://developers.plugshare.com/images/image01.png"> AS3112</span></li> -->
-        <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="http://developers.plugshare.com/images/image02.png"> SAE Combo DC CCS</span></li></label>
+        <li><input type="checkbox" name="outlet" value="9" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image09.png"> BS1363</span></li>
+        <li><input type="checkbox" name="outlet" value="10" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image13.png"> Europlug</span></li>
+        <li><input type="checkbox" name="outlet" value="11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></li>
+        <li><input type="checkbox" name="outlet" value="12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></li> -->
+        <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image02.png"> SAE Combo DC CCS</span></li></label>
         <!-- <li><input type="checkbox" name="outlet" value="14" checked> <span class="label"><img src=""> Three Phase 32A (UK)</span></li> -->
     </ul>
 
