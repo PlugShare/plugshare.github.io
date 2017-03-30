@@ -1,5 +1,5 @@
 <div id="embed">
-  <h2>Dealer Program - Embedded Map Generator</h2>
+  <h2>Embeddable Map Generator</h2>
   <p>The map below can be embedded into any article, blog, or website.</p>
   <p id="widget"><iframe src="https://www.plugshare.com/widget2.html?latitude=33.9924&longitude=-118.4722&spanLat=0.02&spanLng=0.02" width="800" height="600"></iframe></p>
 
@@ -134,7 +134,7 @@
   </div>
   <div id="snippet">
     <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
-    <textarea id="code" rows="5" cols="100" disabled></textarea>
+    <textarea id="code" rows="5" cols="100"></textarea>
   </div>
 
   <!-- <hr>
