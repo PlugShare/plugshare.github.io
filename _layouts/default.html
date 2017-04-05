@@ -161,7 +161,6 @@
                 $("#longitude").val(location.lng);
                 $("#result").show();
                 $("#result code").html("Search Result: " + data.results[0].formatted_address);
-                calculate();
                 updateEmbed();
                 $("#widget").html($("#code").val());
               }
@@ -171,18 +170,20 @@
 
         calculate = function() {
           var mile_radius = $("#radius").val();
-          var lat = $("#latitude").val();
-          var lng = $("#longitude").val();
-          var miles_per_lat_degree = 69.172;
-          var miles_per_lng_degree = Math.abs(Math.cos(lat)) * miles_per_lat_degree;
-          var lat_radius = mile_radius/miles_per_lat_degree;
-          var lng_radius = mile_radius/miles_per_lng_degree;
-          $("#spanLat").val(lat_radius);
-          $("#spanLng").val(lng_radius);
-          updateEmbed();
-          console.log(mile_radius + " miles at " + lat + ", " + lng);
-          console.log("miles per degree", miles_per_lat_degree, miles_per_lng_degree);
-          console.log("lat, lng in degrees", lat_radius, lng_radius);
+          if (mile_radius > 0) {
+            var lat = $("#latitude").val();
+            var lng = $("#longitude").val();
+            var miles_per_lat_degree = 69.172;
+            var miles_per_lng_degree = Math.abs(Math.cos(lat)) * miles_per_lat_degree;
+            var lat_radius = mile_radius/miles_per_lat_degree;
+            var lng_radius = mile_radius/miles_per_lng_degree;
+            $("#spanLat").val(lat_radius);
+            $("#spanLng").val(lng_radius);
+            updateEmbed();
+            console.log(mile_radius + " miles at " + lat + ", " + lng);
+            console.log("miles per degree", miles_per_lat_degree, miles_per_lng_degree);
+            console.log("lat, lng in degrees", lat_radius, lng_radius);
+          }
         }
 
         $("#radius").on('change', function() {
