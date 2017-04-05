@@ -161,6 +161,7 @@
                 $("#longitude").val(location.lng);
                 $("#result").show();
                 $("#result code").html("Search Result: " + data.results[0].formatted_address);
+                calculate();
                 updateEmbed();
                 $("#widget").html($("#code").val());
               }
@@ -179,7 +180,9 @@
           $("#spanLat").val(lat_radius);
           $("#spanLng").val(lng_radius);
           updateEmbed();
-          console.log(mile_radius, lat, lng, miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
+          console.log(mile_radius + " miles at " + lat + ", " + lng);
+          console.log("miles per degree", miles_per_lat_degree, miles_per_lng_degree);
+          console.log("lat, lng degress", lat_radius, lng_radius);
         }
 
         $("#radius").on('change', function() {
