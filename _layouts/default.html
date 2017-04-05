@@ -176,8 +176,11 @@
             var miles_per_lat_degree = 69.172;
             // var miles_per_lng_degree = Math.abs(Math.cos(lat)) * miles_per_lat_degree;
             var miles_per_lng_degree = 69.172;
+            // actually seems like no calculation needed here, /region endpoint send it's own modified numbers
             var lat_radius = mile_radius/miles_per_lat_degree;
             var lng_radius = mile_radius/miles_per_lng_degree;
+            lat_radius = Math.round(lat_radius * 100000) / 100000;
+            lng_radius = Math.round(lng_radius * 100000) / 100000;
             $("#spanLat").val(lat_radius);
             $("#spanLng").val(lng_radius);
             updateEmbed();
