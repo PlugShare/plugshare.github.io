@@ -148,7 +148,7 @@
 
         $("#geocode").on("click", function(e) {
           e.preventDefault();
-          // console.log("geocode");
+          console.log("geocode");
           $.ajax({
             type: "GET",
             url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $('#search').val() + "&key=AIzaSyAIomWPUck8__IbdySu_W9f8etuWVOcKjU",
@@ -178,6 +178,7 @@
           var lng_radius = Math.abs(mile_radius/miles_per_lng_degree);
           $("#spanLat").val(lat_radius);
           $("#spanLng").val(lng_radius);
+          updateEmbed();
           console.log(mile_radius, lat, lng, miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
         }
 
