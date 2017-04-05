@@ -108,7 +108,7 @@
               }
             }
           }
-          // console.log(src);
+          console.log(src);
 
           code = '<iframe src=\'' + src + '\' width=\'' + width + '\' height=\''+ height + '\'></iframe>';
 
@@ -178,7 +178,7 @@
           var lng_radius = Math.abs(mile_radius/miles_per_lng_degree);
           $("#spanLat").val(lat_radius);
           $("#spanLng").val(lng_radius);
-          // console.log(mile_radius, lat, lng, miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
+          console.log(mile_radius, lat, lng, miles_per_lat_degree, miles_per_lng_degree, lat_radius, lng_radius);
         }
 
         $("#radius").on('change', function() {
