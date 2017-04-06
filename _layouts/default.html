@@ -108,7 +108,7 @@
               }
             }
           }
-          console.log(src);
+          // console.log(src);
 
           code = '<iframe src=\'' + src + '\' width=\'' + width + '\' height=\''+ height + '\'></iframe>';
 
@@ -148,7 +148,7 @@
 
         $("#geocode").on("click", function(e) {
           e.preventDefault();
-          console.log("geocode");
+          // console.log("geocode");
           $.ajax({
             type: "GET",
             url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $('#search').val() + "&key=AIzaSyAIomWPUck8__IbdySu_W9f8etuWVOcKjU",
@@ -184,9 +184,9 @@
             $("#spanLat").val(lat_radius);
             $("#spanLng").val(lng_radius);
             updateEmbed();
-            console.log(mile_radius + " miles at " + lat + ", " + lng);
-            console.log("miles per degree", miles_per_lat_degree, miles_per_lng_degree);
-            console.log("lat, lng in degrees", lat_radius, lng_radius);
+            // console.log(mile_radius + " miles at " + lat + ", " + lng);
+            // console.log("miles per degree", miles_per_lat_degree, miles_per_lng_degree);
+            // console.log("lat, lng in degrees", lat_radius, lng_radius);
           }
         }
 
@@ -198,6 +198,9 @@
         });
         $("#radius").keyup(function() {
           calculate();
+        });
+        $("#spanLat, #spanLng").keyup(function() {
+          $("#radius").val('');
         });
 
       });

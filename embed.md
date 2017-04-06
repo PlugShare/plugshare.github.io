@@ -11,14 +11,14 @@
       <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
       <ul id="helpers">
           <li>Helper Functions (use these to help fill out the 4 inputs below)</li>
+          <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Display Radius in Miles (approx)</span></li>
           <li>
             <form action="#">
               <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
-              <input type="submit" id="geocode" value="SEARCH" class="button accept">
+              <input type="submit" id="geocode" value="SEARCH & UPDATE MAP" class="button accept">
             </form>
           </li>
           <li id="result"><code></code></li>
-          <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Radius in Miles (to help calculate span degrees)</span></li>
       </ul>
       <hr>
       <ul id="coords">
