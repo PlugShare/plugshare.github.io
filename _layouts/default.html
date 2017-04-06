@@ -166,6 +166,9 @@
               }
             }
           });
+          if ($("#search").val() == '' && $("#radius").val() > 0) {
+            updateEmbed();
+          }
         });
 
         calculate = function() {
