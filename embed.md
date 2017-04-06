@@ -9,17 +9,17 @@
     <section>
       <h3>Setting the map region</h3>
       <p>By default, the map automatically zooms to the user's current location. To set a specific region to load, set <b>all</b> of the following values:</p>
-      <ul id="helpers">
-          <li>Helper Functions (use these to help fill out the 4 inputs below)</li>
-          <li>
-            <form action="#">
-              <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
-              <input type="submit" id="geocode" value="SEARCH & UPDATE MAP" class="button accept">
-            </form>
-          </li>
-          <li id="result"><code></code></li>
-          <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Display Radius in Miles</span></li>
-      </ul>
+      <form action="#">
+        <ul id="helpers">
+            <li>Helper Functions (use these to help fill out the 4 inputs below)</li>
+            <li>
+                <input type="text" name="search" id="search" placeholder="Search Google for Coordinates">
+                <input type="submit" id="geocode" value="SEARCH & UPDATE MAP" class="button accept">
+            </li>
+            <li id="result"><code></code></li>
+            <li><input type="number" name="radius" id="radius" min="0" placeholder="Radius" > <span class="label">Map Display Radius in Miles</span></li>
+        </ul>
+      </form>
       <hr>
       <ul id="coords">
           <li><input type="text" name="latitude" id="latitude" placeholder="latitude" value="33.9924"> <span class="label">The latitude of the center coordinate.</span></li>
