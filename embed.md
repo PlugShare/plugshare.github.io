@@ -60,13 +60,13 @@
         <label for="outlet6_1"><li><input type="checkbox" name="outlet" value="6_1" id="outlet6_1" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
         <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image02.png"> SAE Combo DC CCS</span></li></label>
         <!-- Worldwide -->
-        <label for="outlet7"><input type="checkbox" name="outlet" value="7" id="outlet7" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Type 2 (Mennekes)</span></label>
-        <label for="outlet8"><input type="checkbox" name="outlet" value="8" id="outlet8" checked> <span class="label"><img src=""> Type 3</span></label>
-        <label for="outlet9"><input type="checkbox" name="outlet" value="9" id="outlet9" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image09.png"> BS1363</span></label>
-        <label for="outlet10"><input type="checkbox" name="outlet" value="10" id="outlet10" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image13.png"> Europlug</span></label>
-        <label for="outlet11"><input type="checkbox" name="outlet" value="11" id="outlet11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></label>
-        <label for="outlet12"><input type="checkbox" name="outlet" value="12" id="outlet12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></label>
-        <label for="outlet14"><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src=""> Three Phase 32A (UK)</span></label>
+        <label for="outlet7"><li><input type="checkbox" name="outlet" value="7" id="outlet7" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Type 2 (Mennekes)</span></li></label>
+        <label for="outlet8"><li><input type="checkbox" name="outlet" value="8" id="outlet8" checked> <span class="label"><img src=""> Type 3</span></li></label>
+        <label for="outlet9"><li><input type="checkbox" name="outlet" value="9" id="outlet9" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image09.png"> BS1363</span></li></label>
+        <label for="outlet10"><li><input type="checkbox" name="outlet" value="10" id="outlet10" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image13.png"> Europlug</span></li></label>
+        <label for="outlet11"><li><input type="checkbox" name="outlet" value="11" id="outlet11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></li></label>
+        <label for="outlet12"><li><input type="checkbox" name="outlet" value="12" id="outlet12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></li></label>
+        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src=""> Three Phase 32A (UK)</span></li></label>
       </ul>
     </section>
 
