@@ -93,7 +93,7 @@
         <button id="network_off">Check None</button>
       </div>
       <ul id="networks">
-        <label for="network7"><li><input type="checkbox" name="network" value="7" id="network7" checked> <span class="label">AddEnergie</span></li></label>
+        <label for="network7"><li><input type="checkbox" name="network" value="7" id="network7" checked> <span class="label">FLO</span></li></label>
         <label for="network9"><li><input type="checkbox" name="network" value="9" id="network9" checked> <span class="label">AeroVironment</span></li></label>
         <label for="network2"><li><input type="checkbox" name="network" value="2" id="network2" checked> <span class="label">Blink</span></li></label>
         <label for="network33"><li><input type="checkbox" name="network" value="33" id="network33" checked> <span class="label">CarCharging</span></li></label>

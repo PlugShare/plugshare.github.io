@@ -95,7 +95,7 @@
                 }
                 src += ']';
               }
-              if (networks.length) {
+              if (networks.length && networks.length < 23) {
                 if (type == 'include')
                   src += '&networks=';
                 else if (type == 'exclude')
