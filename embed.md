@@ -70,7 +70,7 @@
         <label for="outlet11"><li><input type="checkbox" name="outlet" value="11" id="outlet11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></li></label>
         <label for="outlet12"><li><input type="checkbox" name="outlet" value="12" id="outlet12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></li></label>
         <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Three Phase 32A (UK)</span></li></label>
-        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image15.png"> Caravan Mains</span></li></label>
+        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image15.png"> Caravan Mains Socket</span></li></label>
       </ul>
     </section>
 
