@@ -8,7 +8,10 @@
 
     <section>
       <h3>Setting the map region</h3>
-      <p>By default, the map automatically tries to look for and center on the user's current location (https geolocation required). To set a specific region to load, set the latitude & longitude of the location you wish to display.</p>
+      <p>
+        If no coordinates are set, the map automatically tries to look for and center on the user's current location (https geolocation required).<br>
+        To set a specific region to load, set the latitude & longitude of the location you wish to display.
+      </p>
       <form action="#">
         <ul id="helpers">
             <li>Helper Functions (use these to help fill out the 4 inputs below)</li>
@@ -61,12 +64,13 @@
         <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image02.png"> SAE Combo DC CCS</span></li></label>
         <!-- Worldwide -->
         <label for="outlet7"><li><input type="checkbox" name="outlet" value="7" id="outlet7" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Type 2 (Mennekes)</span></li></label>
-        <label for="outlet8"><li><input type="checkbox" name="outlet" value="8" id="outlet8" checked> <span class="label"><img src=""> Type 3</span></li></label>
+        <label for="outlet8"><li><input type="checkbox" name="outlet" value="8" id="outlet8" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image16.png"> Type 3</span></li></label>
         <label for="outlet9"><li><input type="checkbox" name="outlet" value="9" id="outlet9" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image09.png"> BS1363</span></li></label>
         <label for="outlet10"><li><input type="checkbox" name="outlet" value="10" id="outlet10" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image13.png"> Europlug</span></li></label>
         <label for="outlet11"><li><input type="checkbox" name="outlet" value="11" id="outlet11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></li></label>
         <label for="outlet12"><li><input type="checkbox" name="outlet" value="12" id="outlet12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></li></label>
-        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src=""> Three Phase 32A (UK)</span></li></label>
+        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Three Phase 32A (UK)</span></li></label>
+        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image15.png"> Caravan Mains</span></li></label>
       </ul>
     </section>
 
