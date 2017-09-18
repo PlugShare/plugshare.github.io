@@ -61,7 +61,7 @@
           var height = $("#height").val();
           var width = $("#width").val();
 
-          var src = 'https://www.plugshare.com/widget2.html';
+          var src = 'https://www.plugshare.com/widget2.html?';
 
           var spanLat = $("#spanLat").val();
           var spanLng = $("#spanLng").val();
@@ -69,45 +69,49 @@
           var longitude = $("#longitude").val();
 
           if (spanLat && spanLng && latitude && longitude) {
-            src += '?latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
+            src += 'latitude=' + latitude + '&longitude=' + longitude + '&';
+          }
+          if (latitude && longitude) {
+            src += 'spanLat=' + spanLat + '&spanLng=' + spanLng + '&';
+          }
 
-            // open embed
-            var outlets = $('input[name="outlet"]:checked').map(function() {
-              return this.value;
-            }).get();
-            var networks = $('input[name="network"]:checked').map(function() {
-              return this.value;
-            }).get();
-            var type = $('input[name="type"]:checked').val();
-            if (outlets.length || networks.length) {
-              if (outlets.length) {
-                src += '&outlets=[';
-                for (var i = 0; i < outlets.length; i++) {
-                  if (outlets[i] == '6_0') {
-                    src += '{"connector":6,"power":0}';
-                  } else if (outlets[i] == '6_1') {
-                    src += '{"connector":6,"power":1}';
-                  } else {
-                    src += '{"connector":' + outlets[i] + '}';
-                  }
-                  if (i != outlets.length - 1)
-                    src += ',';
+          // open embed
+          var outlets = $('input[name="outlet"]:checked').map(function() {
+            return this.value;
+          }).get();
+          var networks = $('input[name="network"]:checked').map(function() {
+            return this.value;
+          }).get();
+          var type = $('input[name="type"]:checked').val();
+          if (outlets.length || networks.length) {
+            if (outlets.length) {
+              src += 'outlets=[';
+              for (var x = 0; x < outlets.length; x++) {
+                if (outlets[x] == '6_0') {
+                  src += '{"connector":6,"power":0}';
+                } else if (outlets[x] == '6_1') {
+                  src += '{"connector":6,"power":1}';
+                } else {
+                  src += '{"connector":' + outlets[x] + '}';
                 }
-                src += ']';
+                if (x != outlets.length - 1)
+                  src += ',';
               }
-              if (networks.length && networks.length < 23) {
-                if (type == 'include')
-                  src += '&networks=';
-                else if (type == 'exclude')
-                  src += '&exclusion_networks=';
-                for (var i = 0; i < networks.length; i++) {
-                  src += networks[i];
-                  if (i != networks.length - 1)
-                    src += ',';
-                }
+              src += ']&';
+            }
+            if (networks.length && networks.length < 23) {
+              if (type == 'include')
+                src += 'networks=';
+              else if (type == 'exclude')
+                src += '&exclusion_networks=';
+              for (var y = 0; y < networks.length; y++) {
+                src += networks[y];
+                if (y != networks.length - 1)
+                  src += ',';
               }
             }
           }
+
           // console.log(src);
 
           code = '<iframe src=\'' + src + '\' width=\'' + width + '\' height=\''+ height + '\'></iframe>';
