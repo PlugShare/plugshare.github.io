@@ -63,16 +63,13 @@
 
           var src = 'https://www.plugshare.com/widget2.html?';
 
-          var spanLat = $("#spanLat").val();
-          var spanLng = $("#spanLng").val();
           var latitude = $("#latitude").val();
           var longitude = $("#longitude").val();
+          var spanLat = $("#spanLat").val();
+          var spanLng = $("#spanLng").val();
 
-          if (spanLat && spanLng && latitude && longitude) {
-            src += 'latitude=' + latitude + '&longitude=' + longitude + '&';
-          }
-          if (latitude && longitude) {
-            src += 'spanLat=' + spanLat + '&spanLng=' + spanLng + '&';
+          if (latitude && longitude && spanLat && spanLng) {
+            src += 'latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
           }
 
           // open embed
