@@ -140,6 +140,12 @@
     <textarea id="code" rows="5" cols="100"></textarea>
   </div>
 
+  <div id="notice">
+    Deprecation Notice: For embed maps that default to user's location, Google Chrome requires adding <span class="code">allow="geolocation"</span> to your embed code.<br>
+    Please add the tag to your existing embed code or use the generator to generate updated embed code.<br>
+    For more information, <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes" target="_blank">click here</a>.
+  </div>
+
   <!-- <hr>
 
   <h2>Who's using us?</h2>

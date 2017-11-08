@@ -303,6 +303,16 @@ header {
   #snippet {
     display: none;
   }
+  #notice {
+    margin-top: 10px;
+    color: red;
+  }
+  .code {
+    background-color: #ccc;
+    padding: 5px;
+    color: #333;
+    border-radius: 3px;
+  }
   #access {
     background: rgba(84, 84, 84, 0.1);
     border: 1px solid;
