@@ -140,8 +140,10 @@
   <div id="snippet">
     <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
     <textarea id="code" rows="5" cols="100" readonly="readonly"></textarea>
-    <div class="button accept" id="copy_button">
-      Copy
+    <div class="button-margin">
+      <div class="button accept" id="copy_button">
+        Copy
+      </div>
     </div>
   </div>
 
