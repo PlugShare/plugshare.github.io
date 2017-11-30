@@ -70,7 +70,9 @@
         <label for="outlet11"><li><input type="checkbox" name="outlet" value="11" id="outlet11" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image12.png"> UK Commando</span></li></label>
         <label for="outlet12"><li><input type="checkbox" name="outlet" value="12" id="outlet12" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image01.png"> AS3112</span></li></label>
         <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Three Phase 32A (UK)</span></li></label>
-        <label for="outlet14"><li><input type="checkbox" name="outlet" value="14" id="outlet14" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image15.png"> Caravan Mains Socket</span></li></label>
+        <label for="outlet15"><li><input type="checkbox" name="outlet" value="15" id="outlet15" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image15.png"> Caravan Mains Socket</span></li></label>
+        <label for="outlet16"><li><input type="checkbox" name="outlet" value="16" id="outlet16" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> China BG/T</span></li></label>
+        <label for="outlet17"><li><input type="checkbox" name="outlet" value="17" id="outlet17" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image17.png"> China BG/T 2</span></li></label>
       </ul>
     </section>
 
@@ -137,7 +139,10 @@
   </div>
   <div id="snippet">
     <p>Insert the following code snippet into your website. For best results, it is recommended that you set a width no less than 500 and a height no less than 600.</p>
-    <textarea id="code" rows="5" cols="100"></textarea>
+    <textarea id="code" rows="5" cols="100" readonly="readonly"></textarea>
+    <div class="button accept" id="copy_button">
+      Copy
+    </div>
   </div>
 
   <div id="notice">
