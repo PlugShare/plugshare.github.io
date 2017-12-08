@@ -1,7 +1,8 @@
 <form action="https://formspree.io/info@plugshare.com" method="POST" id="access">
   <fieldset>
-    <legend><h2>API Request Form</h2></legend>
+    <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
     <h3>Register for an API key to access api.plugshare.com</h3>
+    <h4 class="warning">Note: We currently do not support personal or non-commercial licenses to use our data</h4>
     <div class="fields">
       <div class="input-field">
         <label for="first_name">First Name:</label><br>

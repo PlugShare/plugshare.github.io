@@ -320,8 +320,12 @@ header {
     background: rgba(84, 84, 84, 0.1);
     border: 1px solid;
     border-radius: 3px;
+    .warning {
+      color: red;
+    }
     .fields {
       @extend .clearfix;
+      margin-top: 10px;
       .input-field {
         float: left;
         margin: 5px 25px 10px 0;
