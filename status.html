@@ -132,12 +132,13 @@
         xhr.onreadystatechange = function() {
           if (xhr.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
             console.log(xhr);
-            if (xhr.status_description)
-              message.innerHTML = xhr.status_description;
-            if (xhr.status == 'OPERATIONAL') {
+            console.log(xhr.response);
+            if (xhr.response.status_description)
+              message.innerHTML = xhr.response.status_description;
+            if (xhr.response.status == 'OPERATIONAL') {
               status.innerHTML = "Online";
               color.className = "online";
-            } else if (xhr.status == 'PARTIAL_OUTAGE') {
+            } else if (xhr.response.status == 'PARTIAL_OUTAGE') {
               status.innerHTML = "Partial";
               color.className = "partial";
             } else {
