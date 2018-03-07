@@ -132,20 +132,22 @@
         xhr.onreadystatechange = function() {
           if (xhr.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
             console.log(xhr);
-            var response = JSON.parse(xhr.response);
-            console.log(response);
-            if (response.status_description)
-              message.innerHTML = response.status_description;
-            if (response.status == 'OPERATIONAL') {
-              status.innerHTML = "Online";
-              color.className = "online";
-            } else if (response.status == 'PARTIAL_OUTAGE') {
-              status.innerHTML = "Partial";
-              color.className = "partial";
+            if (xhr.response) {
+              var response = JSON.parse(xhr.response);
+              console.log(response);
+              if (response.status_description)
+                message.innerHTML = response.status_description;
+              if (response.status == 'OPERATIONAL') {
+                status.innerHTML = "Operational";
+                color.className = "online";
+              } else if (response.status == 'PARTIAL_OUTAGE') {
+                status.innerHTML = "Partial Outage";
+                color.className = "partial";
+              }
             } else {
-              status.innerHTML = "Offline";
+              status.innerHTML = "Server Offline";
               color.className = "offline";
-              message.innerHTML = 'App server is offline';
+              message.innerHTML = 'We are working to return service back to normal';
             }
           }
         };
@@ -155,12 +157,12 @@
         xhr.timeout = 4000; // Set timeout in milliseconds
         xhr.ontimeout = function () {
           console.log('timeout');
-          status.innerHTML = "Offline";
+          status.innerHTML = "Server Offline";
           color.className = "offline";
-          message.innerHTML = 'App server is offline';
+          message.innerHTML = 'We are working to return service back to normal';
         }
         xhr.send();
     }
-    loadXMLDoc("https://staging.plugshare.com/api/status"); //https://api.plugshare.com/status
+    loadXMLDoc("https://api.plugshare.com/status");
   </script>
 </html>
