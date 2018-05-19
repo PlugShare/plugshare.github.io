@@ -1,7 +1,7 @@
 <div id="embed">
   <h2>Embeddable Map Generator</h2>
   <p>The map below can be embedded into any article, blog, or website.</p>
-  <p id="widget"><iframe src="https://www.plugshare.com/widget2.html" width="800" height="600"></iframe></p>
+  <p id="widget"><iframe src="https://www.plugshare.com/widget2.html" width="800" height="600" allow="geolocation"></iframe></p>
 
   <div id="parameters">
     <h2>Map Parameters</h2>
@@ -59,8 +59,8 @@
         <label for="outlet3"><li><input type="checkbox" name="outlet" value="3" id="outlet3" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image04.png"> CHAdeMO</span></li></label>
         <label for="outlet4"><li><input type="checkbox" name="outlet" value="4" id="outlet4" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image00.png"> Tesla Roadster</span></li></label>
         <label for="outlet5"><li><input type="checkbox" name="outlet" value="5" id="outlet5" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image10.png"> NEMA 14-50</span></li></label>
-        <label for="outlet6_0"><li><input type="checkbox" name="outlet" value="6_0" id="outlet6_0" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla S HPWC</span></li></label>
-        <label for="outlet6_1"><li><input type="checkbox" name="outlet" value="6_1" id="outlet6_1" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
+        <label for="outlet6_0"><li><input type="checkbox" name="outlet" value="6" id="outlet6" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla S HPWC</span></li></label>
+        <label for="outlet6_1"><li><input type="checkbox" name="outlet" value="42" id="outlet42" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
         <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image02.png"> SAE Combo DC CCS</span></li></label>
         <!-- Worldwide -->
         <label for="outlet7"><li><input type="checkbox" name="outlet" value="7" id="outlet7" checked> <span class="label"><img src="https://s3.amazonaws.com/plugshare.production.assets/assets/outlets/image06.png"> Type 2 (Mennekes)</span></li></label>

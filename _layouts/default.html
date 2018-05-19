@@ -83,19 +83,12 @@
           var type = $('input[name="type"]:checked').val();
           if (outlets.length || networks.length) {
             if (outlets.length) {
-              src += 'outlets=[';
+              src += 'plugs=';
               for (var x = 0; x < outlets.length; x++) {
-                if (outlets[x] == '6_0') {
-                  src += '{"connector":6,"power":0}';
-                } else if (outlets[x] == '6_1') {
-                  src += '{"connector":6,"power":1}';
-                } else {
-                  src += '{"connector":' + outlets[x] + '}';
-                }
+                src += outlets[x];
                 if (x != outlets.length - 1)
                   src += ',';
               }
-              src += ']';
             }
             if (networks.length && networks.length < 23) {
               if (type == 'include')
