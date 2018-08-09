@@ -62,7 +62,8 @@
           var height = $("#height").val();
           var width = $("#width").val();
 
-          var src = 'https://www.plugshare.com/widget2.html?';
+          var src = 'https://www.plugshare.com/widget2.html';
+          var append = '?';
 
           var latitude = $("#latitude").val();
           var longitude = $("#longitude").val();
@@ -70,6 +71,8 @@
           var spanLng = $("#spanLng").val();
 
           if (latitude && longitude && spanLat && spanLng) {
+            src += append;
+            append = '&';
             src += 'latitude=' + latitude + '&longitude=' + longitude + '&spanLat=' + spanLat + '&spanLng=' + spanLng;
           }
 
@@ -83,6 +86,8 @@
           var type = $('input[name="type"]:checked').val();
           if (outlets.length || networks.length) {
             if (outlets.length) {
+              src += append;
+              append = '&';
               src += 'plugs=';
               for (var x = 0; x < outlets.length; x++) {
                 src += outlets[x];
@@ -91,10 +96,15 @@
               }
             }
             if (networks.length && networks.length < 23) {
-              if (type == 'include')
-                src += '&networks=';
-              else if (type == 'exclude')
-                src += '&exclusion_networks=';
+              if (type == 'include') {
+                src += append;
+                append = '&';
+                src += 'networks=';
+              } else if (type == 'exclude') {
+                src += append;
+                append = '&';
+                src += 'exclusion_networks=';
+              }
               for (var y = 0; y < networks.length; y++) {
                 src += networks[y];
                 if (y != networks.length - 1)
