@@ -152,6 +152,15 @@
     Please add the tag to your existing embed code or use the generator to generate updated embed code.<br>
     For more information, <a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes" target="_blank">click here</a>.
   </div>
+  
+  <div id="cta">
+    <div class="prompt">
+      Questions?
+    </div>
+    <div class="button">
+      <a href="mailto:info@plugshare.com">Contact Us</a>
+    </div>
+  </div>
 
   <!-- <hr>
 
