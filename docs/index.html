@@ -2404,6 +2404,14 @@ described above.</p>
     </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.plugshare.com/network/{id}/checkins</code></p>
+
+<p>This functionality is only available by arrangement.  It returns checkins associated with
+locations which contain the given network&rsquo;s stations.  The request must be issued with
+special authentication not described here.</p>
+
 <h3 id="arguments">Arguments</h3>
 
 <table>
@@ -2412,14 +2420,14 @@ described above.</p>
       <div class="field">id</div>
       <div class="type required">required</div>
     </td>
-    <td>ID of network whose photos should be returned</td>
+    <td>ID of network whose checkins should be returned</td>
   </tr>
   <tr>
     <td>
       <div class="field">start</div>
       <div class="type required">required</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns reviews
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
         created after this time.
     </td>
   </tr>
@@ -2428,7 +2436,7 @@ described above.</p>
       <div class="field">end</div>
       <div class="type">optional</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns reviews
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
         created on or before this time.
     </td>
   </tr>
@@ -2450,7 +2458,7 @@ respectively.</p>
 
 <h3 id="paging">Paging</h3>
 
-<p>Make a query with a start time.  The response is a list of JSON objects representing reviews,
+<p>Make a query with a start time.  The response is a list of JSON objects representing checkins,
 sorted in order of creation time.  If there are <code class="prettyprint">count</code> results or fewer, issue another query
 where start is the created_at of the last item in the results.</p>
 
