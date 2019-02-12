@@ -1,3 +1,4 @@
+<meta name="description" content="Generate your own PlugShare map to embed on your article, blog, or website! Easily preset the viewable area, outlets and network filters with this handy tool.">
 <div id="embed">
   <h2>Embeddable Map Generator</h2>
   <p>The map below can be embedded into any article, blog, or website.</p>
@@ -158,7 +159,7 @@
       Questions?
     </div>
     <div class="button">
-      <a href="mailto:info@plugshare.com">Contact Us</a>
+      <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288">See our FAQ</a>
     </div>
   </div>
 

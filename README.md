@@ -1,3 +1,4 @@
+<meta name="description" content="PlugShare developer portal. Popular topics: PlugShare embed map, permalinking, API documentation, commercial API access request">
 <div id="index">
   <section id="map">
     <a href="embed">
@@ -20,7 +21,7 @@
       Questions?
     </div>
     <div class="button">
-      <a href="mailto:info@plugshare.com">Contact Us</a>
+      <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288">See our FAQ</a>
     </div>
   </div>
 </div>

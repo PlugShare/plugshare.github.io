@@ -1,3 +1,4 @@
+<meta name="description" content="Commercial licenses only. Register for an API key to access api.plugshare.com">
 <form action="https://formspree.io/info@plugshare.com" method="POST" id="access">
   <fieldset>
     <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
