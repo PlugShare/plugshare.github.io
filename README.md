@@ -20,8 +20,10 @@
     <div class="prompt">
       Questions?
     </div>
-    <div class="button">
-      <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288">See our FAQ</a>
-    </div>
+    <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288">
+      <div class="button">
+        See our FAQ
+      </div>
+    </a>
   </div>
 </div>

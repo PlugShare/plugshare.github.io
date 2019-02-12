@@ -58,14 +58,12 @@ h3 {
   font-weight: 200;
   text-shadow: none;
   background-color: $psblue;
+  color: #fff;
   position: relative;
   bottom: 5px;
   transition: all .3s ease;
   &:hover {
     background-color: tint($psblue, 20%);
-  }
-  a {
-    color: #fff;
   }
 }
 .button.accept {
