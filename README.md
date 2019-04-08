@@ -1,8 +1,8 @@
 ---
-title: PlugShare Developer Center
+title: 'PlugShare Developer Center'
 description: 'PlugShare developer portal. Popular topics: PlugShare embed map, permalinking, API documentation, commercial API access request'
-url: https://developer.plugshare.com/
-canonical: https://developer.plugshare.com/
+url: 'https://developer.plugshare.com/'
+canonical: 'https://developer.plugshare.com/'
 ---
 <!-- frontmatter breaks this page for some reason -->
 <div id="index">
