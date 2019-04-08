@@ -1,6 +1,6 @@
 ---
 title: PlugShare Developer Center
-description: PlugShare developer portal. Popular topics - PlugShare embed map, permalinking, API documentation, commercial API access request
+description: PlugShare developer portal
 ---
 <div id="index">
   <section id="map">
