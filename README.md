@@ -1,8 +1,7 @@
 ---
 title: PlugShare Developer Center
-canonical: https://developer.plugshare.com/
+description: PlugShare developer portal. Popular topics - PlugShare embed map, permalinking, API documentation, commercial API access request
 ---
-<!-- frontmatter breaks this page for some reason -->
 <div id="index">
   <section id="map">
     <a href="embed">
