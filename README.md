@@ -1,3 +1,6 @@
+---
+title: PlugShare Developer Center
+---
 <!-- frontmatter breaks this page for some reason -->
 <title>PlugShare Developer Center</title>
 <meta name="description" content="PlugShare developer portal. Popular topics: PlugShare embed map, permalinking, API documentation, commercial API access request">
