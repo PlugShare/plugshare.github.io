@@ -1,3 +1,5 @@
 theme: jekyll-theme-tactile
 plugins:
 - jekyll-seo-tag
+title: PlugShare Developer Center
+description: PlugShare developer portal. Popular topics - PlugShare embed map, permalinking, API documentation, commercial API access request
