@@ -1,8 +1,8 @@
 ---
-title: PlugShare Developer Center
-description: PlugShare developer portal. Popular topics - PlugShare embed map, permalinking, API documentation, commercial API access request
-url: https://developer.plugshare.com/
-canonical: https://developer.plugshare.com/
+title: PlugShare Developer Center - Embeddable Map Generator
+description: Generate your own PlugShare map to embed on your article, blog, or website! Easily preset the viewable area, outlets and network filters with this handy tool.
+url: https://developer.plugshare.com/embed
+canonical: https://developer.plugshare.com/embed
 ---
 <div id="index">
   <section id="map">
