@@ -1,8 +1,9 @@
 ---
-title: PlugShare Developer Center - Embeddable Map Generator
+title: Embeddable Map Generator
 description: Generate your own PlugShare map to embed on your article, blog, or website! Easily preset the viewable area, outlets and network filters with this handy tool.
 url: https://developer.plugshare.com/embed
 canonical_link: https://developer.plugshare.com/embed
+site_title: PlugShare Developer Center
 ---
 <div id="embed">
   <h2>Embeddable Map Generator</h2>
