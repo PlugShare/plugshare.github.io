@@ -2,7 +2,7 @@
 title: PlugShare Developer Center - Permalinking
 description: You can link directly to charging locations or a map region on PlugShare's web, iOS, and Android apps.
 url: https://developer.plugshare.com/permalink
-canonical: https://developer.plugshare.com/permalink
+canonical_link: https://developer.plugshare.com/permalink
 ---
 # Permalinking
 
