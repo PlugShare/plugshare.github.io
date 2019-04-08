@@ -1,3 +1,6 @@
+---
+title: PlugShare Developer Center
+---
 <!-- frontmatter breaks this page for some reason -->
 <div id="index">
   <section id="map">
