@@ -1,5 +1,5 @@
 ---
-title: PlugShare Developer Center - API Request Form (Commercial Licenses Only)
+title: API Request Form
 description: Commercial licenses only. Register for an API key to access api.plugshare.com
 url: https://developer.plugshare.com/access
 canonical_link: https://developer.plugshare.com/access
