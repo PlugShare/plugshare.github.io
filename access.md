@@ -42,9 +42,9 @@ canonical_link: https://developer.plugshare.com/access
           <option value="website">Website</option>
         </select>
       </div>
-      <div class="input-field">
+      <div class="input-field" style="clear: left;">
         <label for="users">How many users will there be?</label><br>
-        <input type="text" name="users" id="users" value="" placeholder="Estimated initial users count or range" required>
+        <input type="text" name="users" id="users" value="" placeholder="number or range" required>
       </div>
       <div class="input-field">
         <label for="region">Where will the data be used?</label><br>
@@ -52,9 +52,9 @@ canonical_link: https://developer.plugshare.com/access
       </div>
       <div class="input-field">
         <label for="budget">What is your budget for acquiring and using data for this project?</label><br>
-        <input type="text" name="budget" id="budget" value="" placeholder="Estimated dollar value or range" required>
+        <input type="text" name="budget" id="budget" value="" placeholder="number or range" required>
       </div>
-      <div style="color: red;">
+      <div style="font-weight: bold; color: red; clear: left;">
         Sub-licensing the data/API is not permitted.
       </div>
       <input type="hidden" name="_next" value="thanks" />
