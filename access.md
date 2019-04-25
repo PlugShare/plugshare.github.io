@@ -27,12 +27,35 @@ canonical_link: https://developer.plugshare.com/access
         <input type="tel" name="phone" id="phone" value="" placeholder="Business Phone" required>
       </div>
       <div class="input-field">
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" id="email" value="" placeholder="Email" required>
+        <label for="email">Business Email:</label><br>
+        <input type="email" name="email" id="email" value="" placeholder="Business Email" required>
       </div>
       <div class="input-field">
-        <label for="description">Short description of intended use:</label><br>
+        <label for="description">What is the proposed use of the data/API?</label><br>
         <textarea rows="4" cols="50" name="description" id="description" required></textarea>
+      </div>
+      <div class="input-field">
+        <label for="type">Which type of license are you looking for?</label><br>
+        <select name="type" id="type" required>
+          <option value="navigation">In-Vehicle Navigation App</option>
+          <option value="mobile">Mobile App</option>
+          <option value="website">Website</option>
+        </select>
+      </div>
+      <div class="input-field">
+        <label for="users">How many users will there be?</label><br>
+        <input type="text" name="users" id="users" value="" placeholder="Estimated initial users count or range" required>
+      </div>
+      <div class="input-field">
+        <label for="region">Where will the data be used?</label><br>
+        <input type="text" name="region" id="region" value="" placeholder="Region: US, Europe, etc." required>
+      </div>
+      <div class="input-field">
+        <label for="budget">What is your budget for acquiring and using data for this project?</label><br>
+        <input type="text" name="budget" id="budget" value="" placeholder="Estimated dollar value or range" required>
+      </div>
+      <div style="color: red;">
+        Sub-licensing the data/API is not permitted.
       </div>
       <input type="hidden" name="_next" value="thanks" />
     </div>
