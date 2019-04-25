@@ -37,7 +37,7 @@ canonical_link: https://developer.plugshare.com/access
       <div class="input-field">
         <label for="type">Which type of license are you looking for?</label><br>
         <select name="type" id="type" required>
-          <option value="" disabled></option>
+          <option value="" disabled selected></option>
           <option value="navigation">In-Vehicle Navigation App</option>
           <option value="mobile">Mobile App</option>
           <option value="website">Website</option>
