@@ -8,7 +8,9 @@ canonical_link: https://developer.plugshare.com/access
   <fieldset>
     <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
     <h3>Register for an API key to access api.plugshare.com</h3>
-    <h4 class="warning">Note: We currently do not support personal or non-commercial licenses to use our data</h4>
+    <h4>Thank you for your interest in obtaining an evaluation license to access the PlugShare API for EV charging station data.</h4>
+    <h4>To help us understand your needs better, please tell us about your project using the form below.</h4>
+    <h4 class="warning">Note: Due to the volume of inquiries we receive and our limited developer support resources, at this time we do not provide personal or non-commercial licenses to use our data.</h4>
     <div class="fields">
       <div class="input-field">
         <label for="first_name">First Name:</label><br>
@@ -35,12 +37,13 @@ canonical_link: https://developer.plugshare.com/access
         <textarea rows="4" cols="50" name="description" id="description" required></textarea>
       </div>
       <div class="input-field">
-        <label for="type">Which type of license are you looking for?</label><br>
+        <label for="type">Which type of application are you developing?</label><br>
         <select name="type" id="type" required>
           <option value="" disabled selected></option>
-          <option value="navigation">In-Vehicle Navigation App</option>
           <option value="mobile">Mobile App</option>
           <option value="website">Website</option>
+          <option value="navigation">In-Vehicle Navigation App</option>
+          <option value="navigation">Multiple Platforms</option>
         </select>
       </div>
       <div class="input-field" style="clear: left;">
@@ -55,8 +58,9 @@ canonical_link: https://developer.plugshare.com/access
         <label for="budget">What is your budget for acquiring and using data for this project?</label><br>
         <input type="text" name="budget" id="budget" value="" placeholder="number or range" required>
       </div>
-      <div style="font-weight: bold; color: red; clear: left;">
-        Sub-licensing the data/API is not permitted.
+      <div class="input-field">
+        <label for="timeline">What is your timeline for evaluating data for this project, and when do you plan to launch a production version?</label><br>
+        <input type="text" name="timeline" id="timeline" value="" placeholder="" required>
       </div>
       <input type="hidden" name="_next" value="thanks" />
     </div>
