@@ -9,8 +9,8 @@ canonical_link: https://developer.plugshare.com/access
     <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
     <h3>Register for an API key to access api.plugshare.com</h3>
     <h4>Thank you for your interest in obtaining an evaluation license to access the PlugShare API for EV charging station data.</h4>
-    <h4>To help us understand your needs better, please tell us about your project using the form below.</h4>
-    <h4 class="warning">Note: Due to the volume of inquiries we receive and our limited developer support resources, at this time we do not provide personal or non-commercial licenses to use our data.</h4>
+    <h4>To help us better understand your needs, please tell us about your project using the form below.</h4>
+    <h4 class="warning" style="margin-top: 10px;">Note: Due to the volume of inquiries we receive and our limited developer support resources, we do not provide personal or non-commercial licenses to use our data at this time.</h4>
     <div class="fields">
       <div class="input-field">
         <label for="first_name">First Name:</label><br>
