@@ -1188,6 +1188,13 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
+  <tr>
+    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1341,6 +1348,13 @@ POST body:
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
