@@ -109,6 +109,7 @@ canonical_link: https://developer.plugshare.com/embed
         <button id="network_off">Check None</button>
       </div>
       <ul id="networks">
+        <!-- when updating this list, make sure to update networks length in default.html -->
         <label for="network1"><li><input type="checkbox" name="network" value="1" id="network1" checked> <span class="label">ChargePoint</span></li></label>
         <label for="network2"><li><input type="checkbox" name="network" value="2" id="network2" checked> <span class="label">Blink</span></li></label>
         <label for="network3"><li><input type="checkbox" name="network" value="3" id="network3" checked> <span class="label">SemaConnect</span></li></label>
@@ -143,7 +144,7 @@ canonical_link: https://developer.plugshare.com/embed
         <label for="network50"><li><input type="checkbox" name="network" value="50" id="network50" checked> <span class="label">Irvine Company</span></li></label>
         <label for="network51"><li><input type="checkbox" name="network" value="51" id="network51" checked> <span class="label">Ionity</span></li></label>
         <label for="network52"><li><input type="checkbox" name="network" value="52" id="network52" checked> <span class="label">Fastned</span></li></label>
-        <!-- <label for="network53"><li><input type="checkbox" name="network" value="53" id="network53" checked> <span class="label">Suncor</span></li></label> -->
+        <label for="network53"><li><input type="checkbox" name="network" value="53" id="network53" checked> <span class="label">Petro Canada</span></li></label>
         <label for="network54"><li><input type="checkbox" name="network" value="54" id="network54" checked> <span class="label">Electrify Canada</span></li></label>
       </ul>
     </section>
