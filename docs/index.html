@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>PlugShare API Reference</title>
-    <meta name="description" content="Use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database.">
-    <link rel="canonical" href="https://developer.plugshare.com/docs/">
+    <title>API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -199,7 +197,7 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+      <script src="javascripts/all_nosearch.js"></script>
     <script>
     //This is Google's default GA code
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -226,23 +224,29 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.png" alt="Logo" />
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <div id="toc">
       </div>
-        <ul class="toc-footer">
-            <li><a href='/access'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>API V3 - Updated 3/14/2017</li>
-            <li>Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
+        <h2 id="part-e43a05c834c974da"><meta name="description" content="Use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database."></h2>
+
+<p>title: PlugShare API Reference</p>
+
+<p>language_tabs:</p>
+
+<p>toc_footers:
+  - <a href='/access'>Sign Up for a Developer Key</a>
+  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - API V3 - Updated 3/14/2017
+  - Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a></p>
+
+<p>includes:</p>
+
+<h2 id="search-true">search: true</h2>
+
+<h1 id="introduction">Introduction</h1>
 
 <p>Welcome to the PlugShare API! You can use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database. The PlugShare API is a REST API</p>
 
@@ -811,7 +815,7 @@ Optional location filters do not apply to this endpoint because this only return
       <div class="field">radius</div>
       <div class="type">optional</div>
     </td>
-    <td>Search radius in meters.  Maximum 50000 meters.</td>
+    <td>Search radius in meters.</td>
   </tr>
   <tr>
     <td>
@@ -827,13 +831,6 @@ Optional location filters do not apply to this endpoint because this only return
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -1016,13 +1013,6 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1188,13 +1178,6 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1348,13 +1331,6 @@ POST body:
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -2037,6 +2013,9 @@ You may want to apply some filters to the search queries to return only relevant
 <th></th>
 <th>id</th>
 <th>network</th>
+<th></th>
+<th>id</th>
+<th>network</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2048,6 +2027,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>36</td>
 <td>ChargeNet</td>
+<td></td>
+<td>54</td>
+<td>Electrify Canada</td>
 </tr>
 <tr>
 <td>2</td>
@@ -2058,6 +2040,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>37</td>
 <td>Recargo</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>3</td>
@@ -2068,6 +2053,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>41</td>
 <td>KSI</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>4</td>
@@ -2078,6 +2066,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>45</td>
 <td>POLAR</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>5</td>
@@ -2088,6 +2079,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>46</td>
 <td>EVConnect</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>6</td>
@@ -2095,6 +2089,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>26</td>
 <td>Greenlots</td>
+<td></td>
+<td>47</td>
+<td>Electrify America</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2106,6 +2103,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td>29</td>
 <td>OpConnect</td>
 <td></td>
+<td>48</td>
+<td>Chargefox</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -2115,6 +2115,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>30</td>
 <td>Shorepower</td>
+<td></td>
+<td>49</td>
+<td>BC Hydro EV</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2126,6 +2129,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td>33</td>
 <td>CarCharging</td>
 <td></td>
+<td>50</td>
+<td>Irvine Company</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -2136,6 +2142,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td>34</td>
 <td>JNSH</td>
 <td></td>
+<td>51</td>
+<td>Ionity</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -2145,6 +2154,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 <td>35</td>
 <td>Tesla Destination</td>
+<td></td>
+<td>52</td>
+<td>Fastned</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2404,6 +2416,34 @@ where start is the created_at of the last item in the results.</p>
     </td>
   <td>User object including in depth information about the user who submitted this review (check-in).</td>
   </tr>
+i  <tr>
+    <td>
+      <div class="field">problem</div>
+      <div class="type">Number (integer)</div>
+    </td>
+  <td>Integer enum value corresponding to the problem_description property.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">problem_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>
+      <b>1</b> = &ldquo;Broken hardware&rdquo;<br>
+      <b>2</b> = &ldquo;In use&rdquo;<br>
+      <b>3</b> = &ldquo;Blocked by vehicle&rdquo;<br>
+      <b>4</b> = &ldquo;Could not activate&rdquo;<br>
+      <b>5</b> = &ldquo;Permanently closed&rdquo;<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">waiting</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Indicates whether the user is waiting to charge.</td>
+  </tr>
+
   <tr>
     <td>
       <div class="field">created_at</div>
