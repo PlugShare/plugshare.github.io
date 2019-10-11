@@ -15,6 +15,12 @@
     <a href="docs"><h3>Documentation</h3></a><br>
     <a href="access"><h3>Request Access</h3></a>
   </section>
+  <section id="cpo">
+    <h2>Charging Network Operators</h2>
+    <a href="https://recargo.com/cpo.html"><h3>CPO Dashboard</h3></a><br>
+  </section>
+  <section id="placeholder">
+  </section>
   <div id="cta">
     <div class="prompt">
       Questions?
