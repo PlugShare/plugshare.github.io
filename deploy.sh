@@ -22,6 +22,8 @@ Options:
 
 run_build() {
   bundle exec middleman build --clean
+  mkdir site/docs
+  mv build/* site/docs
 }
 
 parse_args() {
@@ -69,8 +71,8 @@ parse_args() {
   # vars should be declared here, with sane defaults if applicable.
 
   # Source directory & target branch.
-  deploy_directory=build
-  deploy_branch=gh-pages
+  deploy_directory=site
+  deploy_branch=test-repo
 
   #if no user identity is already set in the current git environment, use this:
   default_username=${GIT_DEPLOY_USERNAME:-deploy.sh}
