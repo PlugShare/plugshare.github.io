@@ -1,0 +1,5 @@
+theme: jekyll-theme-tactile
+title: PlugShare Developer Center
+description: PlugShare embed map, permalinking, API documentation & access request
+plugins:
+- jekyll-seo-tag
