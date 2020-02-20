@@ -1,11 +1,13 @@
-
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <meta name="description" content="Use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database.">
+    <link rel="canonical" href="https://developer.plugshare.com/docs/">
+    
+    <title>PlugShare API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -196,309 +198,2425 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-c5541673.js"></script>
+    <link href="stylesheets/screen-edf0d684.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-cd87497a.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-ee87ef62.js"></script>
+    <script>
+    //This is Google's default GA code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-21850385-16', 'auto');
+    ga('send', 'pageview');
+    //This does hash-click tracking (inspired by http://stackoverflow.com/a/4813223)
+    $(document).ready(function() {
+      $('.tocify-item a').on('click', function(){
+        ga('send', 'pageview', {'page': location.pathname + location.search  + location.hash});
+      });
+    });
+    </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
         <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
-    <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
+    <div class="tocify-wrapper">
+      <img src="images/logo-2d2b547e.png" alt="Logo" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-      </ul>
+      <div id="toc">
+      </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='/access'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li>API V3 - Updated 2/19/2020</li>
+            <li>Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the PlugShare API! You can use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database. The PlugShare API is a REST API</p>
+<h2 id='using-the-api'>Using The API</h2>
+<p>Generally, you&#39;ll want to use a search method to return a list of locations. Each location will contain one or more stations, each of which may contain one or more outlets. Not all information about a location is returned from the search method; for reviews, photos, and more you&#39;ll want to request the location directly using its unique identifier.<br>
+Here are some examples to get you started. Try out <a href="#get-nearby-locations"><code>GET /locations/nearby</code></a> and <a href="#get-locations-in-region"><code>GET /locations/region</code></a></p>
+<h2 id='access-instructions'>Access Instructions</h2>
+<p>PlugShare uses API keys to allow access to the API. You can register a new PlugShare API key at our <a href="/access">developer portal</a>.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>HTTPS + HTTP Basic auth is required when making API requests. After obtaining an API key/secret, the key and secret have to be specified in the request with HTTP Basic Auth, i.e. converted into an Authorization header.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>URL: <a href="https://api.plugshare.com/">https://api.plugshare.com/</a></p>
+<h1 id='core-data-entities'>Core Data Entities</h1>
+<p><img src="images/tables-8b85d097.png"></p>
+
+<p>A location or station may also have zero to many promos, and a location may also have zero to many amenities.</p>
+<h1 id='location'>Location</h1>
+<p>A driver identifiable destination where Charging Stations (Stations) are located. As a general rule if stations are within visible range of each other they are organized together into a location.</p>
+<h2 id='object-properties'>Object Properties</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Example Response:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/20667"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"link_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EZ-Charge"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"link_action"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"image_url_2x"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85274</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">127483</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37558</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95845</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">name</div>
+      <div class="type">String</div>
+    </td>
+    <td>Descriptive name of the parking structure, business, etc.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">latitude</div>
+      <div class="type">Number</div>
+    </td>
+      <td>Latitude coordinate for this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">longitude</div>
+      <div class="type">Number</div> 
+    </td>
+      <td>Longitude coordinate for this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">description</div>
+      <div class="type">String</div>
+    </td>
+    <td>Unicode string describing a location, can include HTML elements.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">stations</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains station objects. Each location will have at least 1 station object.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">reviews</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains review objects. Ordered from the most recent to oldest. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">valid_outlets</div>
+      <div class="type deprecated">Array</div>
+    </td>
+    <td>The types of outlets that are valid for this location’s locale. This is not a list of outlet types that are present.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">photos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains photo objects. Ordered from the most recent to oldest. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">promos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains promo objects. This will only return promos at the location level. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">all_promos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains promo objects. This will return all promos at both the location level and station level. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">Number (decimal)</div>
+    </td>
+    <td>The location’s PlugScore - If a location has enough data to be scored this is a decimal number with 1 significant digit from 0.0 (worst) - 10.0 (best). Score is based on recency weighted reviews and may also be affected by cost, available power, and other factors.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>If true, then there is a cost associated with this location (check cost_description). If false, then cost is unknown. This field supplements cost values at each station location. Generally cost values at stations are provided by 3rd parties, while cost values at locations are provided by PlugShare members.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>A description of fees for charging and parking at this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field" id="access-values">access</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td><b>1</b> = A public location.<br>
+    <b>2</b> = A restricted location. Not available for general public use. Examples include workplace charging and car dealerships with charging policy restrictions.<br>
+    <b>3</b> = A residential location that has been shared. Not available for public use without prior permission.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">url</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>A shareable link that redirects to this PlugShare location (platform aware: opens apps if user is on mobile, otherwise directs to web).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">icon</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>A recommended icon for displaying the location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">icon_type</div>
+      <div class="type">String</div>
+    </td>
+    <td>The stripped file name of the icon's URL path.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">phone</div>
+      <div class="type">String</div>
+    </td>
+    <td>Formatting of this field is not currently guaranteed.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">address</div>
+      <div class="type">String</div>
+    </td>
+    <td>Street address of the location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">pwps_version</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>The Pay with PlugShare version protocol required to be supported by the client to activate this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">updated_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>Timestamp of the last time this location was updated. "yyyy-mm-dd hh:mm:ss" format.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">qr_enabled</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>True if this station is tagged with a QR code for station identification and activation flows.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">poi_name</div>
+      <div class="type">String</div>
+    </td>
+    <td>Point of interest / location type name. Selected from a list of 40+ types, including Gas Station, Park, Restaurant, etc.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_type_name</div>
+      <div class="type">String</div>
+    </td>
+    <td>The types of parking available. Customers Only, Free, Pay, Restricted, Unknown, '', or null.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">locale</div>
+      <div class="type">String</div>
+    </td>
+    <td>This location's locale. US, UK, EU, AU, JP, WW.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">opening_date</div>
+      <div class="type">String (date)</div>
+    </td>
+    <td>Date when location is anticipated to open in the future. "yyyy-mm-dd" format.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">hours</div>
+      <div class="type">String</div>
+    </td>
+    <td>String for hours of availability. Commonly 24/7 or specified time frames.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">open247</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is open 24 hours a day, 7 days a week.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">coming_soon</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is not currently active and is anticipated to be coming soon.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">under_repair</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is currently under repair.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">compass_bearing</div>
+      <div class="type">Number (float)</div>
+    </td>
+    <td>A compass bearing from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">distance_meters</div>
+      <div class="type">Number (float)</div>
+    </td>
+    <td>A distance in meters from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
+  </tr>
+</table>
+<h2 id='get-location'>Get Location</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/38606
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Example Response:</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38606</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/38606"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a location based on location id.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/{id}</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Location id of target location</td>
+  </tr>
+</table>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Optional location filters do not apply to this endpoint because this only returns 0 or 1 location object(s).
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<h3 id='returns'>Returns</h3>
+<p>Returns a <code>location</code> object if the call succeeded.</p>
+<h2 id='get-nearby-locations'>Get Nearby Locations</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45911</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/45911"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves locations near a given coordinate.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/nearby</code></p>
+<h3 id='arguments-2'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">latitude</div>
+      <div class="type required">conditional</div>
+    </td>
+    <td>Latitude coordinate of target search location.<br>
+    <i>This endpoint requires either lat/lng coordinates or an address.</i></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">longitude</div>
+      <div class="type required">conditional</div>
+    </td>
+    <td>Longitude coordinate of target search location.<br>
+    <i>This endpoint requires either lat/lng coordinates or an address.</i></td>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+      <div class="field">address</div>
+      <div class="type required">conditional</div>
+    </td>
+    <td>Address of target search location.<br>
+    <i>This endpoint requires either lat/lng coordinates or an address.</i><br>
+    Will return {code:1} if address cannot be geolocated, and {code:2} if address is ambiguous. Otherwise returns list of locations.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    200-500 is a recommended value for most applications.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">radius</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Search radius in meters. Maximum 50000 meters.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">outlets</div>
+      <div class="type">optional</div>
+    </td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">optional, default is <b>true</b></div>
+    </td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of access values. Matches if at least one access value is present.<br>
+    See <a href="#access-values">Access Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">availability</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of availability values. Matches if at least one availability value is present.<br>
+    See <a href="#availability-values">Availability Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">amenities</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of amenities. Matches if at least one listed amenity is present.<br>
+    See <a href="#amenities-list">Amenity Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">exclude_networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to include. Matches if at least one network is present.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional</div>
+    </td>
+    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+  </tr>
+</table>
+
+<aside class="notice">
+You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
+</aside>
+<h3 id='additional-examples'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;radius=1000</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='get-locations-in-region'>Get Locations in Region</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-15T10:06:01Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210 Market Ave, Los Altos, CA 94022"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40025</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/G.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Variable: $3.00/hour to $6.00/hour"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Charging Station"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/40025"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-13T20:51:23Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.105989</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Public"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.396454</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves locations in a region based on a given coordinate with latitude and longitude spans.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/region</code></p>
+<h3 id='arguments-3'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">spanLat</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Latitude span in degrees of target search region.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">spanLng</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Longitude span in degrees of target search region.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">latitude</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Latitude coordinate of target search location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">longitude</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Longitude coordinate of target search location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type required">required</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    200-500 is a recommended value for most applications.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">outlets</div>
+      <div class="type">optional</div>
+    </td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">optional, default is <b>true</b></div>
+    </td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of access values. Matches if at least one access value is present.<br>
+    See <a href="#access-values">Access Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">availability</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of availability values. Matches if at least one availability value is present.<br>
+    See <a href="#availability-values">Availability Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">amenities</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of amenities. Matches if at least one listed amenity is present.<br>
+    See <a href="#amenities-list">Amenity Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">exclude_networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to include. Matches if at least one network is present.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional</div>
+    </td>
+    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+  </tr>
+</table>
+
+<aside class="notice">
+You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
+</aside>
+<h3 id='additional-examples-2'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;outlets=[{&quot;connector&quot;:2}]</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='search-locations'>Search Locations</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please call first."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-15T22:53:50Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3109231567"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glencoe Ave Venice, CA 90291"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58226</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/H.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/58226"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-06T01:21:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.449509</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.000126</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>This endpoint returns locations whose name or address contains a specified search query.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/search</code></p>
+<h3 id='arguments-4'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">query</div>
+      <div class="type required">required</div>
+    </td>
+    <td>The search query. Matches on name or address.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    200-500 is a recommended value for most applications.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">page</div>
+      <div class="type">optional</div>
+    </td>
+    <td>This method supports paging. If page is specified, count must be specified as well.<br>
+    This returns results based on the page index number, with 100 results showing per page.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">outlets</div>
+      <div class="type">optional</div>
+    </td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">optional, default is <b>true</b></div>
+    </td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of access values. Matches if at least one access value is present.<br>
+    See <a href="#access-values">Access Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">exclude_networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to include. Matches if at least one network is present.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
+  </tr>
+</table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
+<h3 id='additional-examples-3'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/search?query=recargo</code></p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p><code>GET https://api.plugshare.com/locations/search?query=california&amp;count=500&amp;page=2</code></p>
 
+<p><code>GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;networks=3,4&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
+
+<p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;access=1,2,3&amp;cost=false</code></p>
+<h3 id='returns-4'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='fetch-locations-along-route'>Fetch Locations Along Route</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>POST https://api.plugshare.com/locations/polyline?minimal=1
+
+POST body:
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"distance"</span><span class="p">:</span><span class="mi">9654</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"outlets"</span><span class="p">:</span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:2},{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:6,</span><span class="se">\"</span><span class="s2">power</span><span class="se">\"</span><span class="s2">:1}]"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"access"</span><span class="p">:</span><span class="s2">"1,2,3"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"polyline"</span><span class="p">:</span><span class="s2">"33.96515,-118.38001000000001,33.96537,33.992140000000006,-118.47224000000001"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"exclude_networks"</span><span class="p">:</span><span class="s2">"2,19,3,1,26,34,5"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"access"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"http://api.plugshare.com/view/location/1553"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Electric St. Garage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stations"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2385</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"outlets"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"connector"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">50627</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"power"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"latitude"</span><span class="p">:</span><span class="mf">34.00208</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"julius"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">137549</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="s2">"G"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2116</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"longitude"</span><span class="p">:</span><span class="mf">-81.04077</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"icon"</span><span class="p">:</span><span class="s2">"https://s3.amazonaws.com/plugshare.staging.assets/icons/G.png"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns locations who are a certain <code>distance</code> away from the <code>polyline</code> path.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.plugshare.com/locations/polyline?minimal=1</code></p>
+<h3 id='arguments-5'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">polyline</div>
+      <div class="type required">required</div>
+    </td>
+    <td>A list of coordinates describing the route in the form of lat1,lng1,lat2,lng2...</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">distance</div>
+      <div class="type required">required</div>
+    </td>
+    <td>The search distance in meters around the route.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    200-500 is a recommended value for most applications</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">page</div>
+      <div class="type">optional</div>
+    </td>
+    <td>This method supports paging. If page is specified, count must be specified as well.<br>
+    This returns results based on the page index number, with 100 results showing per page.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">outlets</div>
+      <div class="type">optional</div>
+    </td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">optional, default is <b>true</b></div>
+    </td>
+    <td><b>true</b> = Returns all locations regardless of cost.<br>
+    <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of access values. Matches if at least one access value is present.<br>
+    See <a href="#access-values">Access Values</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">exclude_networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to exclude. Passing “exclude_networks=1” will exclude locations which exclusively have ChargePoint stations. If a location has both a ChargePoint station and a station of another network or a non-networked station it will still be eligible to be returned.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">networks</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on a comma separated list of network ids to include. Matches if at least one network is present.<br>
+    See <a href="#networks-list">Networks List</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional</div>
+    </td>
+    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+  </tr>
+</table>
+
+<aside class="notice">
+You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
+</aside>
+<h3 id='additional-examples-4'>Additional Examples</h3>
+<p><code>POST https://api.plugshare.com/locations/polyline</code></p>
+<h3 id='returns-5'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='amenities-list'>Amenities List</h2>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>id</th>
+<th>amenity</th>
+<th></th>
+<th>id</th>
+<th>amenity</th>
+<th></th>
+<th>id</th>
+<th>amenity</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>1</td>
+<td>Lodging</td>
+<td></td>
+<td>4</td>
+<td>EV Parking</td>
+<td></td>
+<td>7</td>
+<td>WiFi</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>2</td>
+<td>Dining</td>
+<td></td>
+<td>5</td>
+<td>Valet Parking</td>
+<td></td>
+<td>8</td>
+<td>Shopping</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>3</td>
+<td>Restrooms</td>
+<td></td>
+<td>6</td>
+<td>Park</td>
+<td></td>
+<td>9</td>
+<td>Grocery</td>
 </tr>
 </tbody></table>
+<h1 id='station'>Station</h1>
+<p>A physical charging unit installed on the ground or wall. In EV industry terms this is also frequently referred to as an EVSE (Electric Vehicle Service Equipment). Stations can be network managed. Stations frequently support real time availability data.</p>
+<h2 id='object-properties-2'>Object Properties</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38416</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78351</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">name</div>
+      <div class="type">String</div>
+    </td>
+    <td>The name attribute of a station is the user-facing identifier for the station. Typically the name is found somewhere on the physical station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">network</div>
+      <div class="type">Object</div>
+    </td>
+    <td>The network that owns or directly manages this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">network_id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Network id of the station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">Number (integer enum)</td>
+    </div>
+    <td><b>0</b> = Unknown<br>
+    <b>1</b> = Free<br>
+    <b>2</b> = Fee</div>
+  </td>
+  <tr>
+    <td>
+      <div class="field">cost_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>Describes the cost of charging at this location. Examples include $2/hr, $0.10/kWh, $8 per session.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">manufacturer</div>
+      <div class="type">String</div>
+    </td>
+    <td>The manufacturer of this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">model</div>
+      <div class="type">String</div>
+    </td>
+    <td>The hardware model type.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">pwps_version</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>The Pay with PlugShare version protocol required to be supported by the client to activate this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">latitude</div>
+      <div class="type">Number</div>
+    </td>
+      <td>Latitude coordinate for this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">longitude</div>
+      <div class="type">Number</div> 
+    </td>
+      <td>Longitude coordinate for this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">outlets</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains outlet objects. Each station will have at least 1 outlet object.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">promos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains promo objects. This will only return promos on the station level. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field" id="availability-values">available</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td><b>0</b> = Unknown<br>
+    <b>1</b> = Available<br>
+    <b>2</b> = In Use<br>
+    <b>3</b> = Offline<br>
+    <b>4</b> = Under Repair</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">hours</div>
+      <div class="type">String</div>
+    </td>
+    <td>String for hours of availability. Commonly 24/7 or specified time frames.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">location_id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>The id of the station's parent location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">pre_charge_instructions</div>
+      <div class="type">String</div>
+    </td>
+    <td>Optional network provided instructions to display before charging.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">qr_enabled</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>True if this station is tagged with a QR code for station identification and activation flows.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (date)</div>
+    </td>
+    <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
+  </tr>
+</table>
+<h1 id='outlet'>Outlet</h1>
+<p>A physical vehicle-to-station connection point: either a plug or a socket. Stations can have multiple outlets. Stations can have outlets of varying types.</p>
+<h2 id='object-properties-3'>Object Properties</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85911</span><span class="p">,</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">connector</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td>See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">power</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td>See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">available</div>
+      <div class="type">string</div>
+    </td>
+    <td>If null, outlet level availability is unknown (Note: generally, see Station availability instead).</td>
+  </tr>
+</table>
+<h2 id='outlet-connector-types'>Outlet Connector Types</h2>
+<p>PlugShare supports all EV charging connectors that are in active use globally.</p>
+
+<table class="connectors">
+  <tr>
+    <th>Connector ID</th>
+    <th>Power Level</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>North America</th>
+    <th>UK</th>
+    <th>EU</th>
+    <th>JP</th>
+    <th>AU</th>
+    <th>WW</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td></td>
+    <td>US Wall Outlet</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image03.png"></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td></td>
+    <td>J-1772</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image08.png"></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td></td>
+    <td>CHAdeMO</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image04.png"></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td></td>
+    <td>Tesla Roadster</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image00.png"></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td></td>
+    <td>NEMA 14-50</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image10.png"></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>0</td>
+    <td>Tesla S HPWC</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image05.png"></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>1</td>
+    <td>Tesla Supercharger</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image05.png"></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td></td>
+    <td>Type 2 (Mennekes)</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image06.png"></td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td></td>
+    <td>Type 3</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image16.png"></td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td></td>
+    <td>BS1363</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image09.png"></td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td></td>
+    <td>Europlug</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image13.png"></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td></td>
+    <td>UK Commando</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image12.png"></td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td></td>
+    <td>AS3112</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image01.png"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td></td>
+    <td>SAE Combo DC CCS</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image02.png"></td>
+    <td>Y</td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td></td>
+    <td>Three Phase (AU)</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image14.png"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td></td>
+    <td>Three Phase (EU)<br>(currently same ID)</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image23.png"></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td></td>
+    <td>Caravan Mains Socket</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image15.png"></td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+    <td></td>
+    <td>Y</td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td></td>
+    <td>China BG/T</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image06.png"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td></td>
+    <td>China BG/T 2</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image17.png"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+</table>
+<h1 id='network'>Network</h1>
+<p>A company that operates stations and provides subscription services or access control services for those stations.</p>
+<h2 id='object-properties-4'>Object Properties</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">name</div>
+      <div class="type">string</div>
+    </td>
+    <td>The driver-friendly name for the Network’s Brand such as “SemaCharge”.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">description</div>
+      <div class="type">string</div>
+    </td>
+    <td>A short marketing summary of the Network’s service offerings.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">action_name</div>
+      <div class="type">string</div>
+    </td>
+    <td>A description of the URL destination. Examples include “Sign Up” or “Learn More”.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">action_url</div>
+      <div class="type">string (URL)</div>
+    </td>
+    <td>A URL provided by a network that usually includes a call to action or contact information.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">url</div>
+      <div class="type">string (URL)</div>
+    </td>
+    <td>A URL that generally links to a network's home page.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">phone</div>
+      <div class="type">string</div>
+    </td>
+    <td>Phone number for customer service or activation by phone requests.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">image</div>
+      <div class="type">string (URL)</div>
+    </td>
+    <td>If available, an approved logo for the Network.</td>
+  </tr>
+</table>
+<h2 id='networks-list'>Networks List</h2>
+<table><thead>
+<tr>
+<th>id</th>
+<th>network</th>
+<th></th>
+<th>id</th>
+<th>network</th>
+<th></th>
+<th>id</th>
+<th>network</th>
+<th></th>
+<th>id</th>
+<th>network</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>ChargePoint</td>
+<td></td>
+<td>15</td>
+<td>Endesa</td>
+<td></td>
+<td>36</td>
+<td>ChargeNet</td>
+<td></td>
+<td>54</td>
+<td>Electrify Canada</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Blink</td>
+<td></td>
+<td>19</td>
+<td>EVgo</td>
+<td></td>
+<td>37</td>
+<td>Recargo</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Semaconnect</td>
+<td></td>
+<td>22</td>
+<td>Lastestasjoner</td>
+<td></td>
+<td>41</td>
+<td>KSI</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>GE WattStation</td>
+<td></td>
+<td>23</td>
+<td>EnelDrive</td>
+<td></td>
+<td>45</td>
+<td>POLAR</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sun Country</td>
+<td></td>
+<td>25</td>
+<td>Volta</td>
+<td></td>
+<td>46</td>
+<td>EVConnect</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Circuit Electrique</td>
+<td></td>
+<td>26</td>
+<td>Greenlots</td>
+<td></td>
+<td>47</td>
+<td>Electrify America</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>FLO</td>
+<td></td>
+<td>29</td>
+<td>OpConnect</td>
+<td></td>
+<td>48</td>
+<td>Chargefox</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tesla Supercharger</td>
+<td></td>
+<td>30</td>
+<td>Shorepower</td>
+<td></td>
+<td>49</td>
+<td>BC Hydro EV</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Webasto</td>
+<td></td>
+<td>33</td>
+<td>CarCharging</td>
+<td></td>
+<td>50</td>
+<td>Irvine Company</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Innogy</td>
+<td></td>
+<td>34</td>
+<td>JNSH</td>
+<td></td>
+<td>51</td>
+<td>Ionity</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Oplaadpalen</td>
+<td></td>
+<td>35</td>
+<td>Tesla Destination</td>
+<td></td>
+<td>52</td>
+<td>Fastned</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='photo'>Photo</h1>
+<p>A location photo contributed by the PlugShare community.</p>
+<h2 id='object-properties-5'>Object Properties</h2>
+<p>Note that JSON objects described here will be enclosed within the
+location object.</p>
+
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75733</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">192372</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">url</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>The URL to the full size photo.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">thumbnail</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>If available, link to a smaller version of the photo(1).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">thumbnail2x</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>If available, link to a smaller version of the photo(1), rendered at 2x the standard thumbnail size.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">caption</div>
+      <div class="type">String</div>
+    </td>
+    <td>User provided caption of the photo.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">order</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Arrangement order of pinned photos at this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">user_id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>The id of the user who uploaded this photo.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>ISO 8601 Format “yyyy-mm-ddThh:mm:ssZ”.</td>
+  </tr>
+</table>
+
+<p>(1) Service side processing of additional formats and dimensions are available as needed.</p>
+<h2 id='get-network-photos'>Get Network Photos</h2>
+<p>Return a list of JSON objects representing photos at the network&#39;s locations
+ordered by creation time.  Each object represents data about a photo.  Note
+that JSON objects described here are NOT the same as the objects returned
+within the location object, described above.</p>
+
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/photos?start=2018-08-01T21:59:46Z&amp;count=32
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
+
+<p>This functionality is only available by arrangement.  It returns photos associated with
+locations which contain the given network&#39;s stations.  The request must be issued with
+special authentication not described here.</p>
+<h3 id='arguments-6'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type required">required</div>
+    </td>
+    <td>ID of network whose photos should be returned</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">start</div>
+      <div class="type required">required</div>
+    </td>
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns photos
+        created after this time.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">end</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns photos
+        created on or before this time.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>An int representing the number of results to return.  Default 500, max 500.</td>
+  </tr>
+</table>
+<h3 id='returns-6'>Returns</h3>
+<p>A list of JSON objects.  Each object is a simplified Photo object.</p>
+<h3 id='paging'>Paging</h3>
+<p>Make a query with a start time.  The response is a list of JSON objects representing photos,
+sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
+where start is the created_at of the last item in the results.</p>
+<h1 id='review-check-in'>Review (Check-In)</h1>
+<p>Check-Ins include:</p>
+
+<ul>
+<li>Tips for other drivers</li>
+<li>Reports of equipment problems</li>
+<li>Notification of time windows when a driver is going to be charging. This is helpful even when real-time status is available because it helps identify when a station is likely to become available.</li>
+</ul>
+<h2 id='object-properties-6'>Object Properties</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-11T23:54:42Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"finished"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-12T00:53:22Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nissan LEAF 2018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/2018_LEAF_WHITE.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152385</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">rating</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td><b>1</b> = Positive / Success<br>
+    <b>0</b> = Neutral / Tips etc.<br>
+    -<b>1</b> = Trouble charging or other problem</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">comment</div>
+      <div class="type">String</div>
+    </td>
+    <td>The user's review.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">volts</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>User submitted data of maximum volts if recorded during this visit, else NULL. Note: depending on vehicle capabilities or limitations, this may be lower than the station’s maximum capabilities.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">amps</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>User submitted data of maximum amps if recorded during this visit, else NULL. Note: depending on vehicle capabilities or limitations, this may be lower than the station’s maximum capabilities.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">finished</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>The date the user plans to leave (or left) the location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">user</div>
+      <div class="type">Object (User)</div>
+    </td>
+  <td>User object including in depth information about the user who submitted this review (check-in).</td>
+  </tr>
+i  <tr>
+    <td>
+      <div class="field">problem</div>
+      <div class="type">Number (integer)</div>
+    </td>
+  <td>Integer enum value corresponding to the problem_description property.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">problem_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>
+      <b>1</b> = "Broken hardware"<br>
+      <b>2</b> = "In use"<br>
+      <b>3</b> = "Blocked by vehicle"<br>
+      <b>4</b> = "Could not activate"<br>
+      <b>5</b> = "Permanently closed"<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">waiting</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Indicates whether the user is waiting to charge.</td>
+  </tr>
+
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>When the Check-In was submitted.</td>
+  </tr>
+</table>
+<h2 id='get-network-checkins'>Get Network Checkins</h2>
+<p>Return a list of JSON objects representing checkins at the network&#39;s locations,
+ordered by creation time.  Each object represents a checkin.  Note that JSON objects
+described here are NOT the same as the objects returned within the location object,
+described above.</p>
+
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&amp;count=32
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy and fast"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
+
+<p>This functionality is only available by arrangement.  It returns checkins associated with
+locations which contain the given network&#39;s stations.  The request must be issued with
+special authentication not described here.</p>
+<h3 id='arguments-7'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type required">required</div>
+    </td>
+    <td>ID of network whose checkins should be returned</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">start</div>
+      <div class="type required">required</div>
+    </td>
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+        created after this time.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">end</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+        created on or before this time.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>An int representing the number of results to return.  Default 500, max 500.</td>
+  </tr>
+</table>
+<h3 id='returns-7'>Returns</h3>
+<p>A list of JSON objects.  Each object is a simplified Review object.  The <code>stations</code>
+attribute lists the network&#39;s identifiers for the stations at that location.  The <code>rating</code>
+attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
+respectively.</p>
+<h3 id='paging-2'>Paging</h3>
+<p>Make a query with a start time.  The response is a list of JSON objects representing checkins,
+sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
+where start is the created_at of the last item in the results.</p>
+<h1 id='user'>User</h1>
+<p>A PlugShare user who may be owner of reviews, check-ins, or private locations.</p>
+<h2 id='object-properties-7'>Object Properties</h2>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steven"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hide_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010-03-10T22:08:56Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_color"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">253</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/41329.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-12-30T07:01:35Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/41329.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/41329.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38376</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-13T23:02:56Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3590</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span></code></pre>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">first_name</div>
+      <div class="type">String</div>
+    </td>
+    <td>User's public facing username.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">phone</div>
+      <div class="type">String</div>
+    </td>
+    <td>Formatting of this field is not currently guaranteed.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">about</div>
+      <div class="type">String</div>
+    </td>
+    <td>User input, public-facing about me section.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">allow_notifications</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if user allows notifications.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">notify_nearby</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td><b>0</b> = None.<br>
+    <b>1</b> = Nearby All<br>
+    <b>2</b> = Nearby Private<br>
+    <b>3</b> = Nearby Public</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">notify_nearby_radius</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>User's set notify if charger within nearby radius. Possible values: 1000, 1600, 5000, 8000, 10000, 16000.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_type</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td>Number indicating user's selection of one of many preset vehicle types.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_subtype</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td>Number indicating user's selection of one of many preset vehicle subtypes.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_color</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td>Number indicating user's selection of one of many preset vehicle colors.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>User input, self describe their own vehicle.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">hide_address</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if user opted to hide personal address information.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">last_login</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>ISO 8601 Format “yyyy-mm-ddThh:mm:ssZ”.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>ISO 8601 Format “yyyy-mm-ddThh:mm:ssZ”.</td>
+  </tr>
+</table>
+
+<p><br><br><br><br><br><br><br><br><br><br></p>
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
