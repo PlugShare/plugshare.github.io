@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>PlugShare API Reference</title>
     <meta name="description" content="Use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database.">
     <link rel="canonical" href="https://developer.plugshare.com/docs/">
+    
+    <title>PlugShare API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -197,9 +198,9 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-edf0d684.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-cd87497a.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-ee87ef62.js"></script>
     <script>
     //This is Google's default GA code
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -221,11 +222,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" alt="Logo" />
+      <img src="images/logo-2d2b547e.png" alt="Logo" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -235,42 +236,31 @@
         <ul class="toc-footer">
             <li><a href='/access'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>API V3 - Updated 10/11/2019</li>
+            <li>API V3 - Updated 2/19/2020</li>
             <li>Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
-
+        <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the PlugShare API! You can use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database. The PlugShare API is a REST API</p>
-
-<h2 id="using-the-api">Using The API</h2>
-
-<p>Generally, you&rsquo;ll want to use a search method to return a list of locations. Each location will contain one or more stations, each of which may contain one or more outlets. Not all information about a location is returned from the search method; for reviews, photos, and more you&rsquo;ll want to request the location directly using its unique identifier.<br>
-Here are some examples to get you started. Try out <a href="#get-nearby-locations"><code class="prettyprint">GET /locations/nearby</code></a> and <a href="#get-locations-in-region"><code class="prettyprint">GET /locations/region</code></a></p>
-
-<h2 id="access-instructions">Access Instructions</h2>
-
+<h2 id='using-the-api'>Using The API</h2>
+<p>Generally, you&#39;ll want to use a search method to return a list of locations. Each location will contain one or more stations, each of which may contain one or more outlets. Not all information about a location is returned from the search method; for reviews, photos, and more you&#39;ll want to request the location directly using its unique identifier.<br>
+Here are some examples to get you started. Try out <a href="#get-nearby-locations"><code>GET /locations/nearby</code></a> and <a href="#get-locations-in-region"><code>GET /locations/region</code></a></p>
+<h2 id='access-instructions'>Access Instructions</h2>
 <p>PlugShare uses API keys to allow access to the API. You can register a new PlugShare API key at our <a href="/access">developer portal</a>.</p>
 
 <p>HTTPS + HTTP Basic auth is required when making API requests. After obtaining an API key/secret, the key and secret have to be specified in the request with HTTP Basic Auth, i.e. converted into an Authorization header.</p>
 
 <p>URL: <a href="https://api.plugshare.com/">https://api.plugshare.com/</a></p>
-
-<h1 id="core-data-entities">Core Data Entities</h1>
-
-<p><img src="images/tables.png"></p>
+<h1 id='core-data-entities'>Core Data Entities</h1>
+<p><img src="images/tables-8b85d097.png"></p>
 
 <p>A location or station may also have zero to many promos, and a location may also have zero to many amenities.</p>
-
-<h1 id="location">Location</h1>
-
+<h1 id='location'>Location</h1>
 <p>A driver identifiable destination where Charging Stations (Stations) are located. As a general rule if stations are within visible range of each other they are organized together into a location.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -531,7 +521,7 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       <div class="field">icon_type</div>
       <div class="type">String</div>
     </td>
-    <td>The stripped file name of the icon&rsquo;s URL path.</td>
+    <td>The stripped file name of the icon's URL path.</td>
   </tr>
   <tr>
     <td>
@@ -559,14 +549,14 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       <div class="field">created_at</div>
       <div class="type">String (timestamp)</div>
     </td>
-    <td>ISO 8601 Format &ldquo;yyyy-mm-ddThh:mm:ssZ&rdquo;.</td>
+    <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
   </tr>
   <tr>
     <td>
       <div class="field">updated_at</div>
       <div class="type">String (timestamp)</div>
     </td>
-    <td>Timestamp of the last time this location was updated. &ldquo;yyyy-mm-dd hh:mm:ss&rdquo; format.</td>
+    <td>Timestamp of the last time this location was updated. "yyyy-mm-dd hh:mm:ss" format.</td>
   </tr>
   <tr>
     <td>
@@ -587,21 +577,21 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       <div class="field">parking_type_name</div>
       <div class="type">String</div>
     </td>
-    <td>The types of parking available. Customers Only, Free, Pay, Restricted, Unknown, &ldquo;, or null.</td>
+    <td>The types of parking available. Customers Only, Free, Pay, Restricted, Unknown, '', or null.</td>
   </tr>
   <tr>
     <td>
       <div class="field">locale</div>
       <div class="type">String</div>
     </td>
-    <td>This location&rsquo;s locale. US, UK, EU, AU, JP, WW.</td>
+    <td>This location's locale. US, UK, EU, AU, JP, WW.</td>
   </tr>
   <tr>
     <td>
       <div class="field">opening_date</div>
       <div class="type">String (date)</div>
     </td>
-    <td>Date when location is anticipated to open in the future. &quot;yyyy-mm-dd&rdquo; format.</td>
+    <td>Date when location is anticipated to open in the future. "yyyy-mm-dd" format.</td>
   </tr>
   <tr>
     <td>
@@ -646,9 +636,7 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
     <td>A distance in meters from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
   </tr>
 </table>
-
-<h2 id="get-location">Get Location</h2>
-
+<h2 id='get-location'>Get Location</h2>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
@@ -693,13 +681,9 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a location based on location id.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/{id}</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/{id}</code></p>
+<h3 id='arguments'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -713,13 +697,9 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 <aside class="notice">
 Optional location filters do not apply to this endpoint because this only returns 0 or 1 location object(s).
 </aside>
-
-<h3 id="returns">Returns</h3>
-
-<p>Returns a <code class="prettyprint">location</code> object if the call succeeded.</p>
-
-<h2 id="get-nearby-locations">Get Nearby Locations</h2>
-
+<h3 id='returns'>Returns</h3>
+<p>Returns a <code>location</code> object if the call succeeded.</p>
+<h2 id='get-nearby-locations'>Get Nearby Locations</h2>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
@@ -764,13 +744,9 @@ Optional location filters do not apply to this endpoint because this only return
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves locations near a given coordinate.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/nearby</code></p>
+<h3 id='arguments-2'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -811,14 +787,14 @@ Optional location filters do not apply to this endpoint because this only return
       <div class="field">radius</div>
       <div class="type">optional</div>
     </td>
-    <td>Search radius in meters.</td>
+    <td>Search radius in meters. Maximum 50000 meters.</td>
   </tr>
   <tr>
     <td>
       <div class="field">outlets</div>
       <div class="type">optional</div>
     </td>
-    <td>The &lsquo;outlets&rsquo; filter is a JSON formatted list of &ldquo;outlet descriptor&rdquo; objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
   </tr>
   <tr>
     <td>
@@ -827,6 +803,13 @@ Optional location filters do not apply to this endpoint because this only return
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -887,31 +870,25 @@ Optional location filters do not apply to this endpoint because this only return
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
+<h3 id='additional-examples'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;radius=1000</code></p>
 
-<h3 id="additional-examples">Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;radius=1000</code></p>
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?address=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
-
-<h3 id="returns">Returns</h3>
-
-<p>Returns an array of <code class="prettyprint">location</code> objects, containing up to <code class="prettyprint">count</code> locations</p>
-
-<h2 id="get-locations-in-region">Get Locations in Region</h2>
-
+<p><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='get-locations-in-region'>Get Locations in Region</h2>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
@@ -955,13 +932,9 @@ You may want to apply some filters to the search queries to return only relevant
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves locations in a region based on a given coordinate with latitude and longitude spans.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/region</code></p>
+<h3 id='arguments-3'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -1004,7 +977,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">outlets</div>
       <div class="type">optional</div>
     </td>
-    <td>The &lsquo;outlets&rsquo; filter is a JSON formatted list of &ldquo;outlet descriptor&rdquo; objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
   </tr>
   <tr>
     <td>
@@ -1013,6 +986,13 @@ You may want to apply some filters to the search queries to return only relevant
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -1073,29 +1053,23 @@ You may want to apply some filters to the search queries to return only relevant
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
+<h3 id='additional-examples-2'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;outlets=[{&quot;connector&quot;:2}]</code></p>
 
-<h3 id="additional-examples">Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;outlets=[{&quot;connector&quot;:2}]</code></p>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;cost=false</code></p>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;access=1,3</code></p>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;availability=3</code></p>
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;amenities=1,2</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;exclude_networks=1</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
-
-<h3 id="returns">Returns</h3>
-
-<p>Returns an array of <code class="prettyprint">location</code> objects, containing up to <code class="prettyprint">count</code> locations</p>
-
-<h2 id="search-locations">Search Locations</h2>
-
+<p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
+<h3 id='returns-3'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='search-locations'>Search Locations</h2>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
@@ -1140,13 +1114,9 @@ You may want to apply some filters to the search queries to return only relevant
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint returns locations whose name or address contains a specified search query.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/locations/search</code></p>
+<h3 id='arguments-4'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -1176,7 +1146,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">outlets</div>
       <div class="type">optional</div>
     </td>
-    <td>The &lsquo;outlets&rsquo; filter is a JSON formatted list of &ldquo;outlet descriptor&rdquo; objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
   </tr>
   <tr>
     <td>
@@ -1185,6 +1155,13 @@ You may want to apply some filters to the search queries to return only relevant
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -1222,25 +1199,19 @@ You may want to apply some filters to the search queries to return only relevant
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
+<h3 id='additional-examples-3'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/search?query=recargo</code></p>
 
-<h3 id="additional-examples">Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/locations/search?query=california&amp;count=500&amp;page=2</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search?query=recargo</code></p>
+<p><code>GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search?query=california&amp;count=500&amp;page=2</code></p>
+<p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;networks=3,4&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
 
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;networks=3,4&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;access=1,2,3&amp;cost=false</code></p>
-
-<h3 id="returns">Returns</h3>
-
-<p>Returns an array of <code class="prettyprint">location</code> objects, containing up to <code class="prettyprint">count</code> locations</p>
-
-<h2 id="fetch-locations-along-route">Fetch Locations Along Route</h2>
-
+<p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;access=1,2,3&amp;cost=false</code></p>
+<h3 id='returns-4'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='fetch-locations-along-route'>Fetch Locations Along Route</h2>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
@@ -1284,25 +1255,21 @@ POST body:
       </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="s2">"G"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2116</span><span class="p">,</span><span class="w">
       </span><span class="s2">"longitude"</span><span class="p">:</span><span class="mf">-81.04077</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"icon"</span><span class="p">:</span><span class="s2">"https://assets.plugshare.com/icons/G.png"</span><span class="w">
+      </span><span class="s2">"icon"</span><span class="p">:</span><span class="s2">"https://s3.amazonaws.com/plugshare.staging.assets/icons/G.png"</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint returns locations who are a certain <code class="prettyprint">distance</code> away from the <code class="prettyprint">polyline</code> path.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST https://api.plugshare.com/locations/polyline?minimal=1</code></p>
-
-<h3 id="arguments">Arguments</h3>
-
+<p>This endpoint returns locations who are a certain <code>distance</code> away from the <code>polyline</code> path.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.plugshare.com/locations/polyline?minimal=1</code></p>
+<h3 id='arguments-5'>Arguments</h3>
 <table>
   <tr>
     <td>
       <div class="field">polyline</div>
       <div class="type required">required</div>
     </td>
-    <td>A list of coordinates describing the route in the form of lat1,lng1,lat2,lng2&hellip;</td>
+    <td>A list of coordinates describing the route in the form of lat1,lng1,lat2,lng2...</td>
   </tr>
   <tr>
     <td>
@@ -1332,7 +1299,7 @@ POST body:
       <div class="field">outlets</div>
       <div class="type">optional</div>
     </td>
-    <td>The &lsquo;outlets&rsquo; filter is a JSON formatted list of &ldquo;outlet descriptor&rdquo; objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
+    <td>The 'outlets' filter is a JSON formatted list of "outlet descriptor" objects. Each object has two optional properties, connector and power. Locations will only be returned if they have a station that contains one or more outlets that match one of these descriptors. A descriptor matches an outlet if each of the descriptor properties matches the corresponding property of the outlet. See <a href="#outlet-connector-types">Outlet Connector Types</a></td>
   </tr>
   <tr>
     <td>
@@ -1341,6 +1308,13 @@ POST body:
     </td>
     <td><b>true</b> = Returns all locations regardless of cost.<br>
     <b>false</b> = Does not return locations with a known fee (like parking or $/kw).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
   <tr>
     <td>
@@ -1385,17 +1359,11 @@ POST body:
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
-
-<h3 id="additional-examples">Additional Examples</h3>
-
-<p><code class="prettyprint">POST https://api.plugshare.com/locations/polyline</code></p>
-
-<h3 id="returns">Returns</h3>
-
-<p>Returns an array of <code class="prettyprint">location</code> objects, containing up to <code class="prettyprint">count</code> locations</p>
-
-<h2 id="amenities-list">Amenities List</h2>
-
+<h3 id='additional-examples-4'>Additional Examples</h3>
+<p><code>POST https://api.plugshare.com/locations/polyline</code></p>
+<h3 id='returns-5'>Returns</h3>
+<p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='amenities-list'>Amenities List</h2>
 <table><thead>
 <tr>
 <th>id</th>
@@ -1439,13 +1407,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td>Grocery</td>
 </tr>
 </tbody></table>
-
-<h1 id="station">Station</h1>
-
+<h1 id='station'>Station</h1>
 <p>A physical charging unit installed on the ground or wall. In EV industry terms this is also frequently referred to as an EVSE (Electric Vehicle Service Equipment). Stations can be network managed. Stations frequently support real time availability data.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-2'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -1603,7 +1567,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">location_id</div>
       <div class="type">Number (integer)</div>
     </td>
-    <td>The id of the station&rsquo;s parent location.</td>
+    <td>The id of the station's parent location.</td>
   </tr>
   <tr>
     <td>
@@ -1624,16 +1588,12 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">created_at</div>
       <div class="type">String (date)</div>
     </td>
-    <td>ISO 8601 Format &ldquo;yyyy-mm-ddThh:mm:ssZ&rdquo;.</td>
+    <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
   </tr>
 </table>
-
-<h1 id="outlet">Outlet</h1>
-
+<h1 id='outlet'>Outlet</h1>
 <p>A physical vehicle-to-station connection point: either a plug or a socket. Stations can have multiple outlets. Stations can have outlets of varying types.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-3'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -1680,9 +1640,7 @@ You may want to apply some filters to the search queries to return only relevant
     <td>If null, outlet level availability is unknown (Note: generally, see Station availability instead).</td>
   </tr>
 </table>
-
-<h2 id="outlet-connector-types">Outlet Connector Types</h2>
-
+<h2 id='outlet-connector-types'>Outlet Connector Types</h2>
 <p>PlugShare supports all EV charging connectors that are in active use globally.</p>
 
 <table class="connectors">
@@ -1927,13 +1885,9 @@ You may want to apply some filters to the search queries to return only relevant
     <td>Y</td>
   </tr>
 </table>
-
-<h1 id="network">Network</h1>
-
+<h1 id='network'>Network</h1>
 <p>A company that operates stations and provides subscription services or access control services for those stations.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-4'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -1993,7 +1947,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="field">url</div>
       <div class="type">string (URL)</div>
     </td>
-    <td>A URL that generally links to a network&rsquo;s home page.</td>
+    <td>A URL that generally links to a network's home page.</td>
   </tr>
   <tr>
     <td>
@@ -2010,9 +1964,7 @@ You may want to apply some filters to the search queries to return only relevant
     <td>If available, an approved logo for the Network.</td>
   </tr>
 </table>
-
-<h2 id="networks-list">Networks List</h2>
-
+<h2 id='networks-list'>Networks List</h2>
 <table><thead>
 <tr>
 <th>id</th>
@@ -2172,13 +2124,9 @@ You may want to apply some filters to the search queries to return only relevant
 <td></td>
 </tr>
 </tbody></table>
-
-<h1 id="photo">Photo</h1>
-
+<h1 id='photo'>Photo</h1>
 <p>A location photo contributed by the PlugShare community.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-5'>Object Properties</h2>
 <p>Note that JSON objects described here will be enclosed within the
 location object.</p>
 
@@ -2262,10 +2210,8 @@ location object.</p>
 </table>
 
 <p>(1) Service side processing of additional formats and dimensions are available as needed.</p>
-
-<h2 id="get-network-photos">Get Network Photos</h2>
-
-<p>Return a list of JSON objects representing photos at the network&rsquo;s locations
+<h2 id='get-network-photos'>Get Network Photos</h2>
+<p>Return a list of JSON objects representing photos at the network&#39;s locations
 ordered by creation time.  Each object represents data about a photo.  Note
 that JSON objects described here are NOT the same as the objects returned
 within the location object, described above.</p>
@@ -2280,20 +2226,16 @@ within the location object, described above.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/1.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/network/{id}/photos</code></p>
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
 
 <p>This functionality is only available by arrangement.  It returns photos associated with
-locations which contain the given network&rsquo;s stations.  The request must be issued with
+locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='arguments-6'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -2328,19 +2270,13 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return.  Default 500, max 500.</td>
   </tr>
 </table>
-
-<h3 id="returns">Returns</h3>
-
+<h3 id='returns-6'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Photo object.</p>
-
-<h3 id="paging">Paging</h3>
-
+<h3 id='paging'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing photos,
-sorted in order of creation time.  If there are <code class="prettyprint">count</code> results or fewer, issue another query
+sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
 where start is the created_at of the last item in the results.</p>
-
-<h1 id="review-check-in">Review (Check-In)</h1>
-
+<h1 id='review-check-in'>Review (Check-In)</h1>
 <p>Check-Ins include:</p>
 
 <ul>
@@ -2348,9 +2284,7 @@ where start is the created_at of the last item in the results.</p>
 <li>Reports of equipment problems</li>
 <li>Notification of time windows when a driver is going to be charging. This is helpful even when real-time status is available because it helps identify when a station is likely to become available.</li>
 </ul>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-6'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -2363,9 +2297,11 @@ where start is the created_at of the last item in the results.</p>
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-11T23:54:42Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"finished"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-12T00:53:22Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nissan LEAF 2018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/2018_LEAF_WHITE.jpg"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152385</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -2396,7 +2332,7 @@ where start is the created_at of the last item in the results.</p>
       <div class="field">comment</div>
       <div class="type">String</div>
     </td>
-    <td>The user&rsquo;s review.</td>
+    <td>The user's review.</td>
   </tr>
   <tr>
     <td>
@@ -2439,11 +2375,11 @@ i  <tr>
       <div class="type">String</div>
     </td>
     <td>
-      <b>1</b> = &ldquo;Broken hardware&rdquo;<br>
-      <b>2</b> = &ldquo;In use&rdquo;<br>
-      <b>3</b> = &ldquo;Blocked by vehicle&rdquo;<br>
-      <b>4</b> = &ldquo;Could not activate&rdquo;<br>
-      <b>5</b> = &ldquo;Permanently closed&rdquo;<br>
+      <b>1</b> = "Broken hardware"<br>
+      <b>2</b> = "In use"<br>
+      <b>3</b> = "Blocked by vehicle"<br>
+      <b>4</b> = "Could not activate"<br>
+      <b>5</b> = "Permanently closed"<br>
     </td>
   </tr>
   <tr>
@@ -2462,10 +2398,8 @@ i  <tr>
     <td>When the Check-In was submitted.</td>
   </tr>
 </table>
-
-<h2 id="get-network-checkins">Get Network Checkins</h2>
-
-<p>Return a list of JSON objects representing checkins at the network&rsquo;s locations,
+<h2 id='get-network-checkins'>Get Network Checkins</h2>
+<p>Return a list of JSON objects representing checkins at the network&#39;s locations,
 ordered by creation time.  Each object represents a checkin.  Note that JSON objects
 described here are NOT the same as the objects returned within the location object,
 described above.</p>
@@ -2484,17 +2418,13 @@ described above.</p>
     </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy and fast"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.plugshare.com/network/{id}/checkins</code></p>
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
 
 <p>This functionality is only available by arrangement.  It returns checkins associated with
-locations which contain the given network&rsquo;s stations.  The request must be issued with
+locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-
-<h3 id="arguments">Arguments</h3>
-
+<h3 id='arguments-7'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -2529,26 +2459,18 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return.  Default 500, max 500.</td>
   </tr>
 </table>
-
-<h3 id="returns">Returns</h3>
-
-<p>A list of JSON objects.  Each object is a simplified Review object.  The <code class="prettyprint">stations</code>
-attribute lists the network&rsquo;s identifiers for the stations at that location.  The <code class="prettyprint">rating</code>
+<h3 id='returns-7'>Returns</h3>
+<p>A list of JSON objects.  Each object is a simplified Review object.  The <code>stations</code>
+attribute lists the network&#39;s identifiers for the stations at that location.  The <code>rating</code>
 attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
 respectively.</p>
-
-<h3 id="paging">Paging</h3>
-
+<h3 id='paging-2'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing checkins,
-sorted in order of creation time.  If there are <code class="prettyprint">count</code> results or fewer, issue another query
+sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
 where start is the created_at of the last item in the results.</p>
-
-<h1 id="user">User</h1>
-
+<h1 id='user'>User</h1>
 <p>A PlugShare user who may be owner of reviews, check-ins, or private locations.</p>
-
-<h2 id="object-properties">Object Properties</h2>
-
+<h2 id='object-properties-7'>Object Properties</h2>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
@@ -2580,6 +2502,8 @@ where start is the created_at of the last item in the results.</p>
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3590</span><span class="p">,</span><span class="w">
     </span><span class="s2">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
+
 </span></code></pre>
 <table>
   <tr>
@@ -2598,7 +2522,7 @@ where start is the created_at of the last item in the results.</p>
       <div class="field">first_name</div>
       <div class="type">String</div>
     </td>
-    <td>User&rsquo;s public facing username.</td>
+    <td>User's public facing username.</td>
   </tr>
   <tr>
     <td>
@@ -2636,28 +2560,28 @@ where start is the created_at of the last item in the results.</p>
       <div class="field">notify_nearby_radius</div>
       <div class="type">Number (integer)</div>
     </td>
-    <td>User&rsquo;s set notify if charger within nearby radius. Possible values: 1000, 1600, 5000, 8000, 10000, 16000.</td>
+    <td>User's set notify if charger within nearby radius. Possible values: 1000, 1600, 5000, 8000, 10000, 16000.</td>
   </tr>
   <tr>
     <td>
       <div class="field">vehicle_type</div>
       <div class="type">Number (integer enum)</div>
     </td>
-    <td>Number indicating user&rsquo;s selection of one of many preset vehicle types.</td>
+    <td>Number indicating user's selection of one of many preset vehicle types.</td>
   </tr>
   <tr>
     <td>
       <div class="field">vehicle_subtype</div>
       <div class="type">Number (integer enum)</div>
     </td>
-    <td>Number indicating user&rsquo;s selection of one of many preset vehicle subtypes.</td>
+    <td>Number indicating user's selection of one of many preset vehicle subtypes.</td>
   </tr>
   <tr>
     <td>
       <div class="field">vehicle_color</div>
       <div class="type">Number (integer enum)</div>
     </td>
-    <td>Number indicating user&rsquo;s selection of one of many preset vehicle colors.</td>
+    <td>Number indicating user's selection of one of many preset vehicle colors.</td>
   </tr>
   <tr>
     <td>
