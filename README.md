@@ -1,13 +1,15 @@
 Optimizer Prime touched this and to deploy ANY changes to developer.plugshare.com including main website + docs, here are the steps:
 
-Make all changes in dev branch.
-Website changes - update the md files in /site
-Slate docs changes - update index.html.md in /source
+Make all changes in dev branch.  
+Website changes - update the md files in /site.  
+Slate docs changes - update index.html.md in /source. 
 
-After you're done, push your files to github and run ./deploy.sh
+After you're done, push your files to github and run ./deploy.sh. 
 and it will automatically compile everything and deploy the files to master branch (which becomes live at developer.plugshare.com)
 
-Alternatively ask Joe to update anything (preferred method)
+Alternatively ask Joe to update anything (preferred method).   
+
+**Note**: github rack vulnerability does not affect us.
 
 
 <p align="center">
