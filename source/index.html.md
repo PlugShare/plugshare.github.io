@@ -173,42 +173,252 @@ A driver identifiable destination where Charging Stations (Stations) are located
 }
 ```
 
-| Property          | Type                  | Description                                                                                                                                                                                                                                                                                                         |
-|-------------------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                | Number (integer)      | Unique and immutable identifier.                                                                                                                                                                                                                                                                                    |
-| name              | String                | Descriptive name of the parking structure, business, etc.                                                                                                                                                                                                                                                           |
-| latitude          | Number                | Latitude coordinate for this location.                                                                                                                                                                                                                                                                              |
-| longitude         | Number                | Longitude coordinate for this location.                                                                                                                                                                                                                                                                             |
-| description       | String                | Unicode string describing a location, can include HTML elements.                                                                                                                                                                                                                                                    |
-| stations          | Array                 | Contains station objects. Each location will have at least 1 station object.                                                                                                                                                                                                                                        |
-| reviews           | Array                 | Contains review objects. Ordered from the most recent to oldest. This array can be empty.                                                                                                                                                                                                                           |
-| valid_outlets     | Array                 | The types of outlets that are valid for this location’s locale. This is not a list of outlet types that are present.                                                                                                                                                                                                |
-| photos            | Array                 | Contains photo objects. Ordered from the most recent to oldest. This array can be empty.                                                                                                                                                                                                                            |
-| promos            | Array                 | Contains promo objects. This will only return promos at the location level. This array can be empty.                                                                                                                                                                                                                |
-| all_promos        | Array                 | Contains promo objects. This will return all promos at both the location level and station level. This array can be empty.                                                                                                                                                                                          |
-| score             | Number (decimal)      | The location’s PlugScore - If a location has enough data to be scored this is a decimal number with 1 significant digit from 0.0 (worst) - 10.0 (best). Score is based on recency weighted reviews and may also be affected by cost, available power, and other factors.                                            |
-| cost              | Boolean               | If true, then there is a cost associated with this location (check cost_description). If false, then cost is unknown. This field supplements cost values at each station location. Generally cost values at stations are provided by 3rd parties, while cost values at locations are provided by PlugShare members. |
-| cost_description  | String                | A description of fees for charging and parking at this location.                                                                                                                                                                                                                                                    |
-| access            | Number (integer enum) | **1** = A public location.<br>**2** = A restricted location. Not available for general public use. Examples include workplace charging and car dealerships with charging policy restrictions.<br>**3** = A residential location that has been shared. Not available for public use without prior permission.        |
-| url               | String (URL)          | A shareable link that redirects to this PlugShare location (platform aware: opens apps if user is on mobile, otherwise directs to web).                                                                                                                                                                             |
-| icon              | String (URL)          | A recommended icon for displaying the location.                                                                                                                                                                                                                                                                     |
-| icon_type         | String                | The stripped file name of the icon's URL path.                                                                                                                                                                                                                                                                      |
-| phone             | String                | Formatting of this field is not currently guaranteed.                                                                                                                                                                                                                                                               |
-| address           | String                | Street address of the location.                                                                                                                                                                                                                                                                                     |
-| pwps_version      | Number (integer)      | The Pay with PlugShare version protocol required to be supported by the client to activate this station.                                                                                                                                                                                                            |
-| created_at        | String (timestamp)    | ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".                                                                                                                                                                                                                                                                             |
-| updated_at        | String (timestamp)    | Timestamp of the last time this location was updated. "yyyy-mm-dd hh:mm:ss" format.                                                                                                                                                                                                                                 |
-| qr_enabled        | Boolean               | True if this station is tagged with a QR code for station identification and activation flows.                                                                                                                                                                                                                      |
-| poi_name          | String                | Point of interest / location type name. Selected from a list of 40+ types, including Gas Station, Park, Restaurant, etc.                                                                                                                                                                                            |
-| parking_type_name | String                | The types of parking available. Customers Only, Free, Pay, Restricted, Unknown, '', or null.                                                                                                                                                                                                                        |
-| locale            | String                | This location's locale. US, UK, EU, AU, JP, WW.                                                                                                                                                                                                                                                                     |
-| opening_date      | String (date)         | Date when location is anticipated to open in the future. "yyyy-mm-dd" format.                                                                                                                                                                                                                                       |
-| hours             | String                | String for hours of availability. Commonly 24/7 or specified time frames.                                                                                                                                                                                                                                           |
-| open247           | Boolean               | Flag if the location is open 24 hours a day, 7 days a week.                                                                                                                                                                                                                                                         |
-| coming_soon       | Boolean               | Flag if the location is not currently active and is anticipated to be coming soon.                                                                                                                                                                                                                                  |
-| under_repair      | Boolean               | Flag if the location is currently under repair.                                                                                                                                                                                                                                                                     |
-| compass_bearing   | Number (float)        | A compass bearing from the specified address or coordinate. Note: this field will only appear for locations returned by the /locations/nearby endpoint.                                                                                                                                                             |
-| distance_meters   | Number (float)        | A distance in meters from the specified address or coordinate. Note: this field will only appear for locations returned by the /locations/nearby endpoint.                                                                                                                                                          |
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">id</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>Unique and immutable identifier.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">name</div>
+      <div class="type">String</div>
+    </td>
+    <td>Descriptive name of the parking structure, business, etc.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">latitude</div>
+      <div class="type">Number</div>
+    </td>
+      <td>Latitude coordinate for this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">longitude</div>
+      <div class="type">Number</div> 
+    </td>
+      <td>Longitude coordinate for this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">description</div>
+      <div class="type">String</div>
+    </td>
+    <td>Unicode string describing a location, can include HTML elements.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">stations</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains station objects. Each location will have at least 1 station object.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">reviews</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains review objects. Ordered from the most recent to oldest. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">valid_outlets</div>
+      <div class="type deprecated">Array</div>
+    </td>
+    <td>The types of outlets that are valid for this location’s locale. This is not a list of outlet types that are present.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">photos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains photo objects. Ordered from the most recent to oldest. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">promos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains promo objects. This will only return promos at the location level. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">all_promos</div>
+      <div class="type">Array</div>
+    </td>
+    <td>Contains promo objects. This will return all promos at both the location level and station level. This array can be empty.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">score</div>
+      <div class="type">Number (decimal)</div>
+    </td>
+    <td>The location’s PlugScore - If a location has enough data to be scored this is a decimal number with 1 significant digit from 0.0 (worst) - 10.0 (best). Score is based on recency weighted reviews and may also be affected by cost, available power, and other factors.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>If true, then there is a cost associated with this location (check cost_description). If false, then cost is unknown. This field supplements cost values at each station location. Generally cost values at stations are provided by 3rd parties, while cost values at locations are provided by PlugShare members.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">cost_description</div>
+      <div class="type">String</div>
+    </td>
+    <td>A description of fees for charging and parking at this location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field" id="access-values">access</div>
+      <div class="type">Number (integer enum)</div>
+    </td>
+    <td><b>1</b> = A public location.<br>
+    <b>2</b> = A restricted location. Not available for general public use. Examples include workplace charging and car dealerships with charging policy restrictions.<br>
+    <b>3</b> = A residential location that has been shared. Not available for public use without prior permission.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">url</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>A shareable link that redirects to this PlugShare location (platform aware: opens apps if user is on mobile, otherwise directs to web).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">icon</div>
+      <div class="type">String (URL)</div>
+    </td>
+    <td>A recommended icon for displaying the location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">icon_type</div>
+      <div class="type">String</div>
+    </td>
+    <td>The stripped file name of the icon's URL path.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">phone</div>
+      <div class="type">String</div>
+    </td>
+    <td>Formatting of this field is not currently guaranteed.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">address</div>
+      <div class="type">String</div>
+    </td>
+    <td>Street address of the location.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">pwps_version</div>
+      <div class="type">Number (integer)</div>
+    </td>
+    <td>The Pay with PlugShare version protocol required to be supported by the client to activate this station.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">created_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">updated_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>Timestamp of the last time this location was updated. "yyyy-mm-dd hh:mm:ss" format.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">qr_enabled</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>True if this station is tagged with a QR code for station identification and activation flows.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">poi_name</div>
+      <div class="type">String</div>
+    </td>
+    <td>Point of interest / location type name. Selected from a list of 40+ types, including Gas Station, Park, Restaurant, etc.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_type_name</div>
+      <div class="type">String</div>
+    </td>
+    <td>The types of parking available. Customers Only, Free, Pay, Restricted, Unknown, '', or null.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">locale</div>
+      <div class="type">String</div>
+    </td>
+    <td>This location's locale. US, UK, EU, AU, JP, WW.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">opening_date</div>
+      <div class="type">String (date)</div>
+    </td>
+    <td>Date when location is anticipated to open in the future. "yyyy-mm-dd" format.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">hours</div>
+      <div class="type">String</div>
+    </td>
+    <td>String for hours of availability. Commonly 24/7 or specified time frames.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">open247</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is open 24 hours a day, 7 days a week.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">coming_soon</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is not currently active and is anticipated to be coming soon.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">under_repair</div>
+      <div class="type">Boolean</div>
+    </td>
+    <td>Flag if the location is currently under repair.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">compass_bearing</div>
+      <div class="type">Number (float)</div>
+    </td>
+    <td>A compass bearing from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">distance_meters</div>
+      <div class="type">Number (float)</div>
+    </td>
+    <td>A distance in meters from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
+  </tr>
+</table>
 
 ## Get Location
 
@@ -2010,6 +2220,8 @@ A PlugShare user who may be owner of reviews, check-ins, or private locations.
     "id": 3590,
     "notify_nearby": 1
 }
+
+
 ```
 
 <table>
