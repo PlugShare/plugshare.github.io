@@ -613,3 +613,71 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+
+
+// PlugShare Styles
+table {
+  tr {
+    td:first-of-type, th:first-of-type {
+      text-align: right;
+    }
+  }
+  .field {
+    font-weight: 500;
+  }
+  .type {
+    color: #777;
+    white-space: nowrap;
+  }
+  .type.required {
+    color: #003ca6;
+    font-weight: 600;
+  }
+  .type.deprecated {
+    color: #ff4040;
+  }
+}
+.connectors {
+  tr {
+    td:first-of-type, th:first-of-type {
+      text-align: center;
+    }
+    td, th {
+      text-align: center;
+      vertical-align: middle;
+    }
+    td img {
+      height: 40px;
+      display: block;
+    }
+    td {
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.contact-button {
+  margin-left: 10px;
+  margin-top: 10px;
+  white-space: nowrap;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 10px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-decoration: none;
+  font-weight: 500;
+  text-shadow: none;
+  background-color: #003ca6;
+  position: relative;
+  transition: all .3s ease;
+}
+.contact-button:hover {
+  background-color: #3363b8;
+  text-decoration: none !important;
+}
