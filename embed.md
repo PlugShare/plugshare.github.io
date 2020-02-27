@@ -158,7 +158,7 @@ canonical_link: https://developer.plugshare.com/embed
 
   <h3>Embed Code</h3>
   <div id="terms">
-    <p>Please read and accept the <a href="http://company.plugshare.com/terms/" target="_blank">Terms of Use</a> to view the embed code</p>
+    <p>Please read and accept the <a href="http://company.plugshare.com/terms.html" target="_blank">Terms of Use</a> to view the embed code</p>
     <div class="button accept" id="accept_button">
       I ACCEPT
     </div>
