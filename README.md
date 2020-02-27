@@ -1,3 +1,5 @@
+# HOW TO MAKE CHANGES - README
+
 Optimizer Prime touched this and to deploy ANY changes to developer.plugshare.com including main website + docs, here are the steps:
 
 Make all changes in dev branch.  
@@ -11,6 +13,7 @@ Alternatively ask Joe to update anything (preferred method).
 
 **Note**: github rack vulnerability does not affect us.
 
+---
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/lord/img/master/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
