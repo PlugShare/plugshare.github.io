@@ -236,7 +236,7 @@
         <ul class="toc-footer">
             <li><a href='/access'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>API V3 - Updated 2/19/2020</li>
+            <li>API V3 - Updated 6/22/2020</li>
             <li>Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a></li>
         </ul>
     </div>
@@ -2003,8 +2003,8 @@ You may want to apply some filters to the search queries to return only relevant
 <td>37</td>
 <td>Recargo</td>
 <td></td>
-<td></td>
-<td></td>
+<td>55</td>
+<td>IVY</td>
 </tr>
 <tr>
 <td>3</td>
@@ -2360,14 +2360,14 @@ where start is the created_at of the last item in the results.</p>
       <div class="field">user</div>
       <div class="type">Object (User)</div>
     </td>
-  <td>User object including in depth information about the user who submitted this review (check-in).</td>
+    <td>User object including in depth information about the user who submitted this review (check-in).</td>
   </tr>
-i  <tr>
+  <tr>
     <td>
       <div class="field">problem</div>
       <div class="type">Number (integer)</div>
     </td>
-  <td>Integer enum value corresponding to the problem_description property.</td>
+    <td>Integer enum value corresponding to the problem_description property.</td>
   </tr>
   <tr>
     <td>
@@ -2416,7 +2416,9 @@ described above.</p>
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy and fast"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">]</span><span class="w">
+    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"vehicle_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chevrolet Bolt EV"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"problem_desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not activate"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
@@ -2438,7 +2440,7 @@ special authentication not described here.</p>
       <div class="field">start</div>
       <div class="type required">required</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z. Returns checkins
         created after this time.
     </td>
   </tr>
@@ -2447,7 +2449,7 @@ special authentication not described here.</p>
       <div class="field">end</div>
       <div class="type">optional</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z. Returns checkins
         created on or before this time.
     </td>
   </tr>
@@ -2456,7 +2458,21 @@ special authentication not described here.</p>
       <div class="field">count</div>
       <div class="type">optional</div>
     </td>
-    <td>An int representing the number of results to return.  Default 500, max 500.</td>
+    <td>An int representing the number of results to return. Default 500, max 500.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_info</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string describing the user's vehicle e.g. "Chevrolet Bolt EV"</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">problem_desc</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string describing any issues the user encountered e.g. "Could not activate"</td>
   </tr>
 </table>
 <h3 id='returns-7'>Returns</h3>
