@@ -2124,7 +2124,7 @@ GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&co
     "comment": "Easy and fast",
     "station_ids": ["75e8130c-27b6-4d9f-9918-b139dcc4f81e", "88b9c729-9209-4059-a895-d4b072b8b281"],
     "vehicle_info": "Chevrolet Bolt EV",
-    "problem_desc": "Could not activate",
+    "problem_description": "Could not activate",
 }
 ```
 
@@ -2180,7 +2180,7 @@ special authentication not described here.
   </tr>
   <tr>
     <td>
-      <div class="field">problem_desc</div>
+      <div class="field">problem_description</div>
       <div class="type">optional</div>
     </td>
     <td>A string describing any issues the user encountered e.g. "Could not activate"</td>
