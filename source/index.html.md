@@ -6,7 +6,7 @@ language_tabs:
 toc_footers:
   - <a href='/access'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-  - API V3 - Updated 2/19/2020
+  - API V3 - Updated 6/22/2020
   - Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a>
 
 includes:
@@ -1795,7 +1795,7 @@ A company that operates stations and provides subscription services or access co
 id | network |   | id | network |   | id | network |   | id | network |
 -- | ------- | - | -- | ------- | - | -- | ------- | - | -- | ------- |
 1 | ChargePoint  | | 15 | Endesa  | | 36 | ChargeNet  | | 54 | Electrify Canada
-2 | Blink  | | 19 | EVgo  | | 37 | Recargo
+2 | Blink  | | 19 | EVgo  | | 37 | Recargo  | | 55 | IVY
 3 | Semaconnect  | | 22 | Lastestasjoner  | | 41 | KSI
 4 | GE WattStation  | | 23 | EnelDrive  | | 45 | POLAR
 5 | Sun Country  | |  25 | Volta  | | 46 | EVConnect
@@ -2062,14 +2062,14 @@ Check-Ins include:
       <div class="field">user</div>
       <div class="type">Object (User)</div>
     </td>
-  <td>User object including in depth information about the user who submitted this review (check-in).</td>
+    <td>User object including in depth information about the user who submitted this review (check-in).</td>
   </tr>
-i  <tr>
+  <tr>
     <td>
       <div class="field">problem</div>
       <div class="type">Number (integer)</div>
     </td>
-  <td>Integer enum value corresponding to the problem_description property.</td>
+    <td>Integer enum value corresponding to the problem_description property.</td>
   </tr>
   <tr>
     <td>
@@ -2122,7 +2122,9 @@ GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&co
     "created_at": "2018-08-01T23:00:00Z",
     "rating": 1,
     "comment": "Easy and fast",
-    "station_ids": ["75e8130c-27b6-4d9f-9918-b139dcc4f81e", "88b9c729-9209-4059-a895-d4b072b8b281"]
+    "station_ids": ["75e8130c-27b6-4d9f-9918-b139dcc4f81e", "88b9c729-9209-4059-a895-d4b072b8b281"],
+    "vehicle_info": "Chevrolet Bolt EV",
+    "problem_desc": "Could not activate",
 }
 ```
 
@@ -2149,7 +2151,7 @@ special authentication not described here.
       <div class="field">start</div>
       <div class="type required">required</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z. Returns checkins
         created after this time.
     </td>
   </tr>
@@ -2158,7 +2160,7 @@ special authentication not described here.
       <div class="field">end</div>
       <div class="type">optional</div>
     </td>
-    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z.  Returns checkins
+    <td>A string representing a datetime in the format 2018-08-01T21:59:46Z. Returns checkins
         created on or before this time.
     </td>
   </tr>
@@ -2167,7 +2169,21 @@ special authentication not described here.
       <div class="field">count</div>
       <div class="type">optional</div>
     </td>
-    <td>An int representing the number of results to return.  Default 500, max 500.</td>
+    <td>An int representing the number of results to return. Default 500, max 500.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">vehicle_info</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string describing the user's vehicle e.g. "Chevrolet Bolt EV"</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">problem_desc</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A string describing any issues the user encountered e.g. "Could not activate"</td>
   </tr>
 </table>
 
