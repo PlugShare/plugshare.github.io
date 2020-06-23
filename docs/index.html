@@ -2460,26 +2460,14 @@ special authentication not described here.</p>
     </td>
     <td>An int representing the number of results to return. Default 500, max 500.</td>
   </tr>
-  <tr>
-    <td>
-      <div class="field">vehicle_info</div>
-      <div class="type">optional</div>
-    </td>
-    <td>A string describing the user's vehicle e.g. "Chevrolet Bolt EV"</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">problem_description</div>
-      <div class="type">optional</div>
-    </td>
-    <td>A string describing any issues the user encountered e.g. "Could not activate"</td>
-  </tr>
 </table>
 <h3 id='returns-7'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Review object.  The <code>stations</code>
 attribute lists the network&#39;s identifiers for the stations at that location.  The <code>rating</code>
 attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
-respectively.</p>
+respectively. The <code>vehicle_info</code> attribute is a string describing the user&#39;s vehicle e.g. 
+&quot;Chevrolet Bolt EV&quot;. The <code>problem_description</code> attribute is a string describing any issues 
+the user encountered e.g. &quot;Could not activate&quot;.</p>
 <h3 id='paging-2'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing checkins,
 sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
