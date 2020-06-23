@@ -2171,27 +2171,15 @@ special authentication not described here.
     </td>
     <td>An int representing the number of results to return. Default 500, max 500.</td>
   </tr>
-  <tr>
-    <td>
-      <div class="field">vehicle_info</div>
-      <div class="type">optional</div>
-    </td>
-    <td>A string describing the user's vehicle e.g. "Chevrolet Bolt EV"</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">problem_description</div>
-      <div class="type">optional</div>
-    </td>
-    <td>A string describing any issues the user encountered e.g. "Could not activate"</td>
-  </tr>
 </table>
 
 ### Returns
 A list of JSON objects.  Each object is a simplified Review object.  The `stations`
 attribute lists the network's identifiers for the stations at that location.  The `rating`
 attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
-respectively.
+respectively. The `vehicle_info` attribute is a string describing the user's vehicle e.g. 
+"Chevrolet Bolt EV". The `problem_description` attribute is a string describing any issues 
+the user encountered e.g. "Could not activate".
 
 ### Paging
 Make a query with a start time.  The response is a list of JSON objects representing checkins,
