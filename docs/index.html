@@ -1591,6 +1591,39 @@ You may want to apply some filters to the search queries to return only relevant
     <td>ISO 8601 Format "yyyy-mm-ddThh:mm:ssZ".</td>
   </tr>
 </table>
+<h2 id='station-availability'>Station Availability</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/stations/availability/38606
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">174876</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:31.197691"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186690</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:28.870196"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN_USE"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all station availability data.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/stations/availability/</code></p>
+
+<aside class="notice">
+This API call requires special permissions to be used.
+</aside>
+<h3 id='returns-6'>Returns</h3>
+<p>Returns an array of <code>station availability</code> objects if the call succeeded.</p>
 <h1 id='outlet'>Outlet</h1>
 <p>A physical vehicle-to-station connection point: either a plug or a socket. Stations can have multiple outlets. Stations can have outlets of varying types.</p>
 <h2 id='object-properties-3'>Object Properties</h2>
@@ -2229,7 +2262,7 @@ within the location object, described above.</p>
     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
 
 <p>This functionality is only available by arrangement.  It returns photos associated with
@@ -2270,7 +2303,7 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return.  Default 500, max 500.</td>
   </tr>
 </table>
-<h3 id='returns-6'>Returns</h3>
+<h3 id='returns-7'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Photo object.</p>
 <h3 id='paging'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing photos,
@@ -2420,7 +2453,7 @@ described above.</p>
     </span><span class="s2">"vehicle_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chevrolet Bolt EV"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"problem_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not activate"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
 
 <p>This functionality is only available by arrangement.  It returns checkins associated with
@@ -2461,7 +2494,7 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return. Default 500, max 500.</td>
   </tr>
 </table>
-<h3 id='returns-7'>Returns</h3>
+<h3 id='returns-8'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Review object.  The <code>stations</code>
 attribute lists the network&#39;s identifiers for the stations at that location.  The <code>rating</code>
 attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
