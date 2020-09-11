@@ -1405,6 +1405,47 @@ A physical charging unit installed on the ground or wall. In EV industry terms t
   </tr>
 </table>
 
+## Station Availability
+
+> Example Request:
+
+```plaintext
+GET https://api.plugshare.com/stations/availability/38606
+```
+
+> Example Response:
+
+```json
+[
+  {
+    "plugshare_station_id": 174876,
+    "available_changed_at": "2020-09-10T13:38:31.197691",
+    "available": 1,
+    "available_name": "AVAILABLE"
+  },
+  {
+    "plugshare_station_id": 186690,
+    "available_changed_at": "2020-09-10T13:38:28.870196",
+    "available": 2,
+    "available_name": "IN_USE"
+  },
+]
+```
+
+This endpoint retrieves all station availability data.
+
+### HTTP Request
+
+`GET https://api.plugshare.com/stations/availability/`
+
+<aside class="notice">
+This API call requires special permissions to be used.
+</aside>
+
+### Returns
+
+Returns an array of `station availability` objects if the call succeeded.
+
 # Outlet
 
 A physical vehicle-to-station connection point: either a plug or a socket. Stations can have multiple outlets. Stations can have outlets of varying types.
