@@ -1436,7 +1436,19 @@ This endpoint retrieves all station availability data.
 
 ### HTTP Request
 
-`GET https://api.plugshare.com/stations/availability/`
+`GET https://api.plugshare.com/stations/availability`
+
+### Arguments
+
+<table>
+  <tr>
+    <td>
+      <div class="field">changed_after</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Expects a timestamp in format `2020-12-31T00:00:00Z` If this is supplied, only stations with available updated after that moment are returned.</td>
+  </tr>
+</table>
 
 <aside class="notice">
 This API call requires special permissions to be used.
