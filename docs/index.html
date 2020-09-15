@@ -1617,7 +1617,17 @@ You may want to apply some filters to the search queries to return only relevant
 </span></code></pre>
 <p>This endpoint retrieves all station availability data.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://api.plugshare.com/stations/availability/</code></p>
+<p><code>GET https://api.plugshare.com/stations/availability</code></p>
+<h3 id='arguments-6'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">changed_after</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Expects a timestamp in format `2020-12-31T00:00:00Z` If this is supplied, only stations with available updated after that moment are returned.</td>
+  </tr>
+</table>
 
 <aside class="notice">
 This API call requires special permissions to be used.
@@ -2268,7 +2278,7 @@ within the location object, described above.</p>
 <p>This functionality is only available by arrangement.  It returns photos associated with
 locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-<h3 id='arguments-6'>Arguments</h3>
+<h3 id='arguments-7'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -2459,7 +2469,7 @@ described above.</p>
 <p>This functionality is only available by arrangement.  It returns checkins associated with
 locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-<h3 id='arguments-7'>Arguments</h3>
+<h3 id='arguments-8'>Arguments</h3>
 <table>
   <tr>
     <td>
