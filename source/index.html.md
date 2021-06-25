@@ -1855,7 +1855,7 @@ id | network |   | id | network |   | id | network |   | id | network |
 6 | Circuit Electrique  | | 26 | Greenlots | | 47 | Electrify America
 7 | FLO | | 29 | OpConnect | | 48 | Chargefox
 8 | Tesla Supercharger | | 30 | Shorepower | | 49 | BC Hydro EV
-9 | Webasto | | 33 | CarCharging | | 50 | Irvine Company
+9 | EVCS | | 33 | CarCharging | | 50 | Irvine Company
 13 | Innogy | | 34 | JNSH | | 51 | Ionity
 14 | Oplaadpalen | | 35 | Tesla Destination | | 52 | Fastned
 
