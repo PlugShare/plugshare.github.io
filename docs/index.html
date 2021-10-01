@@ -1646,6 +1646,8 @@ This API call requires special permissions to be used.
         </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85911</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGING"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-01T22:04:55Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -1678,10 +1680,37 @@ This API call requires special permissions to be used.
   <tr>
     <td>
       <div class="field">available</div>
-      <div class="type">string</div>
+      <div class="type">string (deprecated)</div>
     </td>
     <td>If null, outlet level availability is unknown (Note: generally, see Station availability instead).</td>
   </tr>
+  <tr>
+    <td>
+      <div class="field">status</div>
+      <div class="type">string</div>
+    </td>
+    <td>
+      <div>AVAILABLE = Free for use.</div>
+      <div>BLOCKED = Not accessible due to a physical obstruction.</div>
+      <div>CHARGING = In use during a charging session.</div>
+      <div>CONNECTED = Connected to a vehicle, but not charging.</div>
+      <div>OUTOFORDER = Not operational.</div>
+      <div>UNDER_REPAIR = Not operational due to repairs.</div>
+      <div>OFFLINE = The station is not communicating with the network.</div>
+      <div>PLANNED = Hardware that is planned to be installed or under construction.</div>
+      <div>REMOVED = Decommissioned and removed hardware.</div>
+      <div>RESERVED = Currently reserved for a specific driver.</div>
+      <div>UNKNOWN = No known status.</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">status_changed_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>The date the status field was last updated.</td>
+  </tr>
+  <tr>
 </table>
 <h2 id='outlet-connector-types'>Outlet Connector Types</h2>
 <p>PlugShare supports all EV charging connectors that are in active use globally.</p>
