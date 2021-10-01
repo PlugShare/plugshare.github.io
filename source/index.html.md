@@ -1473,6 +1473,8 @@ A physical vehicle-to-station connection point: either a plug or a socket. Stati
         "power": 0,
         "connector": 2,
         "id": 85911,
+        "status": "CHARGING",
+        "status_changed_at": "2021-10-01T22:04:55Z"
     }
 ]
 ```
@@ -1506,10 +1508,37 @@ A physical vehicle-to-station connection point: either a plug or a socket. Stati
   <tr>
     <td>
       <div class="field">available</div>
-      <div class="type">string</div>
+      <div class="type">string (deprecated)</div>
     </td>
     <td>If null, outlet level availability is unknown (Note: generally, see Station availability instead).</td>
   </tr>
+  <tr>
+    <td>
+      <div class="field">status</div>
+      <div class="type">string</div>
+    </td>
+    <td>
+      <div>AVAILABLE = Free for use.</div>
+      <div>BLOCKED = Not accessible due to a physical obstruction.</div>
+      <div>CHARGING = In use during a charging session.</div>
+      <div>CONNECTED = Connected to a vehicle, but not charging.</div>
+      <div>OUTOFORDER = Not operational.</div>
+      <div>UNDER_REPAIR = Not operational due to repairs.</div>
+      <div>OFFLINE = The station is not communicating with the network.</div>
+      <div>PLANNED = Hardware that is planned to be installed or under construction.</div>
+      <div>REMOVED = Decommissioned and removed hardware.</div>
+      <div>RESERVED = Currently reserved for a specific driver.</div>
+      <div>UNKNOWN = No known status.</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">status_changed_at</div>
+      <div class="type">String (timestamp)</div>
+    </td>
+    <td>The date the status field was last updated.</td>
+  </tr>
+  <tr>
 </table>
 
 ## Outlet Connector Types
