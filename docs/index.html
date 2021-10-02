@@ -2300,6 +2300,7 @@ within the location object, described above.</p>
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"C2011"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C2012"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
@@ -2343,7 +2344,7 @@ special authentication not described here.</p>
   </tr>
 </table>
 <h3 id='returns-7'>Returns</h3>
-<p>A list of JSON objects.  Each object is a simplified Photo object.</p>
+<p>A list of JSON objects.  Each object is a simplified Photo object and contains an attribute &quot;station_ids&quot; which is a list of strings.  Each string is the network&#39;s unique identifier for a charger at the Photo&#39;s Location.</p>
 <h3 id='paging'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing photos,
 sorted in order of creation time.  If there are <code>count</code> results or fewer, issue another query
