@@ -2002,6 +2002,7 @@ GET https://api.plugshare.com/network/999/photos?start=2018-08-01T21:59:46Z&coun
     "created_at": "2018-08-01T23:00:00Z",
     "url": "https://s3.amazonaws.com/photos/1.png",
     "caption": "Had a great charge here",
+    "station_ids": ["C2011", "C2012"],
 }
 ```
 
@@ -2050,8 +2051,7 @@ special authentication not described here.
 </table>
 
 ### Returns
-A list of JSON objects.  Each object is a simplified Photo object.
-
+A list of JSON objects.  Each object is a simplified Photo object and contains an attribute "station_ids" which is a list of strings.  Each string is the network's unique identifier for a charger at the Photo's Location.
 
 ### Paging
 Make a query with a start time.  The response is a list of JSON objects representing photos,
