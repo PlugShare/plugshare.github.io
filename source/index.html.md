@@ -47,60 +47,35 @@ A driver identifiable destination where Charging Stations (Stations) are located
 
 ```json
 {
-  "valid_outlets": [
-    {
-      "connector": 1
-    },
-    {
-      "connector": 2
-    },
-    {
-      "connector": 3
-    },
-    {
-      "connector": 13
-    },
-    {
-      "connector": 4
-    },
-    {
-      "connector": 6
-    },
-    {
-      "connector": 5
-    }
-  ],
-  "description": "No Public Access.",
-  "opening_date": "None",
-  "updated_at": "2016-12-09T10:16:23Z",
-  "hours": "",
-  "phone": "",
-  "cost": true,
-  "pwps_version": 2,
-  "address": "1015 Abbot Kinney Blvd Los Angeles, CA 90291",
-  "score": 10,
-  "id": 20667,
-  "parking_type_name": "Free",
-  "icon": "https://assets.plugshare.com/icons/B.png",
-  "cost_description": "",
-  "reviews": [],
-  "name": "PlugShare API Station",
-  "url": "http://api.plugshare.com/view/location/20667",
-  "created_at": "2013-11-19T22:26:33Z",
-  "icon_type": "B",
-  "longitude": -118.4721,
   "access": 2,
-  "locale": "US",
-  "under_repair": true,
+  "access_restrictions": ["EMPLOYEES_ONLY", "GUESTS_ONLY"],
+  "address": "1015 Abbot Kinney Blvd Los Angeles, CA 90291",
   "amenities": [
     {
       "location_id": 20667,
       "type": 1
     }
   ],
-  "poi_name": "Workplace Private",
-  "coming_soon": null,
+  "coming_soon": false,
+  "cost": true,
+  "cost_description": "$10/hour",
+  "created_at": "2013-11-19T22:26:33Z",
+  "description": "No Public Access.",
+  "hours": "",
+  "icon": "https://assets.plugshare.com/icons/B.png",
+  "icon_type": "B",
+  "id": 20667,
   "latitude": 33.992476,
+  "locale": "US",
+  "longitude": -118.4721,
+  "name": "PlugShare API Station",
+  "open247": false,
+  "opening_date": "None",
+  "overhead_clearance_meters": 6.095999804928006,
+  "parking_attributes": ["PULL_IN"],
+  "parking_level": "1",
+  "parking_type_name": "Free",
+  "phone": "",
   "photos": [
     {
       "user_id": 85274,
@@ -113,7 +88,9 @@ A driver identifiable destination where Charging Stations (Stations) are located
       "id": 127483
     }
   ],
-  "open247": false,
+  "pwps_version": 2,
+  "poi_name": "Workplace Private",
+  "score": 10,
   "stations": [
     {
       "qr_enabled": true,
@@ -153,7 +130,34 @@ A driver identifiable destination where Charging Stations (Stations) are located
       "longitude": -118.472993,
       "model": "",
     }
-  ]
+  ],
+  "reviews": [],
+  "under_repair": true,
+  "url": "http://api.plugshare.com/view/location/20667",
+  "updated_at": "2021-10-29T17:39:19Z",
+  "valid_outlets": [
+    {
+      "connector": 1
+    },
+    {
+      "connector": 2
+    },
+    {
+      "connector": 3
+    },
+    {
+      "connector": 13
+    },
+    {
+      "connector": 4
+    },
+    {
+      "connector": 6
+    },
+    {
+      "connector": 5
+    }
+  ],
 }
 ```
 
@@ -387,6 +391,65 @@ A driver identifiable destination where Charging Stations (Stations) are located
       <div class="type">Number (float)</div>
     </td>
     <td>A distance in meters from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">entrance_latitude</div>
+      <div class="type">Number</div>
+    </td>
+    <td>Latitude coordinate of the position of a driving entrance to the facility where this charging location is hosted.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">entrance_longitude</div>
+      <div class="type">Number</div>
+    </td>
+    <td>Longitude coordinate of the position of a driving entrance to the facility where this charging location is hosted.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access_restrictions</div>
+      <div class="type">Array</div>
+    </td>
+    <td>
+      A list of restrictions covering who may use the charging location.<br>
+      <b>'CUSTOMERS_ONLY'</b> - Customers of the host business are allowed.<br>
+      <b>'GUESTS_ONLY'</b> - Visitors to the site host are allowed.<br>
+      <b>'EMPLOYEES_ONLY'</b> - Employees of the site host have access.<br>
+      <b>'STUDENTS_ONLY'</b> - Students attending an educational site host have access.<br>
+      <b>'RESIDENTS_ONLY'</b> - Residents of a residential site host have access.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_attributes</div>
+      <div class="type">Array</div>
+    </td>
+    <td>
+      A list of parking characteristics of the charging station installation.<br>
+      <b>'PULL_THROUGH'</b> - Vehicles park next to the charging stations and are able to continue forward to exit without changing direction. For reference, this is the configuration most common in American gas stations.<br>
+      <b>'PULL_IN'</b> - Vehicles pull into a parking space facing a curb to charge. Leaving the parking space requires changing direction and backing out. This is very common for charging stations installed in shopping center parking lots and garages.<br>
+      <b>'TRAILER_PARKING'</b> - The facility features space to park a trailer while charging.<br>
+      <b>'TRAILER_FRIENDLY'</b> - The charger configuration allows for charging a vehicle with a trailer attached.<br>
+      <b>'GARAGE'</b> - The stations are located with a parking garage.<br>
+      <b>'HANDICAPPED'</b> - One or more stations are installed at handicapped parking spaces.<br>
+      <b>'WHEELCHAIR_ACCESS'</b> - One or more stations are installed in a parking space supporting wheelchair access.<br>
+      <b>'ILLUMINATED'</b> - The charging station installation site is lit at night.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_level</div>
+      <div class="type">String</div>
+    </td>
+    <td>In multi-story parking facilities, a string with the name of the floor where chargers are installed, as labeled on site.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">overhead_clearance_meters</div>
+      <div class="type">String</div>
+    </td>
+    <td>The maximum vehicle height, if applicable, for entering the parking facility.</td>
   </tr>
 </table>
 
@@ -1830,18 +1893,15 @@ A company that operates stations and provides subscription services or access co
 
 id | network |   | id | network |   | id | network |   | id | network |
 -- | ------- | - | -- | ------- | - | -- | ------- | - | -- | ------- |
-1 | ChargePoint  | | 15 | Endesa  | | 36 | ChargeNet  | | 54 | Electrify Canada
-2 | Blink  | | 19 | EVgo  | | 37 | Recargo  | | 55 | IVY
-3 | Semaconnect  | | 22 | Lastestasjoner  | | 41 | KSI
-4 | GE WattStation  | | 23 | EnelDrive  | | 45 | POLAR
-5 | Sun Country  | |  25 | Volta  | | 46 | EVConnect
-6 | Circuit Electrique  | | 26 | Greenlots | | 47 | Electrify America
-7 | FLO | | 29 | OpConnect | | 48 | Chargefox
-8 | Tesla Supercharger | | 30 | Shorepower | | 49 | BC Hydro EV
-9 | EVCS | | 33 | CarCharging | | 50 | Irvine Company
-13 | Innogy | | 34 | JNSH | | 51 | Ionity
-14 | Oplaadpalen | | 35 | Tesla Destination | | 52 | Fastned
-
+1 | ChargePoint | | 2 | Blink | | 3 | SemaConnect | | 4 | GE WattStation
+5 | Sun Country | | 6 | Circuit Electrique | | 7 | FLO | | 8 | Supercharger
+9 | EVCS | | 19 | EVgo | | 25 | Volta | | 26 | Greenlots
+35 | Tesla Destination | | 36 | ChargeNet | | 41 | myEVroute | | 45 | bp pulse
+46 | EV Connect | | 47 | Electrify America | | 48 | Chargefox | | 49 | BC Hydro EV
+51 | IONITY | | 52 | Fastned | | 53 | Petro-Canada | | 54 | Electrify Canada
+55 | IVY | | 57 | EVUp | | 58 | OpConnect | | 59 | Allego
+60 | Evie Networks | | 67 | EVsmart | | 69 | JOLT | | 70 | Exploren
+71 | Webasto | | 72 | GreenWay
 
 # Photo
 
