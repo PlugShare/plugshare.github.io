@@ -35,7 +35,7 @@ URL: [https://api.plugshare.com/](https://api.plugshare.com/)
 
 <img src="images/tables.png">
 
-A location or station may also have zero to many promos, and a location may also have zero to many amenities.
+A location or station may also have zero to many amenities.
 
 # Location
 
@@ -75,7 +75,6 @@ A driver identifiable destination where Charging Stations (Stations) are located
   "updated_at": "2016-12-09T10:16:23Z",
   "hours": "",
   "phone": "",
-  "promos": [],
   "cost": true,
   "pwps_version": 2,
   "address": "1015 Abbot Kinney Blvd Los Angeles, CA 90291",
@@ -89,20 +88,6 @@ A driver identifiable destination where Charging Stations (Stations) are located
   "url": "http://api.plugshare.com/view/location/20667",
   "created_at": "2013-11-19T22:26:33Z",
   "icon_type": "B",
-  "all_promos": [
-    {
-      "link_url": null,
-      "tag": null,
-      "image_url": null,
-      "name": "EZ-Charge",
-      "link_action": null,
-      "lat": null,
-      "lng": null,
-      "image_url_2x": null,
-      "id": 2,
-      "app_id": null
-    }
-  ],
   "longitude": -118.4721,
   "access": 2,
   "locale": "US",
@@ -161,7 +146,6 @@ A driver identifiable destination where Charging Stations (Stations) are located
         }
       ],
       "hours": "",
-      "promos": [],
       "manufacturer": "GE WattStation",
       "name": "PRIVATE LOCATION",
       "network_id": 4,
@@ -240,20 +224,6 @@ A driver identifiable destination where Charging Stations (Stations) are located
       <div class="type">Array</div>
     </td>
     <td>Contains photo objects. Ordered from the most recent to oldest. This array can be empty.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will only return promos at the location level. This array can be empty.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">all_promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will return all promos at both the location level and station level. This array can be empty.</td>
   </tr>
   <tr>
     <td>
@@ -438,7 +408,6 @@ GET https://api.plugshare.com/locations/38606
     "updated_at": "2016-12-09T10:16:23Z",
     "hours": "",
     "phone": "",
-    "promos": [],
     "cost": true,
     "pwps_version": 2,
     "address": "1015 Abbot Kinney Blvd Los Angeles, CA 90291",
@@ -452,7 +421,6 @@ GET https://api.plugshare.com/locations/38606
     "url": "http://api.plugshare.com/view/location/38606",
     "created_at": "2013-11-19T22:26:33Z",
     "icon_type": "B",
-    "all_promos": [],
     "longitude": -118.4721,
     "access": 2,
     "locale": "US",
@@ -512,7 +480,6 @@ GET https://api.plugshare.com/locations/nearby?latitude=33.992476&longitude=-118
         "updated_at": "2016-12-09T10:16:23Z",
         "hours": "",
         "phone": "",
-        "promos": [],
         "cost": true,
         "pwps_version": 2,
         "address": "1015 Abbot Kinney Blvd Los Angeles, CA 90291",
@@ -525,7 +492,6 @@ GET https://api.plugshare.com/locations/nearby?latitude=33.992476&longitude=-118
         "url": "http://api.plugshare.com/view/location/45911",
         "created_at": "2013-11-19T22:26:33Z",
         "icon_type": "B",
-        "all_promos": [],
         "longitude": -118.4721,
         "access": 2,
         "locale": "US",
@@ -713,7 +679,6 @@ GET https://api.plugshare.com/locations/region?spanLat=0.15&spanLng=0.10&latitud
         "updated_at": "2016-09-15T10:06:01Z",
         "hours": "",
         "phone": "",
-        "promos": [],
         "cost": true,
         "pwps_version": null,
         "address": "210 Market Ave, Los Altos, CA 94022",
@@ -725,7 +690,6 @@ GET https://api.plugshare.com/locations/region?spanLat=0.15&spanLng=0.10&latitud
         "url": "http://api.plugshare.com/view/location/40025",
         "created_at": "2016-09-13T20:51:23Z",
         "icon_type": "G",
-        "all_promos": [],
         "longitude": -122.105989,
         "access": 1,
         "locale": "US",
@@ -906,7 +870,6 @@ GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&count=10
     "updated_at": "2014-10-15T22:53:50Z",
     "hours": "",
     "phone": "3109231567",
-    "promos": [],
     "cost": false,
     "pwps_version": null,
     "address": "Glencoe Ave Venice, CA 90291",
@@ -919,7 +882,6 @@ GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&count=10
     "url": "http://api.plugshare.com/view/location/58226",
     "created_at": "2014-09-06T01:21:10Z",
     "icon_type": "H",
-    "all_promos": [],
     "longitude": -118.449509,
     "access": 3,
     "locale": "US",
@@ -1248,7 +1210,6 @@ A physical charging unit installed on the ground or wall. In EV industry terms t
           }
         ],
         "hours": "",
-        "promos": [],
         "manufacturer": "GE WattStation",
         "name": "PRIVATE LOCATION",
         "network_id": 4,
@@ -1349,13 +1310,6 @@ A physical charging unit installed on the ground or wall. In EV industry terms t
       <div class="type">Array</div>
     </td>
     <td>Contains outlet objects. Each station will have at least 1 outlet object.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will only return promos on the station level. This array can be empty.</td>
   </tr>
   <tr>
     <td>
