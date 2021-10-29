@@ -257,7 +257,7 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 <h1 id='core-data-entities'>Core Data Entities</h1>
 <p><img src="images/tables-8b85d097.png"></p>
 
-<p>A location or station may also have zero to many promos, and a location may also have zero to many amenities.</p>
+<p>A location or station may also have zero to many amenities.</p>
 <h1 id='location'>Location</h1>
 <p>A driver identifiable destination where Charging Stations (Stations) are located. As a general rule if stations are within visible range of each other they are organized together into a location.</p>
 <h2 id='object-properties'>Object Properties</h2>
@@ -265,75 +265,35 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 <p>Example Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/20667"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"link_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EZ-Charge"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"link_action"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"image_url_2x"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
   </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"access_restrictions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"EMPLOYEES_ONLY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GUESTS_ONLY"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$10/hour"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
   </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"overhead_clearance_meters"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.095999804928006</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parking_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"PULL_IN"</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"parking_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85274</span><span class="p">,</span><span class="w">
@@ -346,7 +306,9 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">127483</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -379,7 +341,6 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
       </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -387,7 +348,34 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
       </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/20667"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-29T17:39:19Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table>
@@ -457,20 +445,6 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
       <div class="type">Array</div>
     </td>
     <td>Contains photo objects. Ordered from the most recent to oldest. This array can be empty.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will only return promos at the location level. This array can be empty.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">all_promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will return all promos at both the location level and station level. This array can be empty.</td>
   </tr>
   <tr>
     <td>
@@ -635,6 +609,65 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
     </td>
     <td>A distance in meters from the specified address or coordinate.  Note: this field will only appear for locations returned by the /locations/nearby endpoint.</td>
   </tr>
+  <tr>
+    <td>
+      <div class="field">entrance_latitude</div>
+      <div class="type">Number</div>
+    </td>
+    <td>Latitude coordinate of the position of a driving entrance to the facility where this charging location is hosted.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">entrance_longitude</div>
+      <div class="type">Number</div>
+    </td>
+    <td>Longitude coordinate of the position of a driving entrance to the facility where this charging location is hosted.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">access_restrictions</div>
+      <div class="type">Array</div>
+    </td>
+    <td>
+      A list of restrictions covering who may use the charging location.<br>
+      <b>'CUSTOMERS_ONLY'</b> - Customers of the host business are allowed.<br>
+      <b>'GUESTS_ONLY'</b> - Visitors to the site host are allowed.<br>
+      <b>'EMPLOYEES_ONLY'</b> - Employees of the site host have access.<br>
+      <b>'STUDENTS_ONLY'</b> - Students attending an educational site host have access.<br>
+      <b>'RESIDENTS_ONLY'</b> - Residents of a residential site host have access.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_attributes</div>
+      <div class="type">Array</div>
+    </td>
+    <td>
+      A list of parking characteristics of the charging station installation.<br>
+      <b>'PULL_THROUGH'</b> - Vehicles park next to the charging stations and are able to continue forward to exit without changing direction. For reference, this is the configuration most common in American gas stations.<br>
+      <b>'PULL_IN'</b> - Vehicles pull into a parking space facing a curb to charge. Leaving the parking space requires changing direction and backing out. This is very common for charging stations installed in shopping center parking lots and garages.<br>
+      <b>'TRAILER_PARKING'</b> - The facility features space to park a trailer while charging.<br>
+      <b>'TRAILER_FRIENDLY'</b> - The charger configuration allows for charging a vehicle with a trailer attached.<br>
+      <b>'GARAGE'</b> - The stations are located with a parking garage.<br>
+      <b>'HANDICAPPED'</b> - One or more stations are installed at handicapped parking spaces.<br>
+      <b>'WHEELCHAIR_ACCESS'</b> - One or more stations are installed in a parking space supporting wheelchair access.<br>
+      <b>'ILLUMINATED'</b> - The charging station installation site is lit at night.<br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">parking_level</div>
+      <div class="type">String</div>
+    </td>
+    <td>In multi-story parking facilities, a string with the name of the floor where chargers are installed, as labeled on site.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">overhead_clearance_meters</div>
+      <div class="type">String</div>
+    </td>
+    <td>The maximum vehicle height, if applicable, for entering the parking facility.</td>
+  </tr>
 </table>
 <h2 id='get-location'>Get Location</h2>
 <blockquote>
@@ -652,7 +685,6 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
@@ -666,7 +698,6 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/38606"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
@@ -716,7 +747,6 @@ Optional location filters do not apply to this endpoint because this only return
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
@@ -729,7 +759,6 @@ Optional location filters do not apply to this endpoint because this only return
         </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/45911"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
@@ -905,7 +934,6 @@ You may want to apply some filters to the search queries to return only relevant
         </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-15T10:06:01Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210 Market Ave, Los Altos, CA 94022"</span><span class="p">,</span><span class="w">
@@ -917,7 +945,6 @@ You may want to apply some filters to the search queries to return only relevant
         </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/40025"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-13T20:51:23Z"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.105989</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
         </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
@@ -1086,7 +1113,6 @@ You may want to apply some filters to the search queries to return only relevant
     </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-15T22:53:50Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3109231567"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glencoe Ave Venice, CA 90291"</span><span class="p">,</span><span class="w">
@@ -1099,7 +1125,6 @@ You may want to apply some filters to the search queries to return only relevant
     </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/58226"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-06T01:21:10Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"all_promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
     </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.449509</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
     </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
@@ -1436,7 +1461,6 @@ You may want to apply some filters to the search queries to return only relevant
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"promos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -1536,13 +1560,6 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="type">Array</div>
     </td>
     <td>Contains outlet objects. Each station will have at least 1 outlet object.</td>
-  </tr>
-  <tr>
-    <td>
-      <div class="field">promos</div>
-      <div class="type">Array</div>
-    </td>
-    <td>Contains promo objects. This will only return promos on the station level. This array can be empty.</td>
   </tr>
   <tr>
     <td>
@@ -2056,141 +2073,115 @@ This API call requires special permissions to be used.
 <td>1</td>
 <td>ChargePoint</td>
 <td></td>
-<td>15</td>
-<td>Endesa</td>
-<td></td>
-<td>36</td>
-<td>ChargeNet</td>
-<td></td>
-<td>54</td>
-<td>Electrify Canada</td>
-</tr>
-<tr>
 <td>2</td>
 <td>Blink</td>
 <td></td>
-<td>19</td>
-<td>EVgo</td>
-<td></td>
-<td>37</td>
-<td>Recargo</td>
-<td></td>
-<td>55</td>
-<td>IVY</td>
-</tr>
-<tr>
 <td>3</td>
-<td>Semaconnect</td>
+<td>SemaConnect</td>
 <td></td>
-<td>22</td>
-<td>Lastestasjoner</td>
-<td></td>
-<td>41</td>
-<td>KSI</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>4</td>
 <td>GE WattStation</td>
-<td></td>
-<td>23</td>
-<td>EnelDrive</td>
-<td></td>
-<td>45</td>
-<td>POLAR</td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>5</td>
 <td>Sun Country</td>
 <td></td>
-<td>25</td>
-<td>Volta</td>
-<td></td>
-<td>46</td>
-<td>EVConnect</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>6</td>
 <td>Circuit Electrique</td>
 <td></td>
-<td>26</td>
-<td>Greenlots</td>
-<td></td>
-<td>47</td>
-<td>Electrify America</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>7</td>
 <td>FLO</td>
 <td></td>
-<td>29</td>
-<td>OpConnect</td>
-<td></td>
-<td>48</td>
-<td>Chargefox</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>8</td>
-<td>Tesla Supercharger</td>
-<td></td>
-<td>30</td>
-<td>Shorepower</td>
-<td></td>
-<td>49</td>
-<td>BC Hydro EV</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Supercharger</td>
 </tr>
 <tr>
 <td>9</td>
 <td>EVCS</td>
 <td></td>
-<td>33</td>
-<td>CarCharging</td>
+<td>19</td>
+<td>EVgo</td>
 <td></td>
-<td>50</td>
-<td>Irvine Company</td>
+<td>25</td>
+<td>Volta</td>
 <td></td>
-<td></td>
-<td></td>
+<td>26</td>
+<td>Greenlots</td>
 </tr>
 <tr>
-<td>13</td>
-<td>Innogy</td>
-<td></td>
-<td>34</td>
-<td>JNSH</td>
-<td></td>
-<td>51</td>
-<td>Ionity</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>Oplaadpalen</td>
-<td></td>
 <td>35</td>
 <td>Tesla Destination</td>
 <td></td>
+<td>36</td>
+<td>ChargeNet</td>
+<td></td>
+<td>41</td>
+<td>myEVroute</td>
+<td></td>
+<td>45</td>
+<td>bp pulse</td>
+</tr>
+<tr>
+<td>46</td>
+<td>EV Connect</td>
+<td></td>
+<td>47</td>
+<td>Electrify America</td>
+<td></td>
+<td>48</td>
+<td>Chargefox</td>
+<td></td>
+<td>49</td>
+<td>BC Hydro EV</td>
+</tr>
+<tr>
+<td>51</td>
+<td>IONITY</td>
+<td></td>
 <td>52</td>
 <td>Fastned</td>
+<td></td>
+<td>53</td>
+<td>Petro-Canada</td>
+<td></td>
+<td>54</td>
+<td>Electrify Canada</td>
+</tr>
+<tr>
+<td>55</td>
+<td>IVY</td>
+<td></td>
+<td>57</td>
+<td>EVUp</td>
+<td></td>
+<td>58</td>
+<td>OpConnect</td>
+<td></td>
+<td>59</td>
+<td>Allego</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Evie Networks</td>
+<td></td>
+<td>67</td>
+<td>EVsmart</td>
+<td></td>
+<td>69</td>
+<td>JOLT</td>
+<td></td>
+<td>70</td>
+<td>Exploren</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Webasto</td>
+<td></td>
+<td>72</td>
+<td>GreenWay</td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 <td></td>
