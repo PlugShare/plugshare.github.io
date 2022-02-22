@@ -7,7 +7,7 @@ toc_footers:
   - <a href='/access'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
   - API V3 - Updated 6/22/2020
-  - Questions? <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288" class="contact-button">See our FAQ</a>
+  - Questions? <a href="https://help.plugshare.com/hc/en-us/sections/4418960359699-PlugShare-Products-and-Services" class="contact-button">See our FAQ</a>
 
 includes:
 

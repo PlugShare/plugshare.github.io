@@ -25,7 +25,7 @@
     <div class="prompt">
       Questions?
     </div>
-    <a href="https://recargo.freshdesk.com/support/solutions/folders/29000052288">
+    <a href="https://help.plugshare.com/hc/en-us/sections/4418960359699-PlugShare-Products-and-Services">
       <div class="button">
         See our FAQ
       </div>
