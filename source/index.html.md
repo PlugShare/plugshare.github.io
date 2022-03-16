@@ -1782,7 +1782,7 @@ PlugShare supports all EV charging connectors that are in active use globally.
   <tr>
     <td>16</td>
     <td></td>
-    <td>China BG/T</td>
+    <td>GB/T</td>
     <td><img src="https://assets.plugshare.com/assets/outlets/image06.png"></td>
     <td></td>
     <td></td>
@@ -1794,7 +1794,7 @@ PlugShare supports all EV charging connectors that are in active use globally.
   <tr>
     <td>17</td>
     <td></td>
-    <td>China BG/T 2</td>
+    <td>GB/T 2</td>
     <td><img src="https://assets.plugshare.com/assets/outlets/image17.png"></td>
     <td></td>
     <td></td>
