@@ -1427,7 +1427,7 @@ A physical charging unit installed on the ground or wall. In EV industry terms t
 > Example Request:
 
 ```plaintext
-GET https://api.plugshare.com/stations/availability/38606
+GET https://api.plugshare.com/stations/availability?changed_after=2020-09-10T00:00:00Z
 ```
 
 > Example Response:
