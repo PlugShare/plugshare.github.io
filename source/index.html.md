@@ -1803,6 +1803,18 @@ PlugShare supports all EV charging connectors that are in active use globally.
     <td></td>
     <td>Y</td>
   </tr>
+  <tr>
+    <td>25</td>
+    <td></td>
+    <td>NEMA TT-30</td>
+    <td><img src="https://assets.plugshare.com/assets/outlets/image26.png"></td>
+    <td>Y</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Y</td>
+  </tr>
 </table>
 
 # Network
