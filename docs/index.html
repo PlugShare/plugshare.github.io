@@ -1096,6 +1096,94 @@ You may want to apply some filters to the search queries to return only relevant
 <p><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10&amp;networks=3,4</code></p>
 <h3 id='returns-3'>Returns</h3>
 <p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
+<h2 id='get-location-reviews'>Get Location Reviews</h2>
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/123456/reviews
+</code></pre>
+<blockquote>
+<p>Example Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This was easy to charge at"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:24:07Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135193</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kilowatts"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"allow_promo_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"bookmarks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"charger_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T18:35:22Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"e164_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"formatted_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79998</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"language_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:25:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"setup_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/mobile/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_make_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/image/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_make_profile_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/profile/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Model 3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves reviews (checkins) at a location.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.plugshare.com/location/{id}/reviews</code></p>
+<h3 id='arguments-4'>Arguments</h3>
+<table>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    100-500 is a recommended value for most applications (Default is 100).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">page</div>
+      <div class="type">optional</div>
+    </td>
+    <td>This method supports paging. If page is specified, count must be specified as well.<br>
+    This returns results based on the page index number, with `count` results showing per page.</td>
+  </tr>
+</table>
+<h3 id='additional-examples-3'>Additional Examples</h3>
+<p><code>GET https://api.plugshare.com/location/79998/reviews?count=100?page=1</code></p>
+
+<p><code>GET https://api.plugshare.com/location/79998/reviews?count=100?page=5</code></p>
+
+<p><code>GET https://api.plugshare.com/location/79998/reviews?count=250?page=1</code></p>
+<h3 id='returns-4'>Returns</h3>
+<p>Returns an array of <code>review</code> objects, containing up to <code>count</code> locations</p>
 <h2 id='search-locations'>Search Locations</h2>
 <blockquote>
 <p>Example Request:</p>
@@ -1139,9 +1227,9 @@ You may want to apply some filters to the search queries to return only relevant
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint returns locations whose name or address contains a specified search query.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/search</code></p>
-<h3 id='arguments-4'>Arguments</h3>
+<h3 id='arguments-5'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -1164,7 +1252,7 @@ You may want to apply some filters to the search queries to return only relevant
       <div class="type">optional</div>
     </td>
     <td>This method supports paging. If page is specified, count must be specified as well.<br>
-    This returns results based on the page index number, with 100 results showing per page.</td>
+    This returns results based on the page index number, with `count` results showing per page.</td>
   </tr>
   <tr>
     <td>
@@ -1224,7 +1312,7 @@ You may want to apply some filters to the search queries to return only relevant
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
-<h3 id='additional-examples-3'>Additional Examples</h3>
+<h3 id='additional-examples-4'>Additional Examples</h3>
 <p><code>GET https://api.plugshare.com/locations/search?query=recargo</code></p>
 
 <p><code>GET https://api.plugshare.com/locations/search?query=california&amp;count=500&amp;page=2</code></p>
@@ -1234,7 +1322,7 @@ You may want to apply some filters to the search queries to return only relevant
 <p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;networks=3,4&amp;outlets=[{&quot;connector&quot;:2},{&quot;connector&quot;:6,&quot;power&quot;:1}]</code></p>
 
 <p><code>GET https://api.plugshare.com/locations/search?query=palo%20alto&amp;count=100&amp;access=1,2,3&amp;cost=false</code></p>
-<h3 id='returns-4'>Returns</h3>
+<h3 id='returns-5'>Returns</h3>
 <p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
 <h2 id='fetch-locations-along-route'>Fetch Locations Along Route</h2>
 <blockquote>
@@ -1285,9 +1373,9 @@ POST body:
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint returns locations who are a certain <code>distance</code> away from the <code>polyline</code> path.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://api.plugshare.com/locations/polyline?minimal=1</code></p>
-<h3 id='arguments-5'>Arguments</h3>
+<h3 id='arguments-6'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -1317,7 +1405,7 @@ POST body:
       <div class="type">optional</div>
     </td>
     <td>This method supports paging. If page is specified, count must be specified as well.<br>
-    This returns results based on the page index number, with 100 results showing per page.</td>
+    This returns results based on the page index number, with `count` results showing per page.</td>
   </tr>
   <tr>
     <td>
@@ -1384,9 +1472,9 @@ POST body:
 <aside class="notice">
 You may want to apply some filters to the search queries to return only relevant locations. Filters are added as query parameters (for GET requests) or JSON fields (for POST requests).
 </aside>
-<h3 id='additional-examples-4'>Additional Examples</h3>
+<h3 id='additional-examples-5'>Additional Examples</h3>
 <p><code>POST https://api.plugshare.com/locations/polyline</code></p>
-<h3 id='returns-5'>Returns</h3>
+<h3 id='returns-6'>Returns</h3>
 <p>Returns an array of <code>location</code> objects, containing up to <code>count</code> locations</p>
 <h2 id='amenities-list'>Amenities List</h2>
 <table><thead>
@@ -1633,9 +1721,9 @@ You may want to apply some filters to the search queries to return only relevant
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all station availability data.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/stations/availability</code></p>
-<h3 id='arguments-6'>Arguments</h3>
+<h3 id='arguments-7'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -1649,7 +1737,7 @@ You may want to apply some filters to the search queries to return only relevant
 <aside class="notice">
 This API call requires special permissions to be used.
 </aside>
-<h3 id='returns-6'>Returns</h3>
+<h3 id='returns-7'>Returns</h3>
 <p>Returns an array of <code>station availability</code> objects if the call succeeded.</p>
 <h1 id='outlet'>Outlet</h1>
 <p>A physical vehicle-to-station connection point: either a plug or a socket. Stations can have multiple outlets. Stations can have outlets of varying types.</p>
@@ -2305,13 +2393,13 @@ within the location object, described above.</p>
     </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"C2011"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C2012"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
 
 <p>This functionality is only available by arrangement.  It returns photos associated with
 locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-<h3 id='arguments-7'>Arguments</h3>
+<h3 id='arguments-8'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -2346,7 +2434,7 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return.  Default 500, max 500.</td>
   </tr>
 </table>
-<h3 id='returns-7'>Returns</h3>
+<h3 id='returns-8'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Photo object and contains an attribute &quot;station_ids&quot; which is a list of strings.  Each string is the network&#39;s unique identifier for a charger at the Photo&#39;s Location.</p>
 <h3 id='paging'>Paging</h3>
 <p>Make a query with a start time.  The response is a list of JSON objects representing photos,
@@ -2496,13 +2584,13 @@ described above.</p>
     </span><span class="s2">"vehicle_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chevrolet Bolt EV"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"problem_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not activate"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
 
 <p>This functionality is only available by arrangement.  It returns checkins associated with
 locations which contain the given network&#39;s stations.  The request must be issued with
 special authentication not described here.</p>
-<h3 id='arguments-8'>Arguments</h3>
+<h3 id='arguments-9'>Arguments</h3>
 <table>
   <tr>
     <td>
@@ -2537,7 +2625,7 @@ special authentication not described here.</p>
     <td>An int representing the number of results to return. Default 500, max 500.</td>
   </tr>
 </table>
-<h3 id='returns-8'>Returns</h3>
+<h3 id='returns-9'>Returns</h3>
 <p>A list of JSON objects.  Each object is a simplified Review object.  The <code>stations</code>
 attribute lists the network&#39;s identifiers for the stations at that location.  The <code>rating</code>
 attribute can have the value -1, 0, or 1 indicating a negative, neutral, or positive checkin
