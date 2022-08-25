@@ -914,6 +914,106 @@ You may want to apply some filters to the search queries to return only relevant
 
 Returns an array of `location` objects, containing up to `count` locations
 
+## Get Location Reviews
+
+> Example Request:
+
+```plaintext
+GET https://api.plugshare.com/locations/123456/reviews
+```
+
+> Example Response:
+
+```json
+[
+    {
+        "amps": null,
+        "comment": "This was easy to charge at",
+        "connector_type": 2,
+        "created_at": "2022-07-11T19:24:07Z",
+        "id": 135193,
+        "is_visible": true,
+        "kilowatts": 60,
+        "language": null,
+        "rating": 1,
+        "response": null,
+        "user": {
+          "about": "",
+          "allow_notifications": null,
+          "allow_promo_email": false,
+          "bookmarks": [],
+          "charger_type": 0,
+          "country_code": "US",
+          "created_at": "2022-07-11T18:35:22Z",
+          "display_name": "Brian",
+          "e164_phone_number": "",
+          "first_name": "Brian",
+          "formatted_phone_number": "",
+          "id": 79998,
+          "is_deleted": false,
+          "language_code": null,
+          "last_login": "2022-07-11T19:25:05Z",
+          "last_name": "",
+          "locations": [],
+          "notify_nearby": 0,
+          "notify_nearby_radius": 0,
+          "phone": "",
+          "photos": [],
+          "setup_complete": true,
+          "vehicle_description": "",
+          "vehicle_type": 0
+        },
+        "vehicle_default_img": "https://assets.plugshare.com/vehicles/makes/mobile/tesla.png",
+        "vehicle_make": "Tesla",
+        "vehicle_make_image_url": "https://assets.plugshare.com/vehicles/makes/image/tesla.png",
+        "vehicle_make_profile_image_url": "https://assets.plugshare.com/vehicles/makes/profile/tesla.png",
+        "vehicle_name": "Tesla Model 3",
+        "vehicle_type": 75,
+        "volts": null,
+        "waiting": false
+    }
+]
+```
+
+This endpoint retrieves reviews (checkins) at a location.
+
+### HTTP Request
+
+`GET https://api.plugshare.com/location/{id}/reviews`
+
+### Arguments
+
+<table>
+  <tr>
+    <td>
+      <div class="field">count</div>
+      <div class="type">optional</div>
+    </td>
+    <td>Maximum count of locations to return. Count is capped at 500 regardless of specified value.<br>
+    100-500 is a recommended value for most applications (Default is 100).</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">page</div>
+      <div class="type">optional</div>
+    </td>
+    <td>This method supports paging. If page is specified, count must be specified as well.<br>
+    This returns results based on the page index number, with `count` results showing per page.</td>
+  </tr>
+</table>
+
+### Additional Examples
+
+`GET https://api.plugshare.com/location/79998/reviews?count=100?page=1`
+
+`GET https://api.plugshare.com/location/79998/reviews?count=100?page=5`
+
+`GET https://api.plugshare.com/location/79998/reviews?count=250?page=1`
+
+### Returns
+
+Returns an array of `review` objects, containing up to `count` locations
+
 ## Search Locations
 
 > Example Request:
@@ -989,7 +1089,7 @@ This endpoint returns locations whose name or address contains a specified searc
       <div class="type">optional</div>
     </td>
     <td>This method supports paging. If page is specified, count must be specified as well.<br>
-    This returns results based on the page index number, with 100 results showing per page.</td>
+    This returns results based on the page index number, with `count` results showing per page.</td>
   </tr>
   <tr>
     <td>
@@ -1157,7 +1257,7 @@ This endpoint returns locations who are a certain `distance` away from the `poly
       <div class="type">optional</div>
     </td>
     <td>This method supports paging. If page is specified, count must be specified as well.<br>
-    This returns results based on the page index number, with 100 results showing per page.</td>
+    This returns results based on the page index number, with `count` results showing per page.</td>
   </tr>
   <tr>
     <td>
