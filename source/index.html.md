@@ -979,7 +979,7 @@ This endpoint retrieves reviews (checkins) at a location.
 
 ### HTTP Request
 
-`GET https://api.plugshare.com/location/{id}/reviews`
+`GET https://api.plugshare.com/locations/{id}/reviews`
 
 ### Arguments
 
@@ -1004,11 +1004,11 @@ This endpoint retrieves reviews (checkins) at a location.
 
 ### Additional Examples
 
-`GET https://api.plugshare.com/location/79998/reviews?count=100?page=1`
+`GET https://api.plugshare.com/locations/79998/reviews?count=100?page=1`
 
-`GET https://api.plugshare.com/location/79998/reviews?count=100?page=5`
+`GET https://api.plugshare.com/locations/79998/reviews?count=100?page=5`
 
-`GET https://api.plugshare.com/location/79998/reviews?count=250?page=1`
+`GET https://api.plugshare.com/locations/79998/reviews?count=250?page=1`
 
 ### Returns
 
