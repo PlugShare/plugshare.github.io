@@ -6,7 +6,7 @@ language_tabs:
 toc_footers:
   - <a href='/access'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-  - API V3 - Updated 6/22/2020
+  - API V3 - Updated 2/6/2023
   - Questions? <a href="https://help.plugshare.com/hc/en-us/sections/4418960359699-PlugShare-Products-and-Services" class="contact-button">See our FAQ</a>
 
 includes:
@@ -636,10 +636,11 @@ This endpoint retrieves locations near a given coordinate.
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
+      <div class="field">include_coming_soon</div>
+      <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+    <td><b>true</b> = Returns all locations regardless of coming soon status.<br>
+    <b>false</b> = Does not return locations tagged as coming soon.</td>
   </tr>
   <tr>
     <td>
@@ -691,9 +692,9 @@ This endpoint retrieves locations near a given coordinate.
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -829,13 +830,6 @@ This endpoint retrieves locations in a region based on a given coordinate with l
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -884,9 +878,9 @@ This endpoint retrieves locations in a region based on a given coordinate with l
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -1108,13 +1102,6 @@ This endpoint returns locations whose name or address contains a specified searc
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1143,6 +1130,13 @@ This endpoint returns locations whose name or address contains a specified searc
       <div class="type">optional</div>
     </td>
     <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -1276,13 +1270,6 @@ This endpoint returns locations who are a certain `distance` away from the `poly
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1315,9 +1302,9 @@ This endpoint returns locations who are a certain `distance` away from the `poly
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
