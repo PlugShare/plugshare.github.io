@@ -27,19 +27,13 @@ body {
   @extend %default-font;
 }
 
-.toc-footer, .lang-selector, .search, #nav-button {
+.tocify, .toc-footer, .lang-selector, .search, #nav-button {
   display: none;
-}
-.tocify-header, .tocify-subheader {
-  text-decoration: underline;
 }
 
 .tocify-wrapper>img {
-  margin: 10px auto 0;
+  margin: 0 auto;
   display: block;
-  // border-radius: 3px;
-  // background-color: #2E3336 !important;
-  // -webkit-print-color-adjust: exact !important;
 }
 
 .content {
@@ -152,18 +146,8 @@ body {
   }
 }
 
-.connectors tr td, .connectors tr th {
-  text-align: center;
-  vertical-align: middle;
-}
-.connectors tr td img {
-  height: 40px;
-  display: block;
-}
-.content img {
-  max-width: 100%;
-}
-
-.highlight .s2, .highlight .kc, .content pre {
-  color: #968f47;
+.copy-clipboard {
+  @media print {
+    display: none
+  }
 }
