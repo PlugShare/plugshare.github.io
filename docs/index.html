@@ -1,15 +1,13 @@
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Use our REST API to access PlugShare API endpoints, which can get information on charging stations, reviews, and photos in our database.">
-    <link rel="canonical" href="https://developer.plugshare.com/docs/">
-    
     <title>PlugShare API Reference</title>
 
-    <style>
+    <style media="screen">
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
@@ -44,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -128,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -143,16 +141,13 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
 }
 .highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
   color: #ffffff;
 }
 .highlight .ni {
@@ -167,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -178,6 +173,9 @@
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -198,45 +196,223 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-edf0d684.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-cd87497a.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-ee87ef62.js"></script>
-    <script>
-    //This is Google's default GA code
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-21850385-16', 'auto');
-    ga('send', 'pageview');
-    //This does hash-click tracking (inspired by http://stackoverflow.com/a/4813223)
-    $(document).ready(function() {
-      $('.tocify-item a').on('click', function(){
-        ga('send', 'pageview', {'page': location.pathname + location.search  + location.hash});
-      });
-    });
-    </script>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
   </head>
 
   <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
-    <div class="tocify-wrapper">
-      <img src="images/logo-2d2b547e.png" alt="Logo" />
+    <div class="toc-wrapper">
+      <img src="images/logo-2d2b547e.png" class="logo" alt="" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <div id="toc">
-      </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#using-the-api" class="toc-h2 toc-link" data-title="Using The API">Using The API</a>
+                  </li>
+                  <li>
+                    <a href="#access-instructions" class="toc-h2 toc-link" data-title="Access Instructions">Access Instructions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#core-data-entities" class="toc-h1 toc-link" data-title="Core Data Entities">Core Data Entities</a>
+          </li>
+          <li>
+            <a href="#location" class="toc-h1 toc-link" data-title="Location">Location</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#get-location" class="toc-h2 toc-link" data-title="Get Location">Get Location</a>
+                  </li>
+                  <li>
+                    <a href="#get-nearby-locations" class="toc-h2 toc-link" data-title="Get Nearby Locations">Get Nearby Locations</a>
+                  </li>
+                  <li>
+                    <a href="#get-locations-in-region" class="toc-h2 toc-link" data-title="Get Locations in Region">Get Locations in Region</a>
+                  </li>
+                  <li>
+                    <a href="#get-location-reviews" class="toc-h2 toc-link" data-title="Get Location Reviews">Get Location Reviews</a>
+                  </li>
+                  <li>
+                    <a href="#search-locations" class="toc-h2 toc-link" data-title="Search Locations">Search Locations</a>
+                  </li>
+                  <li>
+                    <a href="#fetch-locations-along-route" class="toc-h2 toc-link" data-title="Fetch Locations Along Route">Fetch Locations Along Route</a>
+                  </li>
+                  <li>
+                    <a href="#amenities-list" class="toc-h2 toc-link" data-title="Amenities List">Amenities List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#station" class="toc-h1 toc-link" data-title="Station">Station</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-2" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#station-availability" class="toc-h2 toc-link" data-title="Station Availability">Station Availability</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#outlet" class="toc-h1 toc-link" data-title="Outlet">Outlet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-3" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#outlet-connector-types" class="toc-h2 toc-link" data-title="Outlet Connector Types">Outlet Connector Types</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#network" class="toc-h1 toc-link" data-title="Network">Network</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-4" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#networks-list" class="toc-h2 toc-link" data-title="Networks List">Networks List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#photo" class="toc-h1 toc-link" data-title="Photo">Photo</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-5" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#get-network-photos" class="toc-h2 toc-link" data-title="Get Network Photos">Get Network Photos</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#review-check-in" class="toc-h1 toc-link" data-title="Review (Check-In)">Review (Check-In)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-6" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+                  <li>
+                    <a href="#get-network-checkins" class="toc-h2 toc-link" data-title="Get Network Checkins">Get Network Checkins</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#object-properties-7" class="toc-h2 toc-link" data-title="Object Properties">Object Properties</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
         <ul class="toc-footer">
             <li><a href='/access'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
-            <li>API V3 - Updated 6/22/2020</li>
+            <li>API V3 - Updated 2/6/2023</li>
             <li>Questions? <a href="https://help.plugshare.com/hc/en-us/sections/4418960359699-PlugShare-Products-and-Services" class="contact-button">See our FAQ</a></li>
         </ul>
     </div>
@@ -264,120 +440,120 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"access_restrictions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"EMPLOYEES_ONLY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GUESTS_ONLY"</span><span class="p">],</span><span class="w">
-  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"access_restrictions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"EMPLOYEES_ONLY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GUESTS_ONLY"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$10/hour"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"overhead_clearance_meters"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.095999804928006</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"parking_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"PULL_IN"</span><span class="p">],</span><span class="w">
-  </span><span class="s2">"parking_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$10/hour"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20667</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"overhead_clearance_meters"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.095999804928006</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parking_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"PULL_IN"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"parking_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85274</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">127483</span><span class="w">
+      </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85274</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">127483</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37558</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
+      </span><span class="nl">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37558</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95845</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">95845</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/20667"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-29T17:39:19Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/20667"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-29T17:39:19Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -673,44 +849,44 @@ Here are some examples to get you started. Try out <a href="#get-nearby-location
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/38606
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/38606
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38606</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/38606"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38606</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/38606"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves a location based on location id.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/{id}</code></p>
@@ -734,44 +910,44 @@ Optional location filters do not apply to this endpoint because this only return
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/nearby?latitude=33.992476&amp;longitude=-118.4721&amp;count=10
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45911</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/45911"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="nl">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Public Access."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-09T10:16:23Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1015 Abbot Kinney Blvd Los Angeles, CA 90291"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45911</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/B.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare API Station"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/45911"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:33Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.4721</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Private"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992476</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves locations near a given coordinate.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/nearby</code></p>
@@ -835,10 +1011,11 @@ Optional location filters do not apply to this endpoint because this only return
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
+      <div class="field">include_coming_soon</div>
+      <div class="type">optional, default is <b>true</b></div>
     </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+    <td><b>true</b> = Returns all locations regardless of coming soon status.<br>
+    <b>false</b> = Does not return locations tagged as coming soon.</td>
   </tr>
   <tr>
     <td>
@@ -890,9 +1067,9 @@ Optional location filters do not apply to this endpoint because this only return
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -921,43 +1098,43 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/region?spanLat=0.15&amp;spanLng=0.10&amp;latitude=33.992476&amp;longitude=-118.4721&amp;count=10
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-15T10:06:01Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210 Market Ave, Los Altos, CA 94022"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40025</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/G.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Variable: $3.00/hour to $6.00/hour"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Charging Station"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/40025"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-13T20:51:23Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.105989</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Public"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.396454</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="nl">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-15T10:06:01Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"210 Market Ave, Los Altos, CA 94022"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">40025</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Free"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/G.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Variable: $3.00/hour to $6.00/hour"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central Charging Station"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/40025"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-13T20:51:23Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.105989</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Workplace Public"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.396454</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves locations in a region based on a given coordinate with latitude and longitude spans.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/region</code></p>
@@ -1016,13 +1193,6 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1071,9 +1241,9 @@ You may want to apply some filters to the search queries to return only relevant
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -1100,60 +1270,60 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/123456/reviews
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/123456/reviews
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This was easy to charge at"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:24:07Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135193</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"kilowatts"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"allow_promo_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"bookmarks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-          </span><span class="s2">"charger_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T18:35:22Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"e164_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"formatted_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79998</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"language_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:25:05Z"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-          </span><span class="s2">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-          </span><span class="s2">"setup_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="nl">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This was easy to charge at"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:24:07Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135193</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"kilowatts"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"allow_promo_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bookmarks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"charger_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T18:35:22Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"display_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"e164_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brian"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"formatted_phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79998</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"language_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-11T19:25:05Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"setup_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/mobile/tesla.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_make_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/image/tesla.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_make_profile_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/profile/tesla.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Model 3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="nl">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/mobile/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_make_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/image/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_make_profile_image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/makes/profile/tesla.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tesla Model 3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves reviews (checkins) at a location.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/{id}/reviews</code></p>
@@ -1188,44 +1358,44 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/locations/search?query=venice%2C%20ca&amp;count=10
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please call first."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-15T22:53:50Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3109231567"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glencoe Ave Venice, CA 90291"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58226</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/H.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/58226"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-06T01:21:10Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.449509</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.000126</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"valid_outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please call first."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"opening_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-15T22:53:50Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3109231567"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Glencoe Ave Venice, CA 90291"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">58226</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parking_type_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/icons/H.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.plugshare.com/view/location/58226"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-09-06T01:21:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.449509</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"under_repair"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amenities"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"poi_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coming_soon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.000126</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open247"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint returns locations whose name or address contains a specified search query.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/locations/search</code></p>
@@ -1271,13 +1441,6 @@ You may want to apply some filters to the search queries to return only relevant
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1307,6 +1470,13 @@ You may want to apply some filters to the search queries to return only relevant
     </td>
     <td>Filter on PlugScore. Accepts a range from 0.0 to 10.0. Will return results greater than or equal to the number provided.</td>
   </tr>
+  <tr>
+    <td>
+      <div class="field">minimal</div>
+      <div class="type">optional, default 0</div>
+    </td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
+  </tr>
 </table>
 
 <aside class="notice">
@@ -1328,50 +1498,50 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>POST https://api.plugshare.com/locations/polyline?minimal=1
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>POST https://api.plugshare.com/locations/polyline?minimal=1
 
 POST body:
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"distance"</span><span class="p">:</span><span class="mi">9654</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"outlets"</span><span class="p">:</span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:2},{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:6,</span><span class="se">\"</span><span class="s2">power</span><span class="se">\"</span><span class="s2">:1}]"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"access"</span><span class="p">:</span><span class="s2">"1,2,3"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"polyline"</span><span class="p">:</span><span class="s2">"33.96515,-118.38001000000001,33.96537,33.992140000000006,-118.47224000000001"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"exclude_networks"</span><span class="p">:</span><span class="s2">"2,19,3,1,26,34,5"</span><span class="w">
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"distance"</span><span class="p">:</span><span class="mi">9654</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"outlets"</span><span class="p">:</span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:2},{</span><span class="se">\"</span><span class="s2">connector</span><span class="se">\"</span><span class="s2">:6,</span><span class="se">\"</span><span class="s2">power</span><span class="se">\"</span><span class="s2">:1}]"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"access"</span><span class="p">:</span><span class="s2">"1,2,3"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"polyline"</span><span class="p">:</span><span class="s2">"33.96515,-118.38001000000001,33.96537,33.992140000000006,-118.47224000000001"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"exclude_networks"</span><span class="p">:</span><span class="s2">"2,19,3,1,26,34,5"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"access"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"url"</span><span class="p">:</span><span class="s2">"http://api.plugshare.com/view/location/1553"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"score"</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Electric St. Garage"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"stations"</span><span class="p">:[</span><span class="w">
+      </span><span class="nl">"access"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="s2">"http://api.plugshare.com/view/location/1553"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"score"</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Electric St. Garage"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stations"</span><span class="p">:[</span><span class="w">
          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2385</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"outlets"</span><span class="p">:[</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">2385</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"outlets"</span><span class="p">:[</span><span class="w">
                </span><span class="p">{</span><span class="w">
-                  </span><span class="s2">"connector"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">50627</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"power"</span><span class="p">:</span><span class="mi">0</span><span class="w">
+                  </span><span class="nl">"connector"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">50627</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"power"</span><span class="p">:</span><span class="mi">0</span><span class="w">
                </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"latitude"</span><span class="p">:</span><span class="mf">34.00208</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"owner"</span><span class="p">:{</span><span class="w">
-         </span><span class="s2">"first_name"</span><span class="p">:</span><span class="s2">"julius"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">137549</span><span class="w">
+      </span><span class="nl">"latitude"</span><span class="p">:</span><span class="mf">34.00208</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"julius"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">137549</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"icon_type"</span><span class="p">:</span><span class="s2">"G"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2116</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"longitude"</span><span class="p">:</span><span class="mf">-81.04077</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"icon"</span><span class="p">:</span><span class="s2">"https://s3.amazonaws.com/plugshare.staging.assets/icons/G.png"</span><span class="w">
+      </span><span class="nl">"icon_type"</span><span class="p">:</span><span class="s2">"G"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">2116</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"longitude"</span><span class="p">:</span><span class="mf">-81.04077</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"icon"</span><span class="p">:</span><span class="s2">"https://s3.amazonaws.com/plugshare.staging.assets/icons/G.png"</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint returns locations who are a certain <code>distance</code> away from the <code>polyline</code> path.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://api.plugshare.com/locations/polyline?minimal=1</code></p>
@@ -1424,13 +1594,6 @@ POST body:
   </tr>
   <tr>
     <td>
-      <div class="field">minimal</div>
-      <div class="type">optional, default 0</div>
-    </td>
-    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
-  </tr>
-  <tr>
-    <td>
       <div class="field">access</div>
       <div class="type">optional</div>
     </td>
@@ -1463,9 +1626,9 @@ POST body:
   <tr>
     <td>
       <div class="field">minimal</div>
-      <div class="type">optional</div>
+      <div class="type">optional, default 0</div>
     </td>
-    <td><b>1</b> = Return minimalized data as response is typically very large.</td>
+    <td>Accepts the value 1.  Speeds up the query by returning only core information for the location and stations.  Useful when populating a map view.</td>
   </tr>
 </table>
 
@@ -1526,38 +1689,38 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38416</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"qr_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pwps_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"location_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20840</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38416</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"cost_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$1/hour: first 4 hours. $20/hour thereafter. 50 cent minimum. Fees continue while car is connected even if not charging."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pre_charge_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">33.992305</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"outlets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78351</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">78351</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"outlet_index"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRIVATE LOCATION"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-11-19T22:26:35Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.472993</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -1700,26 +1863,26 @@ You may want to apply some filters to the search queries to return only relevant
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/stations/availability?changed_after=2020-09-10T00:00:00Z
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/stations/availability?changed_after=2020-09-10T00:00:00Z
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">174876</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:31.197691"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="w">
+    </span><span class="nl">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">174876</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:31.197691"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AVAILABLE"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186690</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:28.870196"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN_USE"</span><span class="w">
+    </span><span class="nl">"plugshare_station_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186690</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-09-10T13:38:28.870196"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN_USE"</span><span class="w">
   </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves all station availability data.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/stations/availability</code></p>
@@ -1745,17 +1908,17 @@ This API call requires special permissions to be used.
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85911</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGING"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-01T22:04:55Z"</span><span class="w">
+        </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"power"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"connector"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85911</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHARGING"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-10-01T22:04:55Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -2080,17 +2243,17 @@ This API call requires special permissions to be used.
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE's networked platform that allows users to manage and monitor the charging of their electric cars."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/network-images/watt.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sign Up"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8554433873"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.gewattstation.com/connect/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE WattStation"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -2296,19 +2459,19 @@ location object.</p>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75733</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">192372</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75733</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/165827.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T17:57:14Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/165827.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlugShare Garage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/165827.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">192372</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -2382,18 +2545,18 @@ within the location object, described above.</p>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/photos?start=2018-08-01T21:59:46Z&amp;count=32
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/photos?start=2018-08-01T21:59:46Z&amp;count=32
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"C2011"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C2012"</span><span class="p">],</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/photos/1.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Had a great charge here"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"C2011"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C2012"</span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/photos</code></p>
 
 <p>This functionality is only available by arrangement.  It returns photos associated with
@@ -2452,24 +2615,24 @@ where start is the created_at of the last item in the results.</p>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-11T23:54:42Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"finished"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-12T00:53:22Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nissan LEAF 2018"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/2018_LEAF_WHITE.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152385</span><span class="w">
+        </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"connector_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-11T23:54:42Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"finished"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-12T00:53:22Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amps"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nissan LEAF 2018"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vehicle_default_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.plugshare.com/vehicles/2018_LEAF_WHITE.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">152385</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
@@ -2571,20 +2734,20 @@ described above.</p>
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&amp;count=32
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext tab-plaintext"><code>GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&amp;count=32
+</code></pre></div>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy and fast"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"vehicle_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chevrolet Bolt EV"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"problem_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not activate"</span><span class="p">,</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-01T23:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easy and fast"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"station_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"75e8130c-27b6-4d9f-9918-b139dcc4f81e"</span><span class="p">,</span><span class="w"> </span><span class="s2">"88b9c729-9209-4059-a895-d4b072b8b281"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"vehicle_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chevrolet Bolt EV"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"problem_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Could not activate"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-9'>HTTP Request</h3>
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://api.plugshare.com/network/{id}/checkins</code></p>
 
 <p>This functionality is only available by arrangement.  It returns checkins associated with
@@ -2642,37 +2805,37 @@ where start is the created_at of the last item in the results.</p>
 <blockquote>
 <p>Example Response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steven"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hide_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010-03-10T22:08:56Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vehicle_color"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"allow_notifications"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steven"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notify_nearby_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hide_address"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vehicle_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010-03-10T22:08:56Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vehicle_color"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">253</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/41329.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-12-30T07:01:35Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/41329.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/41329.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38376</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">253</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/photos/41329.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-12-30T07:01:35Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb/41329.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"thumbnail2x"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://photos.plugshare.com/thumb2x/41329.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38376</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-13T23:02:56Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vehicle_subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3590</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="nl">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-13T23:02:56Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vehicle_subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3590</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"notify_nearby"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 
-</span></code></pre>
+</span></code></pre></div>
 <table>
   <tr>
     <th>Property</th>
