@@ -1,5 +1,12 @@
 # HOW TO MAKE CHANGES - README
 
+** update 2/27/2023 **
+
+This repo's / slate's commands were broken on Joe's new laptop so Fernando updated Slate to the newest version and it ran on his machine (still broken installs for Joe) so for now Fernando has just been running and deploying the updates
+
+---
+
+
 Optimizer Prime touched this and to deploy ANY changes to developer.plugshare.com including main website + docs, here are the steps:
 
 Make all changes in dev branch.  
