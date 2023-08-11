@@ -5,6 +5,7 @@ url: https://developer.plugshare.com/access
 canonical_link: https://developer.plugshare.com/access
 ---
 <form action="https://formspree.io/f/xpzkqavv" method="POST" id="access">
+  <input name="subject" type="hidden" value="API Request Form from {{ company }} - {{ region }}" />
   <fieldset>
     <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
     <h3>Register for an API key to access api.plugshare.com</h3>
