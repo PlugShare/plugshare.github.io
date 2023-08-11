@@ -635,3 +635,29 @@ html, body {
 .copy-clipboard:hover {
   opacity: 0.8;
 }
+
+
+.contact-button {
+    margin-left: 10px;
+    margin-top: 10px;
+    white-space: nowrap;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    text-shadow: none;
+    background-color: rgb(0, 60, 166);
+    position: relative;
+    padding: 0px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+.contact-button:hover {
+    background-color: rgb(51, 99, 184);
+    text-decoration: none !important;
+}
