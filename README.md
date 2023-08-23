@@ -49,7 +49,11 @@ rbenv local 3.2.2
 ```
 
 here we got different error:
-"Autoprefixer doesn’t support Node v4.9.1"
+
+```
+Autoprefixer doesn’t support Node v4.9.1
+```
+
 then I checked nvm and saw I was running version 7 for another project, so I switched to v12
 
 ```
