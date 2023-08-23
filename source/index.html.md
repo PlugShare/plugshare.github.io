@@ -6,7 +6,7 @@ language_tabs:
 toc_footers:
   - <a href='/access'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-  - API V3 - Updated 2/6/2023
+  - API V3 - Updated 8/23/2023
   - Questions? <a href="https://help.plugshare.com/hc/en-us/sections/4418960359699-PlugShare-Products-and-Services" class="contact-button">See our FAQ</a>
 
 includes:
@@ -2307,7 +2307,7 @@ described above.
 
 
 ```plaintext
-GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&count=32
+GET https://api.plugshare.com/network/999/checkins?start=2018-08-01T21:59:46Z&count=32&ratings=1,0
 ```
 
 > Example Response:
@@ -2365,6 +2365,13 @@ special authentication not described here.
       <div class="type">optional</div>
     </td>
     <td>An int representing the number of results to return. Default 500, max 500.</td>
+  </tr>
+  <tr>
+    <td>
+      <div class="field">ratings</div>
+      <div class="type">optional</div>
+    </td>
+    <td>A comma separated list of the three values -1, 0, 1.  These values correspond to negative, neutral, and positive checkins.  Only checkins of the indicated rating will be returned in the results.  If not specified this endpoint only returns negative checkins by default.</td>
   </tr>
 </table>
 
