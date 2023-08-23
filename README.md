@@ -15,6 +15,54 @@ Alternatively ask Joe to update anything (preferred method).
 
 ---
 
+### Troubleshooting deployment notes by Joe
+
+note: below possibly has nothing to do with it, skip to the bottom of this section with node version and try that first
+
+was getting the following error:
+
+```
+can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
+```
+
+https://stackoverflow.com/questions/54042692/rbenv-find-spec-for-exe-cant-find-gem-bundler-0-a-with-executable-bun
+
+was thinking the ruby version was wrong from the mac default 2.6 version, so installed rbenv (ruby manager, similar to nvm) so installed the latest 3.2.2
+
+https://github.com/rbenv/rbenv
+
+step by step actions:
+
+```
+# install rbenv with homebrew
+brew install rbenv ruby-build
+# list latest stable versions:
+rbenv install -l
+# run this and follow the printed instructions:
+rbenv init
+# gives instructions to paste something into your PATH via:
+nano ~/.zshrc
+# while in your project folder, used this to set ruby version locally to this folder only as a test run
+rbenv local 3.2.2
+# ran deploy script in NEW terminal window
+./deploy.sh
+```
+
+here we got different error:
+"Autoprefixer doesn’t support Node v4.9.1"
+then I checked nvm and saw I was running version 7 for another project, so I switched to v12
+
+```
+nvm use 12
+./deploy.sh
+```
+
+## Now it worked!
+
+Always checked nvm versions first and see if that was causing the problem..
+
+---
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/lord/img/master/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
   <br>
