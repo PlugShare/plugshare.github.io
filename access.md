@@ -6,7 +6,7 @@ canonical_link: https://developer.plugshare.com/access
 ---
 <form action="https://formspree.io/f/xpzkqavv" method="POST" id="access">
   {% raw %}
-  <input name="subject" type="hidden" value="{{ company }} - {{ region }} - API" />
+  <input name="subject" type="hidden" value="{{ company }} - {{ region }} - API Request Form" />
   {% endraw %}
   <fieldset>
     <legend><h2>API Request Form (Commercial Licenses Only)</h2></legend>
