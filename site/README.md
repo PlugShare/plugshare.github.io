@@ -13,6 +13,7 @@
     </a>
     <h2>Charging Stations API</h2>
     <a href="access"><h3>Request Access</h3></a>
+    <div><br></div>
   </section>
   <section id="cpo">
     <h2>Charging Network Operators</h2>
