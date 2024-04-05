@@ -23,6 +23,8 @@ Options:
 run_build() {
   bundle exec middleman build --clean
   rm -rf site/docs
+  # mkdir site/docs
+  # mv build/* site/docs
 }
 
 parse_args() {
