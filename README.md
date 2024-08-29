@@ -1,5 +1,11 @@
 # HOW TO MAKE CHANGES - README
 
+Slate docs were removed from the developer site in april 2024 (commit 5562b4bb19bec49fe7d35d9d60924b83b77865c7) because it was to no longer be public and only shared privately with partners.
+
+If you'd like the docs updated, ask Joe to update it from his local plugshare folder.
+
+---
+
 Optimizer Prime touched this and to deploy ANY changes to developer.plugshare.com including main website + docs, here are the steps:
 
 Make all changes in dev branch.  
