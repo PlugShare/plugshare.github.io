@@ -8,11 +8,11 @@
     <a href="permalink"><h3>Permalinking</h3></a>
   </section>
   <section id="api">
-    <a href="access">
+    <a href="https://company.plugshare.com/api.html">
       <img src="api.png">
     </a>
     <h2>Charging Stations API</h2>
-    <a href="access"><h3>Request Access</h3></a>
+    <a href="https://company.plugshare.com/api.html"><h3>Request Access</h3></a>
     <div><br></div>
   </section>
   <section id="cpo">
