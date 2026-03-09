@@ -70,7 +70,7 @@ canonical_link: https://developer.plugshare.com/embed
         <label for="outlet4"><li><input type="checkbox" name="outlet" value="4" id="outlet4" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image00.png"> Tesla Roadster</span></li></label>
         <label for="outlet5"><li><input type="checkbox" name="outlet" value="5" id="outlet5" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image10.png"> NEMA 14-50</span></li></label>
         <label for="outlet6"><li><input type="checkbox" name="outlet" value="6" id="outlet6" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image05.png"> Tesla S HPWC</span></li></label>
-        <label for="outlet42"><li><input type="checkbox" name="outlet" value="42" id="outlet42" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
+        <label for="outlet42"><li><input type="checkbox" name="outlet" value="42" id="outlet26" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image05.png"> Tesla Supercharger</span></li></label>
         <label for="outlet13"><li><input type="checkbox" name="outlet" value="13" id="outlet13" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image02.png"> SAE Combo DC CCS</span></li></label>
         <!-- Worldwide -->
         <label for="outlet7"><li><input type="checkbox" name="outlet" value="7" id="outlet7" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image06.png"> Type 2 (Mennekes)</span></li></label>
