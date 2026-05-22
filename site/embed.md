@@ -83,6 +83,7 @@ canonical_link: https://developer.plugshare.com/embed
         <label for="outlet15"><li><input type="checkbox" name="outlet" value="15" id="outlet15" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image15.png"> Caravan Mains Socket</span></li></label>
         <label for="outlet16"><li><input type="checkbox" name="outlet" value="16" id="outlet16" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image06.png"> China BG/T</span></li></label>
         <label for="outlet17"><li><input type="checkbox" name="outlet" value="17" id="outlet17" checked> <span class="label"><img src="https://assets.plugshare.com/assets/outlets/image17.png"> China BG/T 2</span></li></label>
+        <label for="outlet20"><li><input type="checkbox" name="outlet" value="20" id="outlet20" checked> <span class="label"><img src="https://assets.plugshare.com/outlets/images/ccs-type2.svg"> CCS2</span></li></label>
       </ul>
     </section>
 

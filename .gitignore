@@ -27,3 +27,5 @@ doc/
 ubuntu-*-console.log
 
 site/docs
+
+.claude/
